@@ -1,0 +1,63 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkorchid;
+    padding: 15px;
+    color: white;
+    margin-bottom: 20px; /* Add space between navbar and the section */
+  }
+  
+  .navbar-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-link {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s; /* Add smooth color transition */
+  }
+  
+  .navbar-link:hover {
+    text-decoration: underline;
+    color: red; /* Change the hover color to red (adjust as needed) */
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .navbar-left,
+    .navbar-right {
+      margin-bottom: 10px;
+    }
+  
+    .navbar-link {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  
+    /* Add margin to the bottom of the navbar for spacing */
+    .navbar {
+      margin-bottom: 20px;
+    }
+  }
+  
+  
