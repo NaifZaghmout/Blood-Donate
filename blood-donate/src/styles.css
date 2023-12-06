@@ -56,8 +56,33 @@ body {
   
     /* Add margin to the bottom of the navbar for spacing */
     .navbar {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
+  
+  /* General container style */
+  .container {
+    margin-top: 1px; /* Adjust the margin-top value to add more space */
+  }
+  
+  /* Section heading style */
+  .section-heading {
+    color: #8e44ad; 
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Centered image style */
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem !important; /* Adjust the margin-top as needed */
+  }
+  
+  
   
   
