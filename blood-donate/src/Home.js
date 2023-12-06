@@ -38,7 +38,19 @@ const Home = () => {
 
 
 
- 
+  const footerStyle = {
+    backgroundColor: 'darkorchid',
+    padding: '10px 0',
+    marginTop: '20px',
+    textAlign: 'center',
+    fontSize: '15px',
+  };
+
+  const socialIconStyle = {
+    marginRight: '15px',
+    fontSize: '24px',
+    color: 'white',
+  };
 
   const imageUrls = [
     'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437640/pexels-puwadon-sangngern-5340280_otvusk.jpg',
@@ -190,7 +202,25 @@ const Home = () => {
       </Container>
 
 
-      
+      {/* Footer */}
+      <Container fluid style={footerStyle}>
+        <Row>
+          <Col md={12}>
+
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faFacebook} style={socialIconStyle} />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTwitter} style={socialIconStyle} />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} style={socialIconStyle} />
+            </a>
+
+            <p style={{ color: 'white' }}>&copy; 2023 Your Website. All rights reserved.</p>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
