@@ -1,12 +1,12 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar';
-import Home from './Home';
-import AboutUs from './AboutUs';
-import ContactUs from './ContactUs';
-import UserSignupLogin from './User-Singup-Login'; // Adjust the path
-import StaffSignupLogin from './Staff-Singup-Login'; // Adjust the path
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import UserSignupLogin from './components/User-Singup-Login'; // Adjust the path
+import StaffSignupLogin from './components/Staff-Singup-Login'; // Adjust the path
 
 function App() {
   return (
