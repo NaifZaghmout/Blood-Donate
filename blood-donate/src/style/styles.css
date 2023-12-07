@@ -9,12 +9,14 @@ body {
 
 /* Navbar styles */
 .navbar {
+  width: 100%;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
   background-color: darkorchid;
   padding: 15px;
   color: white;
-  margin-bottom: 20px; /* Add space between navbar and the section */
+  margin-bottom: 20px;
 }
 
 .navbar-left,
@@ -28,12 +30,12 @@ body {
   color: white;
   text-decoration: none;
   font-size: 18px;
-  transition: color 0.3s; /* Add smooth color transition */
+  transition: color 0.3s;
 }
 
 .navbar-link:hover {
   text-decoration: underline;
-  color: red; /* Change the hover color to red (adjust as needed) */
+  color: red;
 }
 
 /* Media queries for responsive design */
@@ -44,30 +46,20 @@ body {
     text-align: center;
   }
 
-  .navbar-left,
-  .navbar-right {
-    margin-bottom: 10px;
-  }
-
   .navbar-link {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-
-  /* Add margin to the bottom of the navbar for spacing */
-  .navbar {
-    margin-bottom: 20px;
+    margin: 10px 0;
   }
 }
 
+
 /* General container style */
 .container {
-  margin-top: 100px; /* Adjust the margin-top value to add more space */
+  margin-top: 1px;
 }
 
 /* Section heading style */
 .section-heading {
-  color: #8e44ad; /* Purple color */
+  color: #8e44ad;
   font-size: 2.5rem;
   margin-bottom: 30px;
 }
@@ -79,11 +71,6 @@ body {
   margin-right: auto;
 }
 
-/* Adjusted margin-top for specific section */
 .mt-4 {
-  margin-top: 1.5rem !important; /* Adjust the margin-top as needed */
+  margin-top: 1.5rem !important;
 }
-
-/* Add more styles as needed for your specific components and layout */
-
-

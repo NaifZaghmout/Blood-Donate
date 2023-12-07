@@ -10,7 +10,7 @@ const Home = () => {
     marginBottom: '20px',
   };
 
-  
+
   const headerStyle = {
     backgroundColor: 'darkorchid',
     color: 'white',
