@@ -193,7 +193,7 @@ const Home = () => {
               </li>
               <li style={{ marginBottom: '10px', fontSize: '16px', fontWeight: 'bold' }}>
                 Weight
-                <p style={{ fontSize: '14px', fontWeight: 'normal' }}>Donors should weigh at least 110 pounds (50 kg).</p>
+                <p style={{ fontSize: '14px', fontWeight: 'normal' }}>Donors should weigh at least 110 pogit pushunds (50 kg).</p>
               </li>
 
             </ul>
