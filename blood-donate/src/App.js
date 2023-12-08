@@ -5,8 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
-import UserSignupLogin from './components/User-Singup-Login'; // Adjust the path
-import StaffSignupLogin from './components/Staff-Singup-Login'; // Adjust the path
+import UserSignupLogin from './components/User-Singup-Login';
+import StaffSignupLogin from './components/Staff-Singup-Login';
 
 function App() {
   return (
