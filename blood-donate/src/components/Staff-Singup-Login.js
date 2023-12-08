@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/StaffSignupLogin.css';
 
+
 const StaffSignupLogin = () => {
     const [isSignup, setSignup] = useState(true);
 
@@ -49,9 +50,8 @@ const StaffSignupLogin = () => {
                 </p>
 
             </div>
+
         </div>
-
-
 
     );
 };
