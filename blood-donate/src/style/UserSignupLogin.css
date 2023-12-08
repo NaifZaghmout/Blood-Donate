@@ -1,0 +1,46 @@
+/* UserSignupLogin.css */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-form {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.auth-form:hover {
+    transform: scale(1.05);
+}
+
+.auth-form h2 {
+    text-align: center;
+}
+
+.auth-form label {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-form {
+        width: 80%;
+    }
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+    background-color: #800080;
+    
+}
+
+
+.auth-form.login {
+    width: 450px;
+}
