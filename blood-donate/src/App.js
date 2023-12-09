@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import UserSignupLogin from './components/User-Singup-Login';
 import StaffSignupLogin from './components/Staff-Singup-Login';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/user" element={<UserSignupLogin />} />
             <Route path="/staff" element={<StaffSignupLogin />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
       </div>
