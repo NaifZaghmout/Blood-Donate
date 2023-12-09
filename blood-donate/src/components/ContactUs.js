@@ -136,15 +136,16 @@ const ContactUs = () => {
             <Container fluid style={footerStyle}>
                 <Row>
                     <Col md={12}>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <FontAwesomeIcon icon={faFacebook} style={socialIconStyle} />
                         </a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                             <FontAwesomeIcon icon={faTwitter} style={socialIconStyle} />
                         </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <FontAwesomeIcon icon={faInstagram} style={socialIconStyle} />
                         </a>
+
                         <p style={{ color: 'white' }}>&copy; 2023 Your Website. All rights reserved.</p>
                     </Col>
                 </Row>
