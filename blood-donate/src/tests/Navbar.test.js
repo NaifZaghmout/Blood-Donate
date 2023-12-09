@@ -21,6 +21,19 @@ describe('Navbar Component', () => {
             </MemoryRouter>
         );
 
-        
+        userEvent.click(screen.getByText('Home'));
+        expect(screen.getByText('Home Page')).toBeInTheDocument();
+
+        userEvent.click(screen.getByText('About Us'));
+        expect(screen.getByText('About Us Page')).toBeInTheDocument();
+
+        userEvent.click(screen.getByText('Contact Us'));
+        expect(screen.getByText('Contact Us Page')).toBeInTheDocument();
+
+        userEvent.click(screen.getByText('User'));
+        expect(screen.getByText('User Page')).toBeInTheDocument();
+
+        userEvent.click(screen.getByText('Staff'));
+        expect(screen.getByText('Staff Page')).toBeInTheDocument();
     });
 });
