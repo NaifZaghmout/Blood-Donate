@@ -1,5 +1,5 @@
 // src/index.js
-
+import { Cloudinary } from 'cloudinary-core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
@@ -8,11 +8,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Initialize Cloudinary with configuration options
-const cloudinary = require('cloudinary-core').Cloudinary.new({
-  cloud_name: 'naif-zaghmout',
-  api_key: '455581233943372',
-  api_secret: 'jtk-1kO9F4FA178u2cqlY7gU4OQ',
+// eslint-disable-next-line
+const cloudinary = new Cloudinary({
+  cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.REACT_APP_CLOUDINARY_API_KEY,
+  api_secret: process.env.REACT_APP_CLOUDINARY_API_SECRET,
 });
+
 
 // Use window.onload to ensure Cloudinary is fully loaded
 window.onload = () => {

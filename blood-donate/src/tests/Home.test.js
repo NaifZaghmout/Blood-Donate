@@ -44,4 +44,20 @@ describe('Home Component', () => {
   });
 
 
+  test('renders Facebook social media link correctly', () => {
+    const facebookLink = screen.getByRole('link', { name: /facebook/i });
+    expect(facebookLink).toHaveAttribute('href', 'https://www.facebook.com');
+  });
+
+  test('renders Twitter social media link correctly', () => {
+    const twitterLink = screen.getByRole('link', { name: /twitter/i });
+    expect(twitterLink).toHaveAttribute('href', 'https://www.twitter.com');
+  });
+
+  test('renders Instagram social media link correctly', () => {
+    const instagramLink = screen.getByRole('link', { name: /instagram/i });
+    expect(instagramLink).toHaveAttribute('href', 'https://www.instagram.com');
+  });
+
+
 });
