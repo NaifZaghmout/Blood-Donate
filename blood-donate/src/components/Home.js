@@ -203,7 +203,6 @@ const Home = () => {
 
 
       {/* Footer */}
-      {/* Footer */}
 <Container fluid style={footerStyle}>
   <Row>
     <Col md={12}>
