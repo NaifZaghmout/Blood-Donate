@@ -1,7 +1,6 @@
 // src/tests/home.test.js
-
+import '@testing-library/jest-dom';
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import Home from '../components/Home';
 
@@ -22,6 +21,16 @@ describe('Home Component', () => {
     expect(femaleDonationSection).toBeInTheDocument();
   });
 
- 
+
+  test('renders the initial image in the carousel', () => {
+    const firstImage = screen.getByAltText(/Image 1/i);
+    expect(firstImage).toBeInTheDocument();
+  });
+
+  test('renders "Who Can Donate" section correctly', () => {
+    const whoCanDonate = screen.getByText(/Who Can Donate/i);
+    expect(whoCanDonate).toBeInTheDocument();
+  });
+
 
 });
