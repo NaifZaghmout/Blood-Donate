@@ -33,4 +33,15 @@ describe('Home Component', () => {
   });
 
 
+  test('renders health benefits section correctly', () => {
+    const healthBenefits = screen.getByText(/Health Benefits for Blood Donation/i);
+    expect(healthBenefits).toBeInTheDocument();
+  });
+
+  test('renders footer content', () => {
+    const footerContent = screen.getByText(/2023 Your Website. All rights reserved./i);
+    expect(footerContent).toBeInTheDocument();
+  });
+
+
 });
