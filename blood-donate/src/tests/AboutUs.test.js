@@ -28,6 +28,26 @@ describe('AboutUs Component', () => {
       expect(screen.getByText(/© 2023 Your Website. All rights reserved./i)).toBeInTheDocument();
     });
   
+    test('renders the main image with alt text', () => {
+      render(<AboutUs />);
+  
+      expect(screen.getByAltText('Blood Donation Organization')).toBeInTheDocument();
+    });
+  
+    test('checks for specific text content in the component', () => {
+      render(<AboutUs />);
+  
+      expect(screen.getByText(/positive impact on the health and well-being/i)).toBeInTheDocument();
+      expect(screen.getByText(/dedicated group of individuals/i)).toBeInTheDocument();
+    });
+  
+    test('checks that social media links have correct URLs', () => {
+      render(<AboutUs />);
+    
+      expect(screen.getByRole('link', { name: 'Facebook' })).toHaveAttribute('href', 'https://www.facebook.com');
+      expect(screen.getByRole('link', { name: 'Twitter' })).toHaveAttribute('href', 'https://www.twitter.com');
+      expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute('href', 'https://www.instagram.com');
+    });
     
   });
   
