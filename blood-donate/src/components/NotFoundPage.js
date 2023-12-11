@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Loader from './Loader'; // Ensure the path is correct
+import Loader from './Loader';
 import '../style/NotFoundPage.css';
 
 const NotFoundPage = () => {
@@ -8,7 +8,7 @@ const NotFoundPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 3000); // Adjust the timeout as needed
+        }, 3000);
     }, []);
 
     if (isLoading) {

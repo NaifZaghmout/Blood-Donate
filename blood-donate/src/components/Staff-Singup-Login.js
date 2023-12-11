@@ -1,22 +1,43 @@
-// Staff-Signup-Login.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/StaffSignupLogin.css';
 import Loader from './Loader';
 
 
 const StaffSignupLogin = () => {
     const [isSignup, setSignup] = useState(true);
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const toggleForm = () => {
         setSignup(!isSignup);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setLoading(true);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    };
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
+
     return (
         <div className="auth-container">
             <div className={`auth-form staff-form ${isSignup ? 'signup' : 'login'}`}>
                 <h2>{isSignup ? 'Staff Signup' : 'Staff Login'}</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">
                             Username
@@ -47,7 +68,7 @@ const StaffSignupLogin = () => {
 
                 <p>
                     {isSignup ? 'Already have an account?' : 'Don’t have an account?'}{' '}
-                    <Link onClick={toggleForm}>{isSignup ? 'Login' : 'Signup'}</Link>
+                    <Link to="#" onClick={toggleForm}>{isSignup ? 'Login' : 'Signup'}</Link>
                 </p>
 
             </div>
