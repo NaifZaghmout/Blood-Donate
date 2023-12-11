@@ -1,15 +1,30 @@
 // ContactUs.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Loader from './Loader';
+import { useLocation } from 'react-router-dom';
+
 
 
 
 
 const ContactUs = () => {
+    const [isLoading, setLoading] = useState(true);
     const [contactInfoHovered, setContactInfoHovered] = useState(false);
     const [messageFormHovered, setMessageFormHovered] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        setLoading(true);
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, [location]);
 
     const sectionStyle = {
         marginTop: '70px',
@@ -43,7 +58,9 @@ const ContactUs = () => {
         setMessageFormHovered(!messageFormHovered);
     };
 
-
+    if (isLoading) {
+        return <Loader />;
+    }
 
     // Footer styles and social icon styles
     const footerStyle = {
