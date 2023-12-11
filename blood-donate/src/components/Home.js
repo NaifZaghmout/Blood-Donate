@@ -2,10 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
+import Loader from './Loader';
 
 
 const Home = () => {
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
   const commonImageStyle = {
     height: '300px',
     objectFit: 'cover',
@@ -72,6 +84,10 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, [imageUrls.length]);
 
+  // Loader display while loading
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div>
