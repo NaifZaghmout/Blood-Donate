@@ -1,9 +1,20 @@
-// components/NotFoundPage.js
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Loader from './Loader'; // Ensure the path is correct
 import '../style/NotFoundPage.css';
 
 const NotFoundPage = () => {
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000); // Adjust the timeout as needed
+    }, []);
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
     return (
         <div className="not-found-page">
             <h1>404 - Page Not Found</h1>

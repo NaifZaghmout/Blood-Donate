@@ -3,6 +3,8 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+
+
 const Home = () => {
   const commonImageStyle = {
     height: '300px',

@@ -1,10 +1,26 @@
-// AboutUs.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; 
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Loader from './Loader'; 
 
 const AboutUs = () => {
+    const [isLoading, setLoading] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+        setLoading(true);
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, [location]);
+
+
+    // Style objects
     const sectionStyle = {
         marginTop: '70px',
         textAlign: 'center',
@@ -15,7 +31,6 @@ const AboutUs = () => {
         marginBottom: '15px',
     };
 
-    // Footer styles and social icon styles
     const footerStyle = {
         backgroundColor: 'darkorchid',
         padding: '10px 0',
@@ -29,6 +44,11 @@ const AboutUs = () => {
         fontSize: '24px',
         color: 'white',
     };
+
+    // Loader display while loading
+    if (isLoading) {
+        return <Loader />;
+    }
 
     return (
         <Container style={sectionStyle}>

@@ -1,0 +1,29 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+
+.loader {
+  font-size: 48px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorchid;
+  box-sizing: border-box;
+  animation: spotlight 2s linear infinite alternate;
+}
+
+@keyframes spotlight {
+  0%, 20% {
+    opacity: 1;
+    letter-spacing: 2px;
+  }
+  80%, 100% {
+    opacity: 0;
+    letter-spacing: 32px;
+  }
+}
