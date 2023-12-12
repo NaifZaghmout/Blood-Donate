@@ -6,8 +6,7 @@ import userEvent from '@testing-library/user-event';
 import Navbar from '../components/Navbar';
 
 describe('Navbar Component', () => {
-
-    test('navigates to the correct route on link click', () => {
+    test('navigates to the correct route on link click', async () => {
         render(
             <MemoryRouter initialEntries={['/']}>
                 <Navbar />
@@ -22,18 +21,18 @@ describe('Navbar Component', () => {
         );
 
         userEvent.click(screen.getByText('Home'));
-        expect(screen.getByText('Home Page')).toBeInTheDocument();
+        expect(await screen.findByText('Home Page')).toBeInTheDocument();
 
         userEvent.click(screen.getByText('About Us'));
-        expect(screen.getByText('About Us Page')).toBeInTheDocument();
+        expect(await screen.findByText('About Us Page')).toBeInTheDocument();
 
         userEvent.click(screen.getByText('Contact Us'));
-        expect(screen.getByText('Contact Us Page')).toBeInTheDocument();
+        expect(await screen.findByText('Contact Us Page')).toBeInTheDocument();
 
         userEvent.click(screen.getByText('User'));
-        expect(screen.getByText('User Page')).toBeInTheDocument();
+        expect(await screen.findByText('User Page')).toBeInTheDocument();
 
         userEvent.click(screen.getByText('Staff'));
-        expect(screen.getByText('Staff Page')).toBeInTheDocument();
+        expect(await screen.findByText('Staff Page')).toBeInTheDocument();
     });
 });
