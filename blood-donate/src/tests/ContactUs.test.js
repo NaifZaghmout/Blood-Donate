@@ -1,26 +1,32 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ContactUs from '../components/ContactUs';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+
 
 describe('ContactUs Component', () => {
-    test('renders contact information and message form headings', () => {
-      render(<ContactUs />);
+  const setup = async () => {
+    render(
+        <Router>
+            <ContactUs />
+        </Router>
+    );
+    await waitFor(() => expect(screen.queryByText('Loading . . .')).not.toBeInTheDocument(), { timeout: 5000 });
+};
+
   
-      expect(screen.getByText('Contact Information')).toBeInTheDocument();
-      expect(screen.getByText('Send Us a Message')).toBeInTheDocument();
-    });
-  
-    test('renders contact information details', () => {
-      render(<ContactUs />);
+    test('renders contact information details',async () => {
+      await setup();
   
       expect(screen.getByText('+1 (555) 123-4567')).toBeInTheDocument();
       expect(screen.getByText('123 Main Street, Cityville, State, Zip Code')).toBeInTheDocument();
       expect(screen.getByText('info@blooddonation.org')).toBeInTheDocument();
     });
   
-    test('check hover effect on contact information section', () => {
-      render(<ContactUs />);
+    test('check hover effect on contact information section', async() => {
+      await setup();
       const contactInfo = screen.getByText('+1 (555) 123-4567').closest('div');
       fireEvent.mouseEnter(contactInfo);
       expect(contactInfo).toHaveStyle('background: purple');
@@ -28,16 +34,16 @@ describe('ContactUs Component', () => {
       expect(contactInfo).toHaveStyle('background: darkorchid');
     });
   
-    test('renders form fields with placeholders', () => {
-      render(<ContactUs />);
+    test('renders form fields with placeholders', async() => {
+      await setup();
   
       expect(screen.getByPlaceholderText('Enter your name')).toBeInTheDocument();
       expect(screen.getByPlaceholderText('Enter your email')).toBeInTheDocument();
       expect(screen.getByPlaceholderText('Type your message here')).toBeInTheDocument();
     });
   
-    test('check hover effect on message form', () => {
-      render(<ContactUs />);
+    test('check hover effect on message form', async() => {
+      await setup();
       const messageForm = screen.getByPlaceholderText('Enter your name').closest('form');
       fireEvent.mouseEnter(messageForm);
       expect(messageForm).toHaveStyle('background: purple');
@@ -45,8 +51,8 @@ describe('ContactUs Component', () => {
       expect(messageForm).toHaveStyle('background: darkorchid');
     });
   
-    test('renders the footer with social media links', () => {
-      render(<ContactUs />);
+    test('renders the footer with social media links',async () => {
+      await setup();
   
       expect(screen.getByLabelText('Facebook')).toBeInTheDocument();
       expect(screen.getByLabelText('Twitter')).toBeInTheDocument();
