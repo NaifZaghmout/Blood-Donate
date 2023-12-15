@@ -19,7 +19,7 @@ describe('UserSignupLogin Component', () => {
         }
     };
 
-    test('initially renders as a signup form', async() => {
+    test('initially renders as a signup form', async () => {
         await setup();
         expect(await screen.getByText('User Signup')).toBeInTheDocument();
         expect(screen.getByLabelText('Username')).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('UserSignupLogin Component', () => {
         expect(screen.getByRole('button', { name: 'Signup' })).toBeInTheDocument();
     });
 
-    test('toggles to login form on link click', async() => {
+    test('toggles to login form on link click', async () => {
         await setup();
         fireEvent.click(screen.getByText('Login'));
         expect(await screen.getByText('User Login')).toBeInTheDocument();
@@ -36,7 +36,7 @@ describe('UserSignupLogin Component', () => {
         expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument();
     });
 
-    test('renders login form correctly when toggled',async () => {
+    test('renders login form correctly when toggled', async () => {
         await setup(false);
         expect(await screen.getByText('User Login')).toBeInTheDocument();
         expect(screen.getByLabelText('Username')).toBeInTheDocument();

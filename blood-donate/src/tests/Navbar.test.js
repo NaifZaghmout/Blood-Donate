@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
@@ -20,19 +20,29 @@ describe('Navbar Component', () => {
             </MemoryRouter>
         );
 
-        userEvent.click(screen.getByText('Home'));
-        expect(await screen.findByText('Home Page')).toBeInTheDocument();
+        await act(async () => {
+            await userEvent.click(screen.getByText('Home'));
+        });
+        await waitFor(() => expect(screen.getByText('Home Page')).toBeInTheDocument());
 
-        userEvent.click(screen.getByText('About Us'));
-        expect(await screen.findByText('About Us Page')).toBeInTheDocument();
+        await act(async () => {
+            await userEvent.click(screen.getByText('About Us'));
+        });
+        await waitFor(() => expect(screen.getByText('About Us Page')).toBeInTheDocument());
 
-        userEvent.click(screen.getByText('Contact Us'));
-        expect(await screen.findByText('Contact Us Page')).toBeInTheDocument();
+        await act(async () => {
+            await userEvent.click(screen.getByText('Contact Us'));
+        });
+        await waitFor(() => expect(screen.getByText('Contact Us Page')).toBeInTheDocument());
 
-        userEvent.click(screen.getByText('User'));
-        expect(await screen.findByText('User Page')).toBeInTheDocument();
+        await act(async () => {
+            await userEvent.click(screen.getByText('User'));
+        });
+        await waitFor(() => expect(screen.getByText('User Page')).toBeInTheDocument());
 
-        userEvent.click(screen.getByText('Staff'));
-        expect(await screen.findByText('Staff Page')).toBeInTheDocument();
+        await act(async () => {
+            await userEvent.click(screen.getByText('Staff'));
+        });
+        await waitFor(() => expect(screen.getByText('Staff Page')).toBeInTheDocument());
     });
 });
