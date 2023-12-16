@@ -1,10 +1,10 @@
 // ContactUs.js
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Loader from '../components/Loader';
 import { useLocation } from 'react-router-dom';
+import Footer from '../components/Footer';
+
 
 
 
@@ -153,23 +153,8 @@ const ContactUs = () => {
             </Row>
 
             {/* Footer */}
-            <Container fluid style={footerStyle}>
-                <Row>
-                    <Col md={12}>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <FontAwesomeIcon icon={faFacebook} style={socialIconStyle} />
-                        </a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <FontAwesomeIcon icon={faTwitter} style={socialIconStyle} />
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <FontAwesomeIcon icon={faInstagram} style={socialIconStyle} />
-                        </a>
+            <Footer /> {/* This line adds the footer to your page */}
 
-                        <p style={{ color: 'white' }}>&copy; 2023 Your Website. All rights reserved.</p>
-                    </Col>
-                </Row>
-            </Container>
         </Container>
     );
 };

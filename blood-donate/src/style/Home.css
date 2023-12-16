@@ -33,21 +33,7 @@
     font-size: 20px;
   }
   
-  /* Footer Section */
-  .footer-style {
-    background-color: darkorchid;
-    padding: 10px 0;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 15px;
-  }
   
-  /* Social Icons */
-  .social-icon-style {
-    margin-right: 15px;
-    font-size: 24px;
-    color: white;
-  }
   
   /* Specific Section Styles */
   /* Donate as Male and Female Images */
@@ -67,15 +53,15 @@
   /* Who Can Donate Section */
 .who-can-donate-section {
     background: #333;
-    padding: 50px; /* Reduced padding */
+    padding: 50px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     color: white;
   }
   
   .who-can-donate-image {
-    width: 100%; /* Make the image responsive within its column */
-    max-width: 300px; /* Set a maximum width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 300px;
+    height: auto; 
     object-fit: cover;
     margin-bottom: 10px;
   }

@@ -1,0 +1,15 @@
+/* Footer Section */
+.footer-style {
+    background-color: darkorchid;
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  /* Social Icons */
+  .social-icon-style {
+    margin-right: 15px;
+    font-size: 24px;
+    color: white;
+  }

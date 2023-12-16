@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Loader from '../components/Loader';
 import '../style/Home.css';
+import Footer from '../components/Footer';
+
 
 
 
@@ -144,42 +144,27 @@ const Home = () => {
 
 
       <Container className="section-style who-can-donate-section">
-  <Row>
-    <Col md={4} className="text-center">
-      {/* md={4} gives the image column a third of the container width */}
-      <Image
-        src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701433582/whocan_k2hukg.jpg"
-        alt="Who Can Donate"
-        className="who-can-donate-image"
-      />
-    </Col>
-    <Col md={8} className="text-left">
-      {/* md={8} allows text to take up remaining space */}
-      <h2>Who Can Donate?</h2>
-      <p className="who-can-donate-text">People aged 18 to 75 are eligible to donate blood.</p>
-      <p className="who-can-donate-text">Individuals should be in good health and free from certain conditions.</p>
-      <p className="who-can-donate-text">Donors should weigh at least 110 pounds (50 kg).</p>
-    </Col>
-  </Row>
-</Container>
-
-
-      <Container fluid className="footer-style">
         <Row>
-          <Col md={12}>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebook} className="social-icon-style" />
-            </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FontAwesomeIcon icon={faTwitter} className="social-icon-style" />
-            </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} className="social-icon-style" />
-            </a>
-            <p className="white-text">&copy; 2023 Your Website. All rights reserved.</p>
+          <Col md={4} className="text-center">
+            {/* md={4} gives the image column a third of the container width */}
+            <Image
+              src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701433582/whocan_k2hukg.jpg"
+              alt="Who Can Donate"
+              className="who-can-donate-image"
+            />
+          </Col>
+          <Col md={8} className="text-left">
+            {/* md={8} allows text to take up remaining space */}
+            <h2>Who Can Donate?</h2>
+            <p className="who-can-donate-text">People aged 18 to 75 are eligible to donate blood.</p>
+            <p className="who-can-donate-text">Individuals should be in good health and free from certain conditions.</p>
+            <p className="who-can-donate-text">Donors should weigh at least 110 pounds (50 kg).</p>
           </Col>
         </Row>
       </Container>
+
+
+      <Footer /> {/* This line adds the footer to your page */}
     </div>
   );
 };

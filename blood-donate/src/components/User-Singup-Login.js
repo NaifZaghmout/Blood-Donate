@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/UserSignupLogin.css';
 import Loader from './Loader';
+import Footer from '../components/Footer';
+
 
 
 
@@ -73,6 +75,7 @@ const UserSignupLogin = () => {
                     <Link to="#" onClick={toggleForm}>{isSignup ? 'Login' : 'Signup'}</Link>
                 </p>
             </div>
+            <Footer /> {/* Add the Footer component */}
         </div>
     );
 };
