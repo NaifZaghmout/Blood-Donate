@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 
 
 const Home = () => {
@@ -92,9 +92,8 @@ const Home = () => {
   return (
     <div>
       <Container fluid>
-        <Row>
-          <Col md={12} className="text-center">
-
+      <Row className="m-0">
+          <Col md={12} className="text-center p-0">
 
             <Image src={imageUrls[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} style={{ ...commonImageStyle, width: '100%' }} />
           </Col>
