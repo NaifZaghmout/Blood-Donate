@@ -4,6 +4,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import { useLocation } from 'react-router-dom';
 import Footer from '../components/Footer';
+import '../style/ContactUs.css';
+
 
 
 
@@ -18,103 +20,39 @@ const ContactUs = () => {
 
     useEffect(() => {
         setLoading(true);
-
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 3000);
-
+        const timer = setTimeout(() => setLoading(false), 3000);
         return () => clearTimeout(timer);
     }, [location]);
 
-    const sectionStyle = {
-        marginTop: '70px',
-        textAlign: 'center',
-    };
-
-    const contactInfoStyle = {
-        padding: '30px',
-        borderRadius: '10px',
-        color: 'white',
-        transition: 'background-color 0.3s',
-    };
-
-    const messageFormStyle = {
-        padding: '30px',
-        borderRadius: '10px',
-        color: 'white',
-        marginTop: '20px',
-        transition: 'background-color 0.3s',
-    };
-
-    const sendMessageButtonStyle = {
-        transition: 'transform 0.3s',
-    };
-
-    const handleContactInfoHover = () => {
-        setContactInfoHovered(!contactInfoHovered);
-    };
-
-    const handleMessageFormHover = () => {
-        setMessageFormHovered(!messageFormHovered);
-    };
+    const handleContactInfoHover = () => setContactInfoHovered(!contactInfoHovered);
+    const handleMessageFormHover = () => setMessageFormHovered(!messageFormHovered);
 
     if (isLoading) {
         return <Loader />;
     }
 
-    // Footer styles and social icon styles
-    const footerStyle = {
-        backgroundColor: 'darkorchid',
-        padding: '10px 0',
-        marginTop: '20px',
-        textAlign: 'center',
-        fontSize: '15px',
-    };
-
-    const socialIconStyle = {
-        marginRight: '15px',
-        fontSize: '24px',
-        color: 'white',
-    };
-
-
-
     return (
-        <Container style={sectionStyle}>
-            {/* Section 1: Contact Information */}
+        <Container className="contact-section">
             <Row>
                 <Col md={12} className="text-center">
                     <h2 className="text-danger mt-2">Contact Information</h2>
                     <div
-                        style={{
-                            ...contactInfoStyle,
-                            background: contactInfoHovered ? 'purple' : 'darkorchid',
-                        }}
+                        className={`contact-info ${contactInfoHovered ? 'hovered' : ''}`}
                         onMouseEnter={handleContactInfoHover}
                         onMouseLeave={handleContactInfoHover}
                     >
-                        <p>
-                            <strong>Phone:</strong> +1 (555) 123-4567
-                        </p>
-                        <p>
-                            <strong>Address:</strong> 123 Main Street, Cityville, State, Zip Code
-                        </p>
-                        <p>
-                            <strong>Email:</strong> info@blooddonation.org
-                        </p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Address:</strong> 123 Main Street, Cityville, State, Zip Code</p>
+                        <p><strong>Email:</strong> info@blooddonation.org</p>
                     </div>
                 </Col>
             </Row>
 
-            {/* Section 2: Send Us a Message Form */}
             <Row>
                 <Col md={12} className="text-center">
                     <h2 className="text-danger mt-4">Send Us a Message</h2>
                     <Form
-                        style={{
-                            ...messageFormStyle,
-                            background: messageFormHovered ? 'purple' : 'darkorchid',
-                        }}
+                        className={`message-form ${messageFormHovered ? 'hovered' : ''}`}
                         onMouseEnter={handleMessageFormHover}
                         onMouseLeave={handleMessageFormHover}
                     >
@@ -133,18 +71,7 @@ const ContactUs = () => {
                             <Form.Control as="textarea" rows={3} placeholder="Type your message here" />
                         </Form.Group>
 
-
-                        <Button
-                            variant="light"
-                            type="submit"
-                            style={{
-                                ...sendMessageButtonStyle,
-                                background: 'white',
-                                color: 'darkorchid',
-                                transform: sendMessageButtonStyle.transform ? 'scale(1.1)' : 'scale(1)',
-                                marginTop: '20px',
-                            }}
-                        >
+                        <Button className="send-message-btn" type="submit">
                             Send Message
                         </Button>
 
@@ -152,9 +79,7 @@ const ContactUs = () => {
                 </Col>
             </Row>
 
-            {/* Footer */}
             <Footer /> {/* This line adds the footer to your page */}
-
         </Container>
     );
 };
