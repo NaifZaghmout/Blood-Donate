@@ -9,12 +9,12 @@
     padding: 30px;
     border-radius: 10px;
     color: white;
-    background-color: darkorchid;
+    background-color:  rgb(19, 20, 109);
     transition: background-color 0.3s;
 }
 
 .contact-info:hover {
-    background-color: purple;
+    background-color:rgb(160, 48, 48);
 }
 
 /* Message Form Styles */
@@ -23,12 +23,12 @@
     border-radius: 10px;
     color: white;
     margin-top: 20px;
-    background-color: darkorchid;
+    background-color:  rgb(19, 20, 109);
     transition: background-color 0.3s;
 }
 
 .message-form:hover {
-    background-color: purple;
+    background-color:  rgb(160, 48, 48);
 }
 
 /* Send Message Button Styles */
