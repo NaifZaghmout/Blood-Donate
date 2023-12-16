@@ -38,8 +38,9 @@
   /* Specific Section Styles */
   /* Donate as Male and Female Images */
   .donate-image {
-    width: 500px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
   }
   
