@@ -24,7 +24,7 @@
   .list-style {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .list-item-style {
@@ -72,6 +72,8 @@
     font-weight: normal;
     font-size: 16px;
     color: white;
+    margin-bottom: 40px;
+
   }
   
   /* Text Styles */
