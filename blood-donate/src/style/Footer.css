@@ -1,6 +1,6 @@
 /* Footer Section */
 .footer-style {
-    background-color: darkorchid;
+    background-color: rgb(19, 20, 109);
     padding: 10px 0;
     margin-top: 20px;
     text-align: center;
@@ -9,7 +9,13 @@
   
   /* Social Icons */
   .social-icon-style {
-    margin-right: 15px;
+    margin-right: 40px;
     font-size: 24px;
     color: white;
   }
+
+  .footer-style .white-text {
+    color: white;
+  }
+
+  
