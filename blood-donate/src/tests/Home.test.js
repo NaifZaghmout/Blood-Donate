@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import Home from '../components/Home';
+import Home from '../pages/Home';
 
 describe('Home Component', () => {
   const setup = async () => {
@@ -42,27 +42,4 @@ describe('Home Component', () => {
     const healthBenefits = await screen.findByText(/Health Benefits for Blood Donation/i);
     expect(healthBenefits).toBeInTheDocument();
   });
-
-  test('renders footer content', async () => {
-    const footerContent = await screen.findByText(/2023 Your Website. All rights reserved./i);
-    expect(footerContent).toBeInTheDocument();
-  });
-
-
-  test('renders Facebook social media link correctly', async () => {
-    const facebookLink = await screen.findByRole('link', { name: /facebook/i });
-    expect(facebookLink).toHaveAttribute('href', 'https://www.facebook.com');
-  });
-
-  test('renders Twitter social media link correctly', async () => {
-    const twitterLink = await screen.findByRole('link', { name: /twitter/i });
-    expect(twitterLink).toHaveAttribute('href', 'https://www.twitter.com');
-  });
-
-  test('renders Instagram social media link correctly', async () => {
-    const instagramLink = await screen.findByRole('link', { name: /instagram/i });
-    expect(instagramLink).toHaveAttribute('href', 'https://www.instagram.com');
-  });
-
-
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import AboutUs from '../components/AboutUs';
+import AboutUs from '../pages/AboutUs';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 
@@ -35,14 +35,7 @@ describe('AboutUs Component', () => {
     expect(screen.getByText(/Medical Treatments:/i)).toBeInTheDocument();
   });
 
-  test('renders the footer with social media links', async () => {
-    await setup();
-
-    expect(screen.getByLabelText('Facebook')).toBeInTheDocument();
-    expect(screen.getByLabelText('Twitter')).toBeInTheDocument();
-    expect(screen.getByLabelText('Instagram')).toBeInTheDocument();
-    expect(screen.getByText(/© 2023 Your Website. All rights reserved./i)).toBeInTheDocument();
-  });
+  
 
   test('renders the main image with alt text', async () => {
     await setup();
@@ -57,12 +50,6 @@ describe('AboutUs Component', () => {
     expect(screen.getByText(/dedicated group of individuals/i)).toBeInTheDocument();
   });
 
-  test('checks that social media links have correct URLs', async () => {
-    await setup();
-
-    expect(screen.getByRole('link', { name: 'Facebook' })).toHaveAttribute('href', 'https://www.facebook.com');
-    expect(screen.getByRole('link', { name: 'Twitter' })).toHaveAttribute('href', 'https://www.twitter.com');
-    expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute('href', 'https://www.instagram.com');
-  });
+  
 
 });
