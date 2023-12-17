@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import { useLocation } from 'react-router-dom';
-import Footer from '../components/Footer';
 import '../style/ContactUs.css';
 
 
@@ -79,7 +78,6 @@ const ContactUs = () => {
                 </Col>
             </Row>
 
-            <Footer /> {/* This line adds the footer to your page */}
         </Container>
     );
 };

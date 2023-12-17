@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import '../style/Home.css';
-import Footer from '../components/Footer';
 
 
 
@@ -164,7 +163,6 @@ const Home = () => {
       </Container>
 
 
-      <Footer /> {/* This line adds the footer to your page */}
     </div>
   );
 };

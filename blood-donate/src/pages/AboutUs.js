@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import Loader from '../components/Loader';
-import Footer from '../components/Footer';
 import '../style/AboutUs.css';
 
 
@@ -70,7 +69,6 @@ const AboutUs = () => {
                 </Col>
             </Row>
 
-            <Footer /> {/* Include the Footer component */}
         </Container>
     );
 };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
-import Footer from '../components/Footer';
 
 
 
@@ -75,7 +74,6 @@ const StaffSignupLogin = () => {
 
             </div>
 
-            <Footer /> {/* Add the Footer component */}
         </div>
     );
 };
