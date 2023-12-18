@@ -11,7 +11,6 @@ import NotFoundPage from './components/NotFoundPage';
 import Footer from './components/Footer';
 
 
-
 function App() {
   return (
     <Router>

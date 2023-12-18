@@ -64,6 +64,14 @@ const Home = () => {
             <p className="donate-section-text">
               As a male donor, your contribution is crucial in saving lives. Your blood donation can help those in need and make a significant impact on the community.
             </p>
+            <div className="read-more-container mb-3">
+              <a href="https://www.blood.co.uk/who-can-give-blood/why-men-should-donate-blood/"
+                className="read-more-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Read More
+              </a>
+            </div>
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701420205/images-male_ir189s.jpg"
               alt="Male Donor"
@@ -76,6 +84,15 @@ const Home = () => {
             <p className="donate-section-text">
               Female donors play a vital role in supporting healthcare efforts. Your blood donation is a gift of life that can benefit patients in various medical situations.
             </p>
+            <div className="read-more-container mb-3">
+              <a href="https://www.cosmopolitan.com/uk/body/health/a16811258/giving-donating-blood-information-facts-women/"
+                className="read-more-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Read More
+              </a>
+            </div>
+
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701420190/images-female_qlhjmx.jpg"
               alt="Female Donor"
@@ -129,8 +146,18 @@ const Home = () => {
                 <p className="health-benefits-text">
                   Regular donation helps maintain liver function.
                 </p>
+               
               </li>
             </ul>
+            <div className="read-more-container mb-3">
+            <a href="https://healthmatters.nyp.org/the-surprising-benefits-of-donating-blood/"
+                className="read-more-button"
+                target="_blank"
+                rel="noopener noreferrer">
+                Read More
+              </a>
+            </div>
+
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/t_health/v1702720964/healthcare-1170_sfdu3r.jpg"
               alt="Additional Benefits"
@@ -158,6 +185,12 @@ const Home = () => {
             <p className="who-can-donate-text">People aged 18 to 75 are eligible to donate blood.</p>
             <p className="who-can-donate-text">Individuals should be in good health and free from certain conditions.</p>
             <p className="who-can-donate-text">Donors should weigh at least 110 pounds (50 kg).</p>
+            <a href="https://www.goodrx.com/health-topic/hematology/who-cant-donate-blood"
+              className="read-more-button"
+              target="_blank"
+              rel="noopener noreferrer">
+              Read More
+            </a>
           </Col>
         </Row>
       </Container>
