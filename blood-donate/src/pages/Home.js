@@ -71,6 +71,7 @@ const Home = () => {
                 rel="noopener noreferrer">
                 Read More
               </a>
+              <br />
             </div>
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701420205/images-male_ir189s.jpg"
@@ -92,7 +93,7 @@ const Home = () => {
                 Read More
               </a>
             </div>
-
+            <br />
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701420190/images-female_qlhjmx.jpg"
               alt="Female Donor"
@@ -146,11 +147,11 @@ const Home = () => {
                 <p className="health-benefits-text">
                   Regular donation helps maintain liver function.
                 </p>
-               
+
               </li>
             </ul>
             <div className="read-more-container mb-3">
-            <a href="https://healthmatters.nyp.org/the-surprising-benefits-of-donating-blood/"
+              <a href="https://healthmatters.nyp.org/the-surprising-benefits-of-donating-blood/"
                 className="read-more-button"
                 target="_blank"
                 rel="noopener noreferrer">

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-import UserSignupLogin from './components/User-Singup-Login';
+import User from './pages/User';
 import StaffSignupLogin from './components/Staff-Singup-Login';
 import NotFoundPage from './components/NotFoundPage';
 import Footer from './components/Footer';
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/user" element={<UserSignupLogin />} />
+            <Route path="/user" element={<User />} />
             <Route path="/staff" element={<StaffSignupLogin />} />
             <Route path="/NotFoundPage" element={<NotFoundPage />} />
             <Route path="/footer" element={<Footer />} />

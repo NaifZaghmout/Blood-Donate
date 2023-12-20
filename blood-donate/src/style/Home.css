@@ -1,108 +1,109 @@
 /* Common Styles */
 .common-image {
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    width: 100%;
-  }
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Header Section */
+.header-style {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* General Section Style */
+.section-style {
+  margin-top: 70px;
+  text-align: center;
+}
+
+/* List Styles */
+.list-style {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.list-item-style {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+
+/* Specific Section Styles */
+/* Donate as Male and Female Images */
+.donate-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
   
-  /* Header Section */
-  .header-style {
-    background-color:   #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* General Section Style */
-  .section-style {
-    margin-top: 70px;
-    text-align: center;
-  }
-  
-  /* List Styles */
-  .list-style {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 30px;
-  }
-  
-  .list-item-style {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  
-  
-  
-  /* Specific Section Styles */
-  /* Donate as Male and Female Images */
-  .donate-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  /* Health Benefits Image */
-  .health-benefits-image {
-    width: 60%;
-    height: 100px;
-    object-fit: cover;
-  }
-  
-  /* Who Can Donate Section */
+}
+
+/* Health Benefits Image */
+.health-benefits-image {
+  width: 60%;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Who Can Donate Section */
 .who-can-donate-section {
-    background: #333;
-    padding: 50px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: white;
-  }
-  
-  .who-can-donate-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto; 
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  /* Text in the Who Can Donate Section */
-  .who-can-donate-text {
-    font-weight: normal;
-    font-size: 16px;
-    color: white;
-    margin-bottom: 40px;
+  background: #333;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
 
-  }
+.who-can-donate-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Text in the Who Can Donate Section */
+.who-can-donate-text {
+  font-weight: normal;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 40px;
+
+}
 
 
- /* Read more button Who Can Donate Section */
+/* Read more button Who Can Donate Section */
 .read-more-button {
   background-color: rgb(19, 20, 109);
   color: white;
   padding: 10px 20px;
-  border-radius: 10px; 
-  text-decoration: none; 
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 
-  
-  
-  /* Text Styles */
-  /* Paragraphs in Health Benefits Section */
-  .health-benefits-text {
-    font-weight: normal;
-    font-size: 19px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Paragraphs in Donate as Male and Female Sections */
-  .donate-section-text {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+
+
+/* Text Styles */
+/* Paragraphs in Health Benefits Section */
+.health-benefits-text {
+  font-weight: normal;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Paragraphs in Donate as Male and Female Sections */
+.donate-section-text {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 
 
@@ -111,62 +112,74 @@
 
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .common-image, .donate-image, .health-benefits-image, .who-can-donate-image {
-      width: 100%;
-      height: auto;
-    }
-  
-    .donate-section-text, .health-benefits-text {
-      font-size: 16px;
-    }
-  
-    .list-item-style {
-      font-size: 16px;
-    }
-  
-    .who-can-donate-section, .section-style {
-      padding: 20px;
-    }
-  
-    .footer-style, .header-style {
-      padding: 15px;
-    }
+
+  .common-image,
+  .donate-image,
+  .health-benefits-image,
+  .who-can-donate-image {
+    width: 100%;
+    height: auto;
   }
-  
-  /* Small devices (tablets, 768px and up) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .donate-image, .health-benefits-image {
-      width: 80%;
-    }
-  
-    .who-can-donate-section {
-      padding: 40px;
-    }
-  
-    .list-item-style {
-      font-size: 18px;
-    }
+
+  .donate-section-text,
+  .health-benefits-text {
+    font-size: 16px;
   }
-  
-  /* Medium devices (desktops, 992px and up) */
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .donate-image, .health-benefits-image {
-      width: 70%;
-    }
-  
-    .who-can-donate-section {
-      padding: 60px;
-    }
+
+  .list-item-style {
+    font-size: 16px;
   }
-  
-  /* Large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {
-    .donate-image, .health-benefits-image {
-      width: 60%;
-    }
-  
-    .who-can-donate-section {
-      padding: 80px;
-    }
+
+  .who-can-donate-section,
+  .section-style {
+    padding: 20px;
   }
-  
+
+  .footer-style,
+  .header-style {
+    padding: 15px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .donate-image,
+  .health-benefits-image {
+    width: 80%;
+  }
+
+  .who-can-donate-section {
+    padding: 40px;
+  }
+
+  .list-item-style {
+    font-size: 18px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .donate-image,
+  .health-benefits-image {
+    width: 70%;
+  }
+
+  .who-can-donate-section {
+    padding: 60px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  .donate-image,
+  .health-benefits-image {
+    width: 60%;
+  }
+
+  .who-can-donate-section {
+    padding: 80px;
+  }
+}
