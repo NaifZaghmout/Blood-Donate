@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/User.css';
+import '../style/User.css'; 
 
 function User() {
   const [step, setStep] = useState(1);
@@ -11,7 +11,21 @@ function User() {
     patient_health_information: ''
   });
 
+  const nextStep = () => {
+    setStep(step + 1);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   return <div></div>;
 }
+
+
 
 export default User;
