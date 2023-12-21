@@ -20,5 +20,18 @@ describe('User Component', () => {
         );
 
         expect(screen.getByText('Make a Difference with Your Donation')).toBeInTheDocument();
+
+    });
+
+
+    test('navigates to second step', async () => {
+        render(
+            <Router>
+                <User />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByText('Next'));
+        expect(screen.getByText('Ready to Be a Hero?')).toBeInTheDocument();
     });
 });
