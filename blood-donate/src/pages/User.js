@@ -115,6 +115,7 @@ function User() {
               name="patient_name"
               value={formData.patient_name}
               onChange={handleChange}
+              placeholder="Enter Your Name"
               required
             />
           </FormGroup>
@@ -125,6 +126,7 @@ function User() {
               name="patient_email"
               value={formData.patient_email}
               onChange={handleChange}
+              placeholder="Enter Your Email" 
               required
             />
           </FormGroup>
@@ -135,6 +137,7 @@ function User() {
               name="patient_phone_number"
               value={formData.patient_phone_number}
               onChange={handleChange}
+              placeholder="Enter Your Phone Number" 
               required
             />
           </FormGroup>
@@ -145,6 +148,7 @@ function User() {
               name="patient_blood_type"
               value={formData.patient_blood_type}
               onChange={handleChange}
+              placeholder="Enter Your Blood Type"
               required
             />
           </FormGroup>
@@ -156,6 +160,7 @@ function User() {
               value={formData.patient_health_information}
               onChange={handleChange}
               rows={3}
+              placeholder="Write About Your Health Condition"
               required
             />
           </FormGroup>
