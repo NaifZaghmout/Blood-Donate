@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import '../style/User.css';
+import Loader from '../components/Loader';
+
+
 
 function User() {
   const [step, setStep] = useState(1);
+  const [isLoading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     patient_name: '',
     patient_email: '',
@@ -11,6 +15,10 @@ function User() {
     patient_blood_type: '',
     patient_health_information: ''
   });
+
+
+  setTimeout(() => setLoading(false), 3000);
+
 
   const nextStep = () => {
     setStep(step + 1);
@@ -25,7 +33,6 @@ function User() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_TOKEN_HERE',
         },
         body: JSON.stringify(formData)
       });
@@ -49,9 +56,17 @@ function User() {
     }));
   };
 
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   const isFormFilled = () => {
     return formData.patient_name && formData.patient_email && formData.patient_phone_number && formData.patient_blood_type && formData.patient_health_information;
   };
+
+
+
 
   return (
     <div className="user-form-container">

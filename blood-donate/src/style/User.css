@@ -51,10 +51,12 @@
   
   .donation-form {
     width: 100%;
+   text-align: center;
   }
   
   .form-group-item {
     margin-bottom: 20px;
+    
   }
   
   .form-group-item:last-child {
