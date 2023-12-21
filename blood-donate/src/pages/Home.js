@@ -89,7 +89,7 @@ const Home = () => {
               </a>
             </div>
 
-        
+
 
           </Col>
         </Row>
@@ -161,7 +161,7 @@ const Home = () => {
               </a>
             </div>
 
-            
+
           </Col>
         </Row>
       </Container>
@@ -170,12 +170,12 @@ const Home = () => {
       <Container fluid className="p-0">
         <Row>
           <Col md={12} className="p-0">
-          <Image
-  src="https://res.cloudinary.com/dusc2x8ri/image/upload/t_health/v1702720964/healthcare-1170_sfdu3r.jpg"
-  alt="Additional Benefits"
-  fluid
-  id="healthBenefitsImage"
-/>
+            <Image
+              src="https://res.cloudinary.com/dusc2x8ri/image/upload/t_health/v1702720964/healthcare-1170_sfdu3r.jpg"
+              alt="Additional Benefits"
+              fluid
+              id="healthBenefitsImage"
+            />
           </Col>
         </Row>
       </Container>

@@ -9,6 +9,8 @@ import User from './pages/User';
 import StaffSignupLogin from './components/Staff-Singup-Login';
 import NotFoundPage from './components/NotFoundPage';
 import Footer from './components/Footer';
+import './style/App.css';
+
 
 
 function App() {

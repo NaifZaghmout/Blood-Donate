@@ -6,6 +6,8 @@
   width: 100%;
 }
 
+
+
 /* Header Section */
 .header-style {
   background-color: #333;
@@ -60,7 +62,7 @@
 /* Who Can Donate Section */
 .who-can-donate-section {
   background: #333;
-  padding: 50px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
 }
@@ -78,8 +80,8 @@
   font-weight: normal;
   font-size: 16px;
   color: white;
-  margin-bottom: 40px;
-
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 
