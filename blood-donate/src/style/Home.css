@@ -12,6 +12,7 @@
   color: white;
   padding: 20px;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 /* General Section Style */
@@ -36,21 +37,25 @@
 
 
 /* Specific Section Styles */
-/* Donate as Male and Female Images */
-.donate-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+/* Styles for male donor image */
+.donor-section-image {
+  width: 150%;
+  height: 10%;
   object-fit: cover;
-  
+  margin-top: 15px;
 }
 
+
+
+
 /* Health Benefits Image */
-.health-benefits-image {
-  width: 60%;
-  height: 100px;
+#healthBenefitsImage {
+  width: 100vw;
+  height: 70%;
   object-fit: cover;
+  margin-top: 20px;
 }
+
 
 /* Who Can Donate Section */
 .who-can-donate-section {
@@ -96,12 +101,15 @@
   font-weight: normal;
   font-size: 19px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
 }
 
 /* Paragraphs in Donate as Male and Female Sections */
 .donate-section-text {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
