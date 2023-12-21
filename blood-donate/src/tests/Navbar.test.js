@@ -36,9 +36,10 @@ describe('Navbar Component', () => {
         await waitFor(() => expect(screen.getByText('Contact Us Page')).toBeInTheDocument());
 
         await act(async () => {
-            await userEvent.click(screen.getByText('User'));
+            await userEvent.click(screen.getByText('Request for Donate'));
         });
         await waitFor(() => expect(screen.getByText('User Page')).toBeInTheDocument());
+        
 
         await act(async () => {
             await userEvent.click(screen.getByText('Staff'));
