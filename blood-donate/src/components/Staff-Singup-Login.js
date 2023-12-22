@@ -20,21 +20,23 @@ const StaffSignupLogin = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleSignup = async (username, password) => {
+    const handleSignup = async (email,username, password) => {
         try {
             await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/register', {
+                email,
                 username,
                 password,
-                email: username
+                
             });
         } catch (error) {
             console.error('Signup failed:', error);
         }
     };
 
-    const handleLogin = async (username, password) => {
+    const handleLogin = async (email ,username, password) => {
         try {
             await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/login', {
+                email, 
                 username,
                 password
             });
@@ -48,6 +50,7 @@ const StaffSignupLogin = () => {
         event.preventDefault();
         setLoading(true);
 
+        const email = event.target.email.value;
         const username = event.target.username.value;
         const password = event.target.password.value;
 
@@ -58,9 +61,9 @@ const StaffSignupLogin = () => {
                 setLoading(false);
                 return;
             }
-            await handleSignup(username, password);
+            await handleSignup(email, username, password);
         } else {
-            await handleLogin(username, password);
+            await handleLogin(email, username, password);
         }
 
         setLoading(false);
@@ -81,18 +84,29 @@ const StaffSignupLogin = () => {
             <div className={`auth-form staff-form ${isSignup ? 'signup' : 'login'}`}>
                 <h2>{isSignup ? 'Staff Signup' : 'Staff Login'}</h2>
                 <form onSubmit={handleSubmit}>
+
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                            Email
+                        </label>
+                        <input type="email" className="form-control" id="email" name="email" />
+                    </div>
+
+
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">
                             Username
                         </label>
-                        <input type="text" className="form-control" id="username" name="username"/>
+                        <input type="text" className="form-control" id="username" name="username" />
                     </div>
+
+
 
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">
                             Password
                         </label>
-                        <input type="password" className="form-control" id="password" name="password"/>
+                        <input type="password" className="form-control" id="password" name="password" />
                     </div>
 
                     {isSignup && (
@@ -100,7 +114,7 @@ const StaffSignupLogin = () => {
                             <label htmlFor="confirmPassword" className="form-label">
                                 Confirm Password
                             </label>
-                            <input type="password" className="form-control" id="confirmPassword" name="confirmpassword"/>
+                            <input type="password" className="form-control" id="confirmPassword" name="confirmpassword" />
                         </div>
                     )}
 
