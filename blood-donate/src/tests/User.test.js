@@ -34,4 +34,18 @@ describe('User Component', () => {
         fireEvent.click(screen.getByText('Next'));
         expect(screen.getByText('Ready to Be a Hero?')).toBeInTheDocument();
     });
+
+
+    test('displays form for blood donation', async () => {
+        render(
+            <Router>
+                <User />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByText('Next'));
+        fireEvent.click(screen.getByText("Yes, I'm Ready"));
+
+        expect(screen.getByText('Blood Donation Application')).toBeInTheDocument();
+    });
 });
