@@ -11,6 +11,10 @@ import axios from 'axios';
 const StaffSignupLogin = () => {
     const [isSignup, setSignup] = useState(true);
     const [isLoading, setLoading] = useState(true);
+    const [passwordError, setPasswordError] = useState('');
+    const [password, setPassword ] = useState('');
+    const [isPasswordValid, setIsPasswordValid] = useState(false);
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -20,23 +24,31 @@ const StaffSignupLogin = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleSignup = async (email,username, password) => {
+
+    useEffect(() => {
+        setIsPasswordValid(password.length >= 8);
+        setPasswordError(isPasswordValid ? '' : 'Password must be at least 8 characters');
+    }, [password , isPasswordValid]);
+
+
+
+    const handleSignup = async (email, username, password) => {
         try {
             await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/register', {
                 email,
                 username,
                 password,
-                
+
             });
         } catch (error) {
             console.error('Signup failed:', error);
         }
     };
 
-    const handleLogin = async (email ,username, password) => {
+    const handleLogin = async (email, username, password) => {
         try {
             await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/login', {
-                email, 
+                email,
                 username,
                 password
             });
@@ -52,7 +64,6 @@ const StaffSignupLogin = () => {
 
         const email = event.target.email.value;
         const username = event.target.username.value;
-        const password = event.target.password.value;
 
         if (isSignup) {
             const confirmPassword = event.target.confirmPassword.value;
@@ -65,6 +76,7 @@ const StaffSignupLogin = () => {
         } else {
             await handleLogin(email, username, password);
         }
+
 
         setLoading(false);
     };
@@ -84,6 +96,8 @@ const StaffSignupLogin = () => {
             <div className={`auth-form staff-form ${isSignup ? 'signup' : 'login'}`}>
                 <h2>{isSignup ? 'Staff Signup' : 'Staff Login'}</h2>
                 <form onSubmit={handleSubmit}>
+
+
 
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">
@@ -106,7 +120,16 @@ const StaffSignupLogin = () => {
                         <label htmlFor="password" className="form-label">
                             Password
                         </label>
-                        <input type="password" className="form-control" id="password" name="password" />
+                        <input
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            placeholder="Password (min 8 characters)"
+                            onChange={(e) => setPassword(e.target.value)} 
+                            disabled={!isSignup && password.length < 8}
+                        />
+                        {passwordError && <div className="alert alert-danger">{passwordError}</div>}
                     </div>
 
                     {isSignup && (
@@ -114,11 +137,21 @@ const StaffSignupLogin = () => {
                             <label htmlFor="confirmPassword" className="form-label">
                                 Confirm Password
                             </label>
-                            <input type="password" className="form-control" id="confirmPassword" name="confirmpassword" />
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="confirmPassword"
+                                name="confirmpassword"
+                                disabled={password.length < 8}
+                            />
                         </div>
                     )}
 
-                    <button type="submit" className="btn btn-primary">
+                    <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={isSignup && password.length < 8}
+                    >
                         {isSignup ? 'Signup' : 'Login'}
                     </button>
                 </form>
