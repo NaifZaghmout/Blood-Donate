@@ -22,7 +22,7 @@ const StaffSignupLogin = () => {
 
     const handleSignup = async (username, password) => {
         try {
-            await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io', {
+            await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/register', {
                 username,
                 password,
                 email: username
@@ -34,7 +34,7 @@ const StaffSignupLogin = () => {
 
     const handleLogin = async (username, password) => {
         try {
-            await axios.post('http://127.0.0.1:8000//login', {
+            await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/login', {
                 username,
                 password
             });
