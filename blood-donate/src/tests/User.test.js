@@ -48,4 +48,29 @@ describe('User Component', () => {
 
         expect(screen.getByText('Blood Donation Application')).toBeInTheDocument();
     });
+    test('submits form and shows submission message', async () => {
+        fetchMock.mockResponseOnce(JSON.stringify({ data: '12345' }));
+        render(
+            <Router>
+                <User />
+            </Router>
+        );
+
+        fireEvent.click(screen.getByText('Next'));
+        fireEvent.click(screen.getByText("Yes, I'm Ready"));
+
+        fireEvent.change(screen.getByPlaceholderText('Enter Your Name'), { target: { value: 'John Doe' } });
+        fireEvent.change(screen.getByPlaceholderText('Enter Your Email'), { target: { value: 'john@example.com' } });
+        fireEvent.change(screen.getByPlaceholderText('Enter Your Phone Number'), { target: { value: '1234567890' } });
+        fireEvent.change(screen.getByPlaceholderText('Enter Your Blood Type'), { target: { value: 'A+' } });
+        fireEvent.change(screen.getByPlaceholderText('Write About Your Health Condition'), { target: { value: 'Healthy' } });
+
+        fireEvent.click(screen.getByText('Submit Application'));
+
+        await waitFor(() => {
+            expect(screen.getByText('Application Submitted')).toBeInTheDocument();
+        });
+
+        expect(screen.getByText('Back to Home')).toBeInTheDocument();
+    });
 });
