@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import '../style/StaffSignupLogin.css';
+import axios from 'axios';
+
+
 
 
 
@@ -17,22 +20,60 @@ const StaffSignupLogin = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const toggleForm = () => {
-        setSignup(!isSignup);
+    const handleSignup = async (username, password) => {
+        try {
+            await axios.post('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io', {
+                username,
+                password,
+                email: username
+            });
+        } catch (error) {
+            console.error('Signup failed:', error);
+        }
     };
 
-    const handleSubmit = (event) => {
+    const handleLogin = async (username, password) => {
+        try {
+            await axios.post('http://127.0.0.1:8000//login', {
+                username,
+                password
+            });
+        } catch (error) {
+            console.error('Login failed:', error);
+
+        }
+    };
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
+        const username = event.target.username.value;
+        const password = event.target.password.value;
+
+        if (isSignup) {
+            const confirmPassword = event.target.confirmPassword.value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                setLoading(false);
+                return;
+            }
+            await handleSignup(username, password);
+        } else {
+            await handleLogin(username, password);
+        }
+
+        setLoading(false);
+    };
+
+    const toggleForm = () => {
+        setSignup(!isSignup);
     };
 
     if (isLoading) {
         return <Loader />;
     }
+
 
 
     return (
@@ -44,14 +85,14 @@ const StaffSignupLogin = () => {
                         <label htmlFor="username" className="form-label">
                             Username
                         </label>
-                        <input type="text" className="form-control" id="username" />
+                        <input type="text" className="form-control" id="username" name="username"/>
                     </div>
 
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">
                             Password
                         </label>
-                        <input type="password" className="form-control" id="password" />
+                        <input type="password" className="form-control" id="password" name="password"/>
                     </div>
 
                     {isSignup && (
@@ -59,7 +100,7 @@ const StaffSignupLogin = () => {
                             <label htmlFor="confirmPassword" className="form-label">
                                 Confirm Password
                             </label>
-                            <input type="password" className="form-control" id="confirmPassword" />
+                            <input type="password" className="form-control" id="confirmPassword" name="confirmpassword"/>
                         </div>
                     )}
 
