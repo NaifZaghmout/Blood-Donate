@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../style/Navbar.css';
 
 const Navbar = () => {
+ 
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -14,6 +16,7 @@ const Navbar = () => {
       <div className="navbar-right">
         <Link to="/user" className="navbar-link">Request for Donate</Link>
         <Link to="/staff-signup" className="navbar-link">Staff Signup</Link>
+        <Link to="/staff-login" className="navbar-link">Staff Login</Link>
       </div>
     </nav>
   );

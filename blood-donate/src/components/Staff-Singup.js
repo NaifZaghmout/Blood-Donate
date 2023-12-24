@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../style/Staff-Singup.css';
+import { Link } from 'react-router-dom'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button } from 'react-bootstrap';
 import Loader from './Loader';
@@ -150,6 +151,10 @@ const Signup = () => {
                     disabled={!isPasswordValid || !isConfirmPasswordValid}>
                     Sign Up
                 </Button>
+
+                <div className="login-signup-link">
+                    If you have an account? <Link to="/staff-login">Login here</Link>
+                </div>
             </Form>
         </Container>
     );

@@ -1,26 +1,36 @@
+/* Container Styles */
 .custom-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
     flex-direction: column;
 }
 
+/* Form Styles */
 .custom-form {
     background-color: rgb(19, 20, 109);
     color: #fff;
     padding: 40px;
     border-radius: 15px;
-    width: 900px;
+    max-width: 600px;
+    width: 100%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: transform 0.3s ease-in-out;
 }
 
 .custom-form:hover {
     transform: scale(1.05);
+    z-index: 1; /* Ensure form scales above other elements */
 }
 
+/* Form Control Styles */
 .custom-form-control {
     height: auto;
     padding: 10px;
@@ -29,42 +39,30 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     border: none;
+    width: 100%;
+}
+
+/* Button Styles */
+.custom-button {
+    width: 100%;
 }
 
 .custom-button:hover {
     background-color: #800080;
 }
 
-
-.password-rules {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 0.8rem;
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-}
-
-.password-warning {
-    color: red;
-    margin-top: 5px;
-    font-size: 1.1rem;
-}
-
-.invalid-password {
-    border: 2px solid red;
-}
-
-.validation-message {
-color: red;
-}
-
-.login-signup-link {
+/* Heading Styles */
+.signup-heading, .login-heading {
+    margin-bottom: 20px;
     text-align: center;
-    margin-top: 20px; 
+    z-index: 2; /* Ensure headings stay above other elements */
+    position: relative;
+}
+
+/* Link Styles for Signup/Login */
+.login-signup-link {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .login-signup-link a {
@@ -76,16 +74,14 @@ color: red;
     text-decoration: underline;
 }
 
-
-
-/* Responsive Design */
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .custom-form {
-        width: 80%;
+        padding: 20px;
+        transform: none !important;
     }
-}
 
-.signup-heading {
-    margin-top: 0;
-    margin-bottom: 20px;
+    .custom-form-control, .custom-button {
+        font-size: 1rem;
+    }
 }
