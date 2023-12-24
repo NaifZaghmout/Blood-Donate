@@ -27,7 +27,7 @@
 
 .custom-form:hover {
     transform: scale(1.05);
-    z-index: 1; /* Ensure form scales above other elements */
+    z-index: 1; 
 }
 
 /* Form Control Styles */
@@ -55,7 +55,7 @@
 .signup-heading, .login-heading {
     margin-bottom: 20px;
     text-align: center;
-    z-index: 2; /* Ensure headings stay above other elements */
+    z-index: 2; 
     position: relative;
 }
 
