@@ -21,6 +21,30 @@ const Login = () => {
         }, 2000);
     }, []);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        const apiUrl = 'https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/login';
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                window.location.href = '/';
+            } else {
+                setError('Login failed. Please check your credentials.');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            setError('An error occurred during login.');
+        }
+    };
+    
+    
     
 };
 
