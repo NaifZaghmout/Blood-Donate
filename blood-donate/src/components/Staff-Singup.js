@@ -37,6 +37,18 @@ const Signup = () => {
             [name]: value,
         }));
     };
+    const handlePasswordChange = (e) => {
+        const password = e.target.value;
+        const valid = validatePassword(password);
+        setIsPasswordValid(valid);
+        handleChange(e);
+    };
+
+    const handleConfirmPasswordChange = (e) => {
+        const confirmPassword = e.target.value;
+        setIsConfirmPasswordValid(confirmPassword === formData.password);
+        handleChange(e);
+    };
 
 
 };
