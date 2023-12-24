@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../style/Staff-Singup.css';
+import '../style/Staff-Singup-Login.css';
 import { Link } from 'react-router-dom'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button } from 'react-bootstrap';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/Staff-Singup.css';
+import '../style/Staff-Singup-Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import Loader from './Loader';
@@ -8,7 +8,7 @@ import Loader from './Loader';
 const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
-        username: '',
+        username: '', 
         password: '',
     });
 
@@ -20,6 +20,14 @@ const Login = () => {
             setIsLoading(false);
         }, 2000);
     }, []);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -99,10 +107,10 @@ const Login = () => {
                     Login
                 </Button>
                 <div className="login-signup-link">
-                    Don't have an account? <Link to="/staff-signup">Sign up here</Link>
-                </div>
+                Don't have an account? <Link to="/staff-signup">Sign up here</Link>
+            </div>
             </Form>
-
+            
         </Container>
     );
 };
