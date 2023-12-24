@@ -34,3 +34,28 @@
 .custom-button:hover {
     background-color: #800080;
 }
+
+
+.password-rules {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.password-warning {
+    color: red;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.invalid-password {
+    border: 2px solid red;
+}
+
+
