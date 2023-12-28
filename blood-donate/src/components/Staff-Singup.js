@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button } from 'react-bootstrap';
 import Loader from './Loader';
+import { BACKEND_API_URL } from '../Environment';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
         email: '',
         username: '',
         password: '',
-        confirmPassword: '',
+        password2: '',
     });
 
     const [isLoading, setIsLoading] = useState(true);
@@ -46,24 +47,32 @@ const Signup = () => {
     };
 
     const handleConfirmPasswordChange = (e) => {
-        const confirmPassword = e.target.value;
-        setIsConfirmPasswordValid(confirmPassword === formData.password);
+        const password2 = e.target.value;
+        setIsConfirmPasswordValid(password2 === formData.password);
         handleChange(e);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const apiUrl = 'https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/register';
+
+        const dataToSend = {
+            ...formData,
+            password2: formData.password2 
+        };
+
+        const apiUrl = `${BACKEND_API_URL}api/register`;
+        
+
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(dataToSend),
             });
             if (response.ok) {
-                window.location.href = '/';
+                window.location.href = '/staff';
             } else {
                 console.error('Signup failed');
             }
@@ -132,8 +141,8 @@ const Signup = () => {
                         className="custom-form-control"
                         type="password"
                         placeholder="Confirm your password"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
+                        name="password2"
+                        value={formData.password2}
                         onChange={handleConfirmPasswordChange}
                         required
                     />

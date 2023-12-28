@@ -3,6 +3,7 @@ import { Form, Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap
 import '../style/User.css';
 import Loader from '../components/Loader';
 import { useNavigate } from 'react-router-dom';
+import { BACKEND_API_URL } from "../Environment";
 
 
 
@@ -38,7 +39,7 @@ function User() {
     console.log(formData);
 
     try {
-      const response = await fetch('https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/createpatientblood/', {
+      const response = await fetch(`${BACKEND_API_URL}api/createpatientblood/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

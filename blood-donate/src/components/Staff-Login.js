@@ -4,6 +4,7 @@ import '../style/Staff-Singup-Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import Loader from './Loader';
+import { BACKEND_API_URL } from '../Environment';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        const apiUrl = 'https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/api/login';
+        const apiUrl = `${BACKEND_API_URL}api/login`;
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -42,7 +43,7 @@ const Login = () => {
                 body: JSON.stringify(formData),
             });
             if (response.ok) {
-                window.location.href = '/';
+                window.location.href = '/staff';
             } else {
                 setError('Login failed. Please check your credentials.');
             }
