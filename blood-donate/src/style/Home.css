@@ -61,10 +61,7 @@
 
 /* Who Can Donate Section */
 .who-can-donate-section {
-  background: #333;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: white;
+  color: rgb(160, 48, 48);
 }
 
 .who-can-donate-image {
@@ -75,11 +72,13 @@
   margin-bottom: 10px;
 }
 
+
+
 /* Text in the Who Can Donate Section */
 .who-can-donate-text {
-  font-weight: normal;
-  font-size: 16px;
-  color: white;
+  font-weight:bold;
+  font-size: 17px;
+  color: rgb(19, 18, 18);
   margin-bottom: 30px;
   margin-top: 30px;
 }

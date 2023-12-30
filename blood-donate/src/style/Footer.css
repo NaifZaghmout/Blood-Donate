@@ -1,14 +1,15 @@
 /* Footer Section */
 .footer-style {
     background-color: rgb(19, 20, 109);
-    padding: 10px 0;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 15px;
+    
   }
   
   /* Social Icons */
   .social-icon-style {
+    padding-top: 25px;
     margin-right: 40px;
     font-size: 24px;
     color: white;
