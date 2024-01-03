@@ -12,6 +12,7 @@ import Signup from './components/Staff-Singup';
 import NotFoundPage from './components/NotFoundPage';
 import Footer from './components/Footer';
 import './style/App.css';
+import "./api/axiosDefaults";
 
 
 
