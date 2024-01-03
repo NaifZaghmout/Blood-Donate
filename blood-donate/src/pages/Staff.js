@@ -3,6 +3,8 @@ import axios from "axios";
 import "../style/staff.css";
 import { MDBDataTable } from "mdbreact";
 import "mdbreact/dist/css/mdb.css";
+import swal from "sweetalert";
+
 
 const Staff = () => {
   const [DataShow, setDataShow] = useState([]);
@@ -22,6 +24,30 @@ const Staff = () => {
     fetchData();
   }, []);
 
+
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`api/delete/${id}/`);
+
+      if (response.status !== 204) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      swal({
+        title: "Deleted",
+        text: "Deleted Successfully",
+        icon: "success",
+        buttons: false,
+        timer: 2000,
+      });
+      setTimeout(() => {
+        setDataShow((prevData) => prevData.filter((item) => item.id !== id));
+      }, 2000);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   useEffect(() => {
     let userData = [];
 
@@ -34,7 +60,20 @@ const Staff = () => {
         item.phone_no = item.patient_phone_number;
         item.blood_type = item.patient_blood_type;
         item.health_information = item.patient_health_information;
-       
+        item.action = (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ display: "flex" }}>
+              <button title="Delete" className="newbtn44 iconbtn">
+                <p
+                  className="editiconDelete1 m-2"
+                onClick={() => handleDelete(item.id)}
+                >
+                  <i className="fa fa-trash"></i>
+                </p>
+              </button>
+            </div>
+          </div>
+        );
 
 
         return item; 
@@ -78,6 +117,12 @@ const Staff = () => {
         field: "health_information",
         sort: "asc",
         width: 500,
+      },
+      {
+        label: "Action",
+        field: "action",
+        sort: "asc",
+        width: 100,
       },
     ],
     rows: usersForRender,
