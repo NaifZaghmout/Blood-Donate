@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../style/Staff-Singup-Login.css';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button } from 'react-bootstrap';
 import Loader from './Loader';
-import { BACKEND_API_URL } from '../Environment';
+import swal from "sweetalert";
+import axios from "axios";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ const Signup = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isPasswordValid, setIsPasswordValid] = useState(true);
     const [isConfirmPasswordValid, setIsConfirmPasswordValid] = useState(true);
+    const [dataResponse, setDataResponse] = useState();
+
 
 
     useEffect(() => {
@@ -57,27 +60,24 @@ const Signup = () => {
 
         const dataToSend = {
             ...formData,
-            password2: formData.password2 
+            password2: formData.password2
         };
 
-        const apiUrl = `${BACKEND_API_URL}api/register`;
-        
 
         try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dataToSend),
+            const response = await axios.post("api/register", dataToSend);
+            swal({
+                title: "Signup",
+                text: "Successfully  signup",
+                icon: "success",
+                buttons: false,
+                timer: 2000,
             });
-            if (response.ok) {
-                window.location.href = '/staff';
-            } else {
-                console.error('Signup failed');
-            }
+            setTimeout(() => {
+                window.location.href = "/staff-login";
+            }, 2000);
         } catch (error) {
-            console.error('Error during signup:', error);
+            setDataResponse(error?.response?.data?.error)
         }
     };
 
@@ -100,6 +100,11 @@ const Signup = () => {
                         onChange={handleChange}
                         required
                     />
+                    {dataResponse === "Email already exists." && (
+                        <div className="password-warning">
+                            <small>{dataResponse}</small>
+                        </div>
+                    )}
                 </Form.Group>
 
                 <Form.Group controlId="formUsername">
@@ -113,6 +118,11 @@ const Signup = () => {
                         onChange={handleChange}
                         required
                     />
+                    {dataResponse === "Username already exists." && (
+                        <div className="password-warning">
+                            <small>{dataResponse}</small>
+                        </div>
+                    )}
                 </Form.Group>
 
                 <Form.Group controlId="formPassword">
