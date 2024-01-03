@@ -53,11 +53,9 @@ const Login = () => {
     
           if (error?.response?.data?.non_field_errors?.length) {
             setError(error?.response?.data?.non_field_errors?.[0]);
-            // console.log("error------------------",error?.response?.data?.non_field_errors?.[0])
           } else {
             setError("Login failed. Please check your credentials.");
           }
-          // setError("An error occurred during login.");
         }
       };
 
