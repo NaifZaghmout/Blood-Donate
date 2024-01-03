@@ -4,7 +4,8 @@ import '../style/Staff-Singup-Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import Loader from './Loader';
-import { BACKEND_API_URL } from '../Environment';
+import swal from "sweetalert";
+import axios from "axios";
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -29,29 +30,36 @@ const Login = () => {
             [name]: value,
         }));
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
-        const apiUrl = `${BACKEND_API_URL}api/login`;
+        setError("");
+    
         try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            if (response.ok) {
-                window.location.href = '/staff';
-            } else {
-                setError('Login failed. Please check your credentials.');
-            }
+          const response = await axios.post("api/login", formData);
+
+              localStorage.setItem("UserData", JSON.stringify(response?.data));
+          swal({
+            title: "Login",
+            text: "Login Successfully",
+            icon: "success",
+            buttons: false,
+            timer: 2000,
+          });
+          setTimeout(() => {
+            window.location.href = "/staff";
+          }, 2000);
         } catch (error) {
-            console.error('Error during login:', error);
-            setError('An error occurred during login.');
+          console.error("Error during login:", error);
+    
+          if (error?.response?.data?.non_field_errors?.length) {
+            setError(error?.response?.data?.non_field_errors?.[0]);
+            // console.log("error------------------",error?.response?.data?.non_field_errors?.[0])
+          } else {
+            setError("Login failed. Please check your credentials.");
+          }
+          // setError("An error occurred during login.");
         }
-    };
+      };
 
     if (isLoading) {
         return <Loader />;

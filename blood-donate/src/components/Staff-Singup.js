@@ -65,7 +65,7 @@ const Signup = () => {
 
 
         try {
-            const response = await axios.post("api/register", dataToSend);
+            await axios.post("api/register", dataToSend);
             swal({
                 title: "Signup",
                 text: "Successfully  signup",
