@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-const baseURL = "http://122.160.74.251:8021/";
+const baseURL = "https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/";
 
 export const handlers = [
   http.get(
