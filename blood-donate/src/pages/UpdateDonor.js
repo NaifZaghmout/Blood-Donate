@@ -66,7 +66,7 @@ const UpdateDonor = () => {
 
 
     try {
-      const response = await axios.put(`api/resolve/${Donorid}/`,formData );
+      await axios.put(`api/resolve/${Donorid}/`,formData );
       swal({
         title: "Updated",
         text: "Updated Successfully",
@@ -93,3 +93,196 @@ const UpdateDonor = () => {
     e.preventDefault();
     setNameData(name);
   };
+
+  return (
+    <>
+    <div>
+    <h1 className="donorHeading">DONORS INFORMATION</h1>
+    </div>
+      <div className="user-form-container-donor">
+        <Link to="/staff">
+          <Button>Back</Button>
+        </Link>
+        <Form>
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Name :
+            </Form.Label>
+            <Col className="d-flex" sm="10">
+              <Form.Control
+                type="text"
+                name="patient_name"
+                value={formData.patient_name}
+                onChange={handleChange}
+                placeholder="Enter Your Name"
+                required
+                disabled={nameData !== "name"}
+              />
+              {nameData !== "name" ? (
+                <Button onClick={(e) => hanldeEditShow(e, "name")}>
+                  <i className="fas fa-pencil-alt"></i>
+                </Button>
+              ) : (
+                <>
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <i className="fa fa-save"></i>
+                  </Button>
+                  <Button onClick={(e) => handleCross(e)}>
+                    <i className="fa fa-remove"></i>
+                  </Button>
+                </>
+              )}
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Email
+            </Form.Label>
+            <Col className="d-flex" sm="10">
+              <Form.Control
+                type="email"
+                name="patient_email"
+                value={formData.patient_email}
+                onChange={handleChange}
+                placeholder="Enter Your Email"
+                required
+                disabled={nameData !== "email"}
+              />
+              {nameData !== "email" ? (
+                <Button onClick={(e) => hanldeEditShow(e, "email")}>
+                  <i className="fas fa-pencil-alt"></i>
+                </Button>
+              ) : (
+                <>
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <i className="fa fa-save"></i>
+                  </Button>
+                  <Button>
+                    <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
+                  </Button>
+                </>
+              )}
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Phone Number
+            </Form.Label>
+            <Col className="d-flex" sm="10">
+              <Form.Control
+                type="text"
+                name="patient_phone_number"
+                value={formData.patient_phone_number}
+                onChange={handleChange}
+                placeholder="Enter Your Phone Number"
+                required
+                disabled={nameData !== "phone"}
+              />
+              {nameData !== "phone" ? (
+                <Button onClick={(e) => hanldeEditShow(e, "phone")}>
+                  <i className="fas fa-pencil-alt"></i>
+                </Button>
+              ) : (
+                <>
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <i className="fa fa-save"></i>
+                  </Button>
+                  <Button>
+                    <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
+                  </Button>
+                </>
+              )}
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Blood Type
+            </Form.Label>
+            <Col className="d-flex" sm="10">
+              <Form.Control
+                type="text"
+                name="patient_blood_type"
+                value={formData.patient_blood_type}
+                onChange={handleChange}
+                placeholder="Enter Your Blood Type"
+                required
+                disabled={nameData !== "bloodtype"}
+              />
+              {nameData !== "bloodtype" ? (
+                <Button onClick={(e) => hanldeEditShow(e, "bloodtype")}>
+                  <i className="fas fa-pencil-alt"></i>
+                </Button>
+              ) : (
+                <>
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <i className="fa fa-save"></i>
+                  </Button>
+                  <Button>
+                    <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
+                  </Button>
+                </>
+              )}
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Health Information
+            </Form.Label>
+            <Col className="d-flex" sm="10">
+              <Form.Control
+                as="textarea"
+                name="patient_health_information"
+                value={formData.patient_health_information}
+                onChange={handleChange}
+                rows={3}
+                placeholder="Write About Your Health Condition"
+                required
+                disabled={nameData !== "health"}
+              />
+              {nameData !== "health" ? (
+                <Button onClick={(e) => hanldeEditShow(e, "health")}>
+                  <i className="fas fa-pencil-alt"></i>
+                </Button>
+              ) : (
+                <>
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <i className="fa fa-save"></i>
+                  </Button>
+                  <Button>
+                    <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
+                  </Button>
+                </>
+              )}
+            </Col>
+          </Form.Group>
+        </Form>
+      </div>
+    </>
+  );
+};
+
+export default UpdateDonor;
