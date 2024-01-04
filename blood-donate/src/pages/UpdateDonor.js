@@ -7,11 +7,10 @@ import "../style/User.css";
 import { useParams } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import "../style/Donor.css";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-
 
 const UpdateDonor = () => {
   let { Donorid } = useParams();
@@ -32,7 +31,6 @@ const UpdateDonor = () => {
       try {
         const response = await axios.get(`api/patient-blood/${Donorid}/`);
 
-
         if (response?.data) {
           const editedData = response?.data;
 
@@ -46,7 +44,6 @@ const UpdateDonor = () => {
           });
         }
 
-      
       } catch (error) {
         console.error("Error:", error);
       }
@@ -54,6 +51,7 @@ const UpdateDonor = () => {
 
     fetchData();
   }, [Donorid, rednder, rednder2, nameData]); 
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -69,8 +67,6 @@ const UpdateDonor = () => {
 
     try {
       const response = await axios.put(`api/resolve/${Donorid}/`,formData );
-
-     ;
       swal({
         title: "Updated",
         text: "Updated Successfully",
@@ -91,9 +87,9 @@ const UpdateDonor = () => {
     setRender2(true);
   };
 
-  
+;
+
   const hanldeEditShow = (e, name) => {
     e.preventDefault();
-    // alert(name);
     setNameData(name);
   };
