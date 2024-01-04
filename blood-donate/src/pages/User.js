@@ -3,7 +3,7 @@ import { Form, Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap
 import '../style/User.css';
 import Loader from '../components/Loader';
 import { useNavigate } from 'react-router-dom';
-import { BACKEND_API_URL } from "../Environment";
+import axios from "axios";
 
 
 
@@ -37,26 +37,14 @@ function User() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-
     try {
-      const response = await fetch(`${BACKEND_API_URL}api/createpatientblood/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_TOKEN_HERE',
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+      await axios.post("api/createpatientblood/", formData);
 
       setLoading(false);
       setStep(4);
       setFormData({});
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setLoading(false);
     }
   };
