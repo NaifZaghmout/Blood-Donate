@@ -4,6 +4,8 @@ import "../style/staff.css";
 import { MDBDataTable } from "mdbreact";
 import "mdbreact/dist/css/mdb.css";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
+
 
 
 const Staff = () => {
@@ -63,6 +65,14 @@ const Staff = () => {
         item.action = (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ display: "flex" }}>
+               <Link to={`/update-donor/${item?.id}`}>
+                <button title="Edit" className="iconbtn newbtn44">
+                  <p className="editiconDelete1 m-2">
+                    {" "}
+                    <i className="fa fa-eye"></i>
+                  </p>
+                </button>
+              </Link>
               <button title="Delete" className="newbtn44 iconbtn">
                 <p
                   className="editiconDelete1 m-2"
