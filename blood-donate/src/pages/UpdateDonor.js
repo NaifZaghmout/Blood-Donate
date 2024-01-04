@@ -7,7 +7,6 @@ import "../style/User.css";
 import { useParams } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import "../style/Donor.css";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -16,7 +15,6 @@ import axios from "axios";
 
 const UpdateDonor = () => {
   let { Donorid } = useParams();
-  // console.log("Donorid-------------", Donorid);
   const [nameData, setNameData] = useState("");
   const [rednder, setRender] = useState(false);
   const [rednder2, setRender2] = useState(false);
@@ -34,13 +32,6 @@ const UpdateDonor = () => {
       try {
         const response = await axios.get(`api/patient-blood/${Donorid}/`);
 
-        // if (!response.ok) {
-        //   throw new Error(`HTTP error! Status: ${response.status}`);
-        // }
-
-        // const data = await response.json();
-
-        // console.log("data-----------cccccc---------------", data);
 
         if (response?.data) {
           const editedData = response?.data;
@@ -55,14 +46,54 @@ const UpdateDonor = () => {
           });
         }
 
-        // Handle the fetched data, e.g., update state
-        // setYourStateVariable(data);
+      
       } catch (error) {
         console.error("Error:", error);
-        // Handle errors, e.g., set an error state
       }
     };
 
-    // Call the fetchData function
     fetchData();
-  }, [Donorid, rednder, rednder2, nameData]); // Add Donorid to the dependency array to fetch data when Donorid changes
+  }, [Donorid, rednder, rednder2, nameData]); 
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+
+    try {
+      const response = await axios.put(`api/resolve/${Donorid}/`,formData );
+
+     ;
+      swal({
+        title: "Updated",
+        text: "Updated Successfully",
+        icon: "success",
+        buttons: false,
+        timer: 2000,
+      });
+      setNameData("");
+      setRender(true);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleCross = (e) => {
+    e.preventDefault();
+    setNameData("");
+    setRender2(true);
+  };
+
+  
+  const hanldeEditShow = (e, name) => {
+    e.preventDefault();
+    // alert(name);
+    setNameData(name);
+  };
