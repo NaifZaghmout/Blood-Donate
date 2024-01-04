@@ -6,8 +6,10 @@ import { Container, Form, Button } from 'react-bootstrap';
 import Loader from './Loader';
 import swal from "sweetalert";
 import axios from "axios";
+import { useRedirect } from '../hooks/useRedirect';
 
 const Signup = () => {
+    useRedirect("loggedIn")
     const [formData, setFormData] = useState({
         email: '',
         username: '',

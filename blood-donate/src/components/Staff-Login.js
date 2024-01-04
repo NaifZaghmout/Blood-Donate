@@ -6,8 +6,11 @@ import { Container, Form, Button, Alert } from 'react-bootstrap';
 import Loader from './Loader';
 import swal from "sweetalert";
 import axios from "axios";
+import { useRedirect } from '../hooks/useRedirect';
+
 
 const Login = () => {
+    useRedirect("loggedIn")
     const [formData, setFormData] = useState({
         email: '',
         username: '', 
