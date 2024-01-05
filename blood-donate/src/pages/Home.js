@@ -171,7 +171,7 @@ const Home = () => {
         <Row>
           <Col md={12} className="p-0">
             <Image
-              src="https://res.cloudinary.com/dusc2x8ri/image/upload/t_health/v1702720964/healthcare-1170_sfdu3r.jpg"
+              src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1704428171/grid_landscape_llfdik.jpg"
               alt="Additional Benefits"
               fluid
               id="healthBenefitsImage"
@@ -181,13 +181,13 @@ const Home = () => {
       </Container>
 
 
-      <Container className="section-style who-can-donate-section">
+      <Container className="section-style who-can-donate-section" >
         <Row>
           <Col md={4} className="text-center">
             {/* md={4} gives the image column a third of the container width */}
             <Image
               src="https://res.cloudinary.com/dusc2x8ri/image/upload/v1701433582/whocan_k2hukg.jpg"
-              alt="Who Can Donate"
+              alt="Who Can Donate" 
               className="who-can-donate-image"
             />
           </Col>

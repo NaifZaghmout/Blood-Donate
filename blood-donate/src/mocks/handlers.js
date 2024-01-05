@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-const baseURL = "https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/";
+const baseURL = "https://stockholm-blood-donate-organization.onrender.com/";
 
 export const handlers = [
   http.get(

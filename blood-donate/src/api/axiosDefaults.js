@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://8000-naifzaghmou-blooddonate-8h80369qfat.ws-us107.gitpod.io/";
+axios.defaults.baseURL = "https://stockholm-blood-donate-organization.onrender.com/";
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.withCredentials = true;
 
