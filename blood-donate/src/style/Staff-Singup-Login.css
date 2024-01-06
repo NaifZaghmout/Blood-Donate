@@ -11,13 +11,15 @@
     color: #fff;
     padding: 40px;
     border-radius: 15px;
-    width: 900px;
+    width: 100%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 900px;
 }
 
 .custom-form:hover {
@@ -82,27 +84,33 @@ color: red;
 
 
 /* Responsive Design */
-@media (max-width: 990px) {
+@media (min-width: 956px) {
     .custom-form {
-        width: 70%;
+        width: 75%;
     }
 }
 
-@media (max-width: 768px) {
+/* Specific range (955px to 769px) */
+@media (max-width: 955px) and (min-width: 769px) {
     .custom-form {
         width: 80%;
+        margin-bottom: 75px;
+        height: 92%;
     }
 }
 
-@media (max-width: 480px) {
+/* Small devices (768px and below) */
+@media (max-width: 768px) {
     .custom-form {
         width: 90%;
         padding: 20px;
     }
 }
 
-@media (max-width: 360px) {
+/* Very small devices (optional, if needed) */
+@media (max-width: 575px) {
     .custom-form {
-        width: 100%;
+        width: 95%;
+        padding: 15px;
     }
 }
