@@ -4,6 +4,7 @@
   object-fit: cover;
   margin-bottom: 20px;
   width: 100%;
+  max-height: 380px;
 }
 
 
@@ -119,6 +120,14 @@
 
 /* Media Queries */
 
+
+/* Screen sizes between 955px and 768px */
+@media (max-width: 955px) and (min-width: 768px) {
+  .common-image {
+    max-height: 270px;
+  }
+}
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
 
@@ -128,6 +137,7 @@
   .who-can-donate-image {
     width: 100%;
     height: auto;
+    max-height: 200px;
   }
 
   .donate-section-text,
@@ -152,6 +162,8 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  
+  
 
   .donate-image,
   .health-benefits-image {
