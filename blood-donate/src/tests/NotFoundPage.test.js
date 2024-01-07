@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import NotFoundPage from '../components/NotFoundPage';
 
+
 describe('NotFoundPage Component', () => {
     test('renders 404 message and description after loading', async () => {
         render(<NotFoundPage />);

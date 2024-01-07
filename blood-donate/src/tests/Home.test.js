@@ -4,6 +4,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import Home from '../pages/Home';
 
+
 describe('Home Component', () => {
   const setup = async () => {
     render(<Home />);

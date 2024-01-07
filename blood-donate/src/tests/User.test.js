@@ -4,6 +4,8 @@ import '@testing-library/jest-dom';
 import User from '../pages/User';
 import { BrowserRouter as Router } from 'react-router-dom';
 import fetchMock from 'jest-fetch-mock';
+import { fireEvent } from '@testing-library/react';
+
 
 fetchMock.enableMocks();
 
