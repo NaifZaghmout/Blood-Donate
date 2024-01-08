@@ -19,7 +19,7 @@ const Staff = () => {
         const response = await axios.get("api/listpatients/");
         setDataShow(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
       }
     };
 
@@ -46,7 +46,7 @@ const Staff = () => {
         setDataShow((prevData) => prevData.filter((item) => item.id !== id));
       }, 2000);
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
     }
   };
 

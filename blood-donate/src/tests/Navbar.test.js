@@ -15,16 +15,27 @@ describe('Navbar Component', () => {
                     <Route path="/" exact element={<div>Home Page</div>} />
                     <Route path="/aboutus" element={<div>About Us Page</div>} />
                     <Route path="/contactus" element={<div>Contact Us Page</div>} />
-                    <Route path="/user" element={<div>User Page</div>} />
                     <Route path="/staff" element={<div>Staff Page</div>} />
+                    <Route path="/user" element={<div>User Page</div>} />
                 </Routes>
             </MemoryRouter>
         );
 
-        await userEvent.click(screen.getByText('Home'));
+        // await userEvent.click(screen.getByText('Home'));
+        // expect(await screen.findByText('Home Page')).toBeInTheDocument();
+
+        const homeLink = screen.getByText('Home');
+        expect(homeLink).toBeInTheDocument();
+        userEvent.click(homeLink);
         expect(await screen.findByText('Home Page')).toBeInTheDocument();
 
-        await userEvent.click(screen.getByText('About Us'));
+
+        // await userEvent.click(screen.getByText('About Us'));
+        // expect(await screen.findByText('About Us Page')).toBeInTheDocument();
+
+        const aboutLink = screen.getByText('About Us');
+        expect(aboutLink).toBeInTheDocument();
+        userEvent.click(aboutLink);
         expect(await screen.findByText('About Us Page')).toBeInTheDocument();
 
         await userEvent.click(screen.getByText('Contact Us'));

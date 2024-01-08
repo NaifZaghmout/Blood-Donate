@@ -36,7 +36,6 @@ function User() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
     try {
       await axios.post("api/createpatientblood/", formData);
 
@@ -44,7 +43,6 @@ function User() {
       setStep(4);
       setFormData({});
     } catch (error) {
-      console.error("Error:", error);
       setLoading(false);
     }
   };

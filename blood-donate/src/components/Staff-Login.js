@@ -52,7 +52,7 @@ const Login = () => {
             window.location.href = "/staff";
           }, 2000);
         } catch (error) {
-          console.error("Error during login:", error);
+        //   console.error("Error during login:", error);
     
           if (error?.response?.data?.non_field_errors?.length) {
             setError(error?.response?.data?.non_field_errors?.[0]);
@@ -107,6 +107,7 @@ const Login = () => {
                         value={formData.password}
                         onChange={handleChange}
                         required
+                        autoComplete='off'
                     />
                 </Form.Group>
 

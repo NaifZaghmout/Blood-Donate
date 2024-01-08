@@ -15,7 +15,7 @@ const Navbar = () => {
       const userData = JSON.parse(userDataString);
       setUserDataShow(userData);
     } else {
-      console.log("No data found in local storage");
+      // console.log("No data found in local storage");
     }
   }, []);
 
@@ -38,7 +38,7 @@ const Navbar = () => {
         window.location.href = "/";
       }, 2000);
     } catch (error) {
-      console.error("Error during signup:", error);
+      // console.error("Error during signup:", error);
     }
   };
 

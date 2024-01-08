@@ -137,6 +137,7 @@ const Signup = () => {
                         value={formData.password}
                         onChange={handlePasswordChange}
                         required
+                        autoComplete='off'
                     />
                     {!isPasswordValid && (
                         <div className="password-warning">
@@ -157,6 +158,7 @@ const Signup = () => {
                         value={formData.password2}
                         onChange={handleConfirmPasswordChange}
                         required
+                        autoComplete='off'
                     />
                     {!isConfirmPasswordValid && (
                         <div className="validation-message">

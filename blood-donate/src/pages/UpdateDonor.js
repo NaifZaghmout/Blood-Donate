@@ -45,7 +45,7 @@ const UpdateDonor = () => {
         }
 
       } catch (error) {
-        console.error("Error:", error);
+        // console.error("Error:", error);
       }
     };
 
@@ -77,7 +77,7 @@ const UpdateDonor = () => {
       setNameData("");
       setRender(true);
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
     }
   };
 
