@@ -92,7 +92,7 @@ thead[data-test="table-foot"] {
   }
   
   .dataTable th {
-    font-size: 19px;
+    font-size: 18px;
     padding: 14px 10px !important;
     font-weight: 700;
     color: #000;
@@ -213,3 +213,27 @@ thead[data-test="table-foot"] {
     width: 40px;
     border-radius: 50%;
   }
+  .dataTables_length.bs-select{
+    text-align: left;
+  }
+  .newbtn44{
+    border: 1px solid #212529;
+    margin:0 5px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .iconbtn{
+    color: red;
+  }
+  .dataTables_length  label {
+    display: flex;
+    align-items: center;
+}
+.dataTables_length select{
+  margin-left: 5px !important;
+}
+button.newbtn44 {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}

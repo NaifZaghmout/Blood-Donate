@@ -66,7 +66,7 @@ const Staff = () => {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ display: "flex" }}>
                <Link to={`/update-donor/${item?.id}`}>
-                <button title="Edit" className="iconbtn newbtn44">
+                <button title="Edit" className="newbtn44">
                   <p className="editiconDelete1 m-2">
                     {" "}
                     <i className="fa fa-eye"></i>

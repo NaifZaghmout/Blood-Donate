@@ -1,5 +1,5 @@
 module.exports = {
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+  setupFilesAfterEnv: ["<rootDir>/src/tests/setupTests.js"],
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
