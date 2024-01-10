@@ -1,4 +1,5 @@
 // src/index.js
+
 import { Cloudinary } from 'cloudinary-core';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -6,7 +7,6 @@ import './style/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 // Initialize Cloudinary with configuration options
 // eslint-disable-next-line

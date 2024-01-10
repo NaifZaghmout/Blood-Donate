@@ -123,15 +123,15 @@ const UpdateDonor = () => {
                 disabled={nameData !== "name"}
               />
               {nameData !== "name" ? (
-                <Button onClick={(e) => hanldeEditShow(e, "name")}>
+                <Button title="Edit" onClick={(e) => hanldeEditShow(e, "name")}>
                   <i className="fas fa-pencil-alt"></i>
                 </Button>
               ) : (
                 <>
-                  <Button onClick={(e) => handleSubmit(e)}>
+                  <Button title="Save" onClick={(e) => handleSubmit(e)}>
                     <i className="fa fa-save"></i>
                   </Button>
-                  <Button onClick={(e) => handleCross(e)}>
+                  <Button title="Close" onClick={(e) => handleCross(e)}>
                     <i className="fa fa-remove"></i>
                   </Button>
                 </>
@@ -158,15 +158,15 @@ const UpdateDonor = () => {
                 disabled={nameData !== "email"}
               />
               {nameData !== "email" ? (
-                <Button onClick={(e) => hanldeEditShow(e, "email")}>
+                <Button title="Edit" onClick={(e) => hanldeEditShow(e, "email")}>
                   <i className="fas fa-pencil-alt"></i>
                 </Button>
               ) : (
                 <>
-                  <Button onClick={(e) => handleSubmit(e)}>
+                  <Button title="Save" onClick={(e) => handleSubmit(e)}>
                     <i className="fa fa-save"></i>
                   </Button>
-                  <Button>
+                  <Button title="Close">
                     <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
                   </Button>
                 </>
@@ -193,15 +193,15 @@ const UpdateDonor = () => {
                 disabled={nameData !== "phone"}
               />
               {nameData !== "phone" ? (
-                <Button onClick={(e) => hanldeEditShow(e, "phone")}>
+                <Button title="Edit" onClick={(e) => hanldeEditShow(e, "phone")}>
                   <i className="fas fa-pencil-alt"></i>
                 </Button>
               ) : (
                 <>
-                  <Button onClick={(e) => handleSubmit(e)}>
+                  <Button title="Save" onClick={(e) => handleSubmit(e)}>
                     <i className="fa fa-save"></i>
                   </Button>
-                  <Button>
+                  <Button title="Close">
                     <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
                   </Button>
                 </>
@@ -228,15 +228,15 @@ const UpdateDonor = () => {
                 disabled={nameData !== "bloodtype"}
               />
               {nameData !== "bloodtype" ? (
-                <Button onClick={(e) => hanldeEditShow(e, "bloodtype")}>
+                <Button title="Edit" onClick={(e) => hanldeEditShow(e, "bloodtype")}>
                   <i className="fas fa-pencil-alt"></i>
                 </Button>
               ) : (
                 <>
-                  <Button onClick={(e) => handleSubmit(e)}>
+                  <Button title="Save" onClick={(e) => handleSubmit(e)}>
                     <i className="fa fa-save"></i>
                   </Button>
-                  <Button>
+                  <Button title="Close">
                     <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
                   </Button>
                 </>
@@ -264,15 +264,15 @@ const UpdateDonor = () => {
                 disabled={nameData !== "health"}
               />
               {nameData !== "health" ? (
-                <Button onClick={(e) => hanldeEditShow(e, "health")}>
+                <Button title="Edit" onClick={(e) => hanldeEditShow(e, "health")}>
                   <i className="fas fa-pencil-alt"></i>
                 </Button>
               ) : (
                 <>
-                  <Button onClick={(e) => handleSubmit(e)}>
+                  <Button title="Save" onClick={(e) => handleSubmit(e)}>
                     <i className="fa fa-save"></i>
                   </Button>
-                  <Button>
+                  <Button title="Close">
                     <i className="fa fa-remove" onClick={(e) => handleCross(e)}></i>
                   </Button>
                 </>
