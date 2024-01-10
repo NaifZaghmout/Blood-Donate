@@ -20,7 +20,7 @@
     width: 90%;
     margin: 0 auto;
 }
-@media only screen and (min-width: 320px) and (max-width: 660px) {
+/* @media only screen and (min-width: 320px) and (max-width: 660px) {
     .tablediv {
         overflow-x: auto !important;
         background-color: #fff !important;
@@ -32,6 +32,57 @@
     .staffdiv {
         padding: 0 !important;
     }
+
+} */
+
+
+@media only screen and (min-width: 320px) and (max-width: 660px) {
+  /* .table-responsive {
+    overflow-x: unset !important;
+  } */
+  .stafftopdiv th {
+    padding: 0 !important;
+    font-size: 10px !important;
+}
+.stafftopdiv td {
+  padding: 0 !important;
+  font-size: 10px !important;
+}
+button.iconbtn {
+  padding: 0 !important;
+}
+p.editiconDelete1 {
+  padding: 2px !important;
+  margin: 0 !important;
+}
+.staffdiv {
+  padding: 0 !important; 
+}
+
+}
+
+@media only screen and (min-width: 661px) and (max-width: 743px) {
+  /* .table-responsive {
+    overflow-x: unset !important;
+  } */
+  .stafftopdiv th {
+    padding: 0 !important;
+    font-size: 15px !important;
+}
+.stafftopdiv td {
+  padding: 0 !important;
+  font-size: 15px !important;
+}
+button.iconbtn {
+  padding: 0 !important;
+}
+p.editiconDelete1 {
+  padding: 4px !important;
+  margin: 0 !important;
+}
+.staffdiv {
+  padding: 0 !important; 
+}
 
 }
 
@@ -236,6 +287,9 @@ button.newbtn44 {
   background-color: #0d6efd;
   color: #fff;
   border-color: #0d6efd;
+  padding: 2px !important;
+
+  margin: 2px !important;
 }
 
 div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
@@ -243,4 +297,8 @@ div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTable
   padding-bottom: 1rem;
   text-align: initial;
   font-weight: 400;
+}
+
+.table-responsive {
+  overflow-x: unset !important;
 }
