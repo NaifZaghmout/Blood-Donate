@@ -37,9 +37,9 @@
 
 
 @media only screen and (min-width: 320px) and (max-width: 660px) {
-  /* .table-responsive {
-    overflow-x: unset !important;
-  } */
+  .table-responsive {
+    overflow-x: auto !important;
+  }
   .stafftopdiv th {
     padding: 0 !important;
     font-size: 10px !important;
@@ -62,9 +62,9 @@ p.editiconDelete1 {
 }
 
 @media only screen and (min-width: 661px) and (max-width: 743px) {
-  /* .table-responsive {
+  .table-responsive {
     overflow-x: unset !important;
-  } */
+  }
   .stafftopdiv th {
     padding: 0 !important;
     font-size: 15px !important;
@@ -299,6 +299,9 @@ div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTable
   font-weight: 400;
 }
 
-.table-responsive {
-  overflow-x: unset !important;
-}
+table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:after {
+  display: none !important;
+  }  
+  table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before {
+  display: none !important;
+  }
