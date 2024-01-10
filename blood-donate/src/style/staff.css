@@ -238,3 +238,9 @@ button.newbtn44 {
   border-color: #0d6efd;
 }
 
+div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: initial;
+  font-weight: 400;
+}
