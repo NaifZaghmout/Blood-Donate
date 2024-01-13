@@ -1,7 +1,7 @@
 # Stockholm Blood Donation Organization
 
 
-![Stockholm-Blood-Donation-Organization](public/images/media-screen.png)
+![Stockholm-Blood-Donation-Organization](./blood-donate/public/images/media-screen.png)
 
 
 
@@ -79,7 +79,7 @@ Get started with the Blood Donate Organization website by following these simple
 - **Navbar:**
   - Allows easy navigation with links to Home, About Us, Contact Us, Blood Donate Request, Staff Signup, Staff Login, and Staff Page.
 
-     - ![Navbar](public/images/navbar.png)
+     - ![Navbar](./blood-donate/public/images/navbar.png)
 
 
   
@@ -88,7 +88,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides a brief description of the organization.
 
 
-     - ![hero](public/images/hero.png)
+     - ![hero](./blood-donate/public/images/hero.png)
 
 
 
@@ -101,7 +101,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Read More Button: Redirects users to an external website for detailed information.
 
 
-     - ![header](public/images/header.png)
+     - ![header](./blood-donate/public/images/header.png)
 
 
 
@@ -114,7 +114,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Read More Button: Redirects users to an external website for in-depth details.
 
 
-     - ![Benefits](public/images/Benefits.png)
+     - ![Benefits](./blood-donate/public/images/Benefits.png)
 
 
 
@@ -127,7 +127,7 @@ Get started with the Blood Donate Organization website by following these simple
 
 
 
-     - ![how-can-donate](public/images/who-can-donate.png)
+     - ![how-can-donate](./blood-donate/public/images/who-can-donate.png)
 
 
 
@@ -139,7 +139,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Features an informative page about the organization.
 
 
-     - ![about-us](public/images/about-us.png)
+     - ![about-us](./blood-donate/public/images/about-us.png)
 
 
 
@@ -151,7 +151,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides insights into the impact and significance of blood donation.
 
 
-     - ![why-we-help](public/images/why-we-help.png)
+     - ![why-we-help](./blood-donate/public/images/why-we-help.png)
 
 
 
@@ -163,7 +163,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides organization contact information, including phone, address, and email.
 
 
-     - ![contact-info](public/images/contact-info.png)
+     - ![contact-info](./blood-donate/public/images/contact-info.png)
 
 
 
@@ -176,7 +176,7 @@ Get started with the Blood Donate Organization website by following these simple
 
 
 
-     - ![send-us-massage](public/images/send-us-massage.png)
+     - ![send-us-massage](./blood-donate/public/images/send-us-massage.png)
 
 
 
@@ -187,7 +187,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Features a compelling message: "Make a Difference with Your Donation."
 
 
-      - ![massage1](public/images/massage1.png)
+      - ![massage1](./blood-donate/public/images/massage1.png)
 
 
 
@@ -196,7 +196,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Encourages users with the message: "Ready to Be a Hero?"
 
 
-     - ![massage2](public/images/massage2.png)
+     - ![massage2](./blood-donate/public/images/massage2.png)
 
 
 
@@ -207,7 +207,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Includes a link to the application for individuals who want to donate blood and make a difference.
 
 
-     - ![application](public/images/application.png)
+     - ![application](./blood-donate/public/images/application.png)
 
 
 
@@ -219,7 +219,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Allows staff members to register on the platform.
 
 
-     - ![singup-form](public/images/singup-form.png)
+     - ![singup-form](./blood-donate/public/images/singup-form.png)
 
 
 
@@ -257,7 +257,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Contains social media links to follow the organization.
   - Includes a copyright statement.
 
-     - ![footer](public/images/footer.png)
+     - ![footer](./blood-donate/public/images/footer.png)
 
 
 
@@ -266,7 +266,7 @@ Get started with the Blood Donate Organization website by following these simple
 
   - All Success messages
 
-     - ![success-messages](public/images/success-messages.jpg)
+     - ![success-messages](./blood-donate/public/images/success-messages.jpg)
 
 
 
@@ -276,7 +276,7 @@ Get started with the Blood Donate Organization website by following these simple
   - All Error messages
 
   
-     - ![error-messages](public/images/error-messages.jpg)
+     - ![error-messages](./blood-donate/public/images/error-messages.jpg)
 
 
 
@@ -575,4 +575,4 @@ That's it! Your Django project should now be successfully deployed on Render. Ma
 
 ## Testing
 
-   Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
+   Please refer to the **[TESTING.md](TESTING.md)** file for all test-related documentation.
