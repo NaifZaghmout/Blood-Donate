@@ -1,7 +1,7 @@
 # Stockholm Blood Donation Organization
 
 
-![Stockholm-Blood-Donation-Organization](BLOOD-DONATE/public/images/media-screen.png)
+![Stockholm-Blood-Donation-Organization](public/images/media-screen.png)
 
 
 
@@ -264,6 +264,7 @@ Get started with the Blood Donate Organization website by following these simple
 
 ### 13. Success messages
 
+  - All Success messages
 
      - ![success-messages](public/images/success-messages.jpg)
 
@@ -272,7 +273,9 @@ Get started with the Blood Donate Organization website by following these simple
 
 ### 14. Error messages
 
+  - All Error messages
 
+  
      - ![error-messages](public/images/error-messages.jpg)
 
 
@@ -385,6 +388,88 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
+## Theme: Blood Donation Platform
+
+### Epic: User Experience Enhancement
+
+### Home Page
+
+#### Epic: Navigation Improvement
+
+| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Easily find the navbar and use it to navigate through pages. | Intuitive navbar for easy navigation.                               | Y                 | -                                       |
+| 2 | View information about blood donation based on gender. | Gender-specific information displayed.                              | Y                 | -                                       |
+| 3 | Learn about the health benefits of blood donation.     | Clear presentation of health benefits.                               | Y                 | -                                       |
+| 4 | Check eligibility for blood donation.                 | Information on eligibility for blood donation.                       | Y                 | -                                       |
+| 5 | Find social media links in the footer and click to be redirected. | Easily accessible social media links in the footer.               | Y                 | -                                       |
+
+### About Us Page
+
+#### Epic: Information Presentation
+
+| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Read about the organization.                          | Comprehensive information about the organization.                  | Y                 | -                                       |
+| 2 | Understand why the organization supports blood donation. | Clear presentation of the organization's mission.                    | Y                 | -                                       |
+
+### Contact Us Page
+
+#### Epic: Communication Enhancement
+
+| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Reach the organization for contact or visit.          | Easy access to contact information.                                  | Y                 | -                                       |
+| 2 | Send a message to the organization for better communication. | Simple and efficient message submission.                           | Y                 | -                                       |
+
+### Request for Donate Page
+
+#### Epic: Donation Request Streamlining
+
+| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Access information before requesting blood donation. | Clear information available before request submission.               | Y                 | -                                       |
+| 2 | Receive a motivational message before submitting the donation request. | Inspirational message before form submission.                  | Y                 | -                                       |
+| 3 | Submit blood donation request quickly and easily.     | Seamless and user-friendly form submission.                          | Y                 | -                                       |
+
+### Footer (Applicable to All Pages)
+
+#### Epic: Social Media Integration
+
+| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Easily find social media links in the footer.        | Clearly visible social media links.                                 | Y                 | -                                       |
+
+### Staff Experience Enhancement (Staff-Specific)
+
+#### Epic: Staff Access and Management
+
+##### Staff Signup Form
+
+| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Find the staff signup form easily in the navbar.     | Clearly visible staff signup form in the navbar.                     | Y                 | -                                       |
+| 2 | Signup as a staff using personal information.         | Successful signup as a staff using personal information.             | Y                 | -                                       |
+| 3 | Receive helpful messages during staff signup.        | Clear messages for issues like username/email taken or password mismatch. | Y             | -                                       |
+| 4 | Automatically redirected to the staff login page after successful staff signup. | Seamless transition to the staff login page.                    | Y             | -                                       |
+
+##### Staff Login Page
+
+| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | Find the staff login page easily in the navbar.      | Clearly visible staff login page in the navbar.                      | Y                 | -                                       |
+| 2 | Receive messages for staff login validation.         | Clear messages for issues like wrong password or email.              | Y                 | -                                       |
+
+##### Staff Management Page
+
+| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
+|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
+| 1 | View information about people requesting blood donation. | Clear display of information for blood donation requests.           | Y                 | -                                       |
+| 2 | View, update, delete, or edit information for a specific patient. | Manage patient information efficiently.                            | Y                 | -                                       |
+| 3 | Search for a specific patient name for fast processing. | Efficient search functionality for specific patient names.          | Y                 | -                                       |
+| 4 | Adjust the number of patients showing in the list.   | Customizable number of patients displayed in the list.               | Y                 | -                                       |
+| 5 | Logout easily from the navbar and return to the home page. | Seamless logout from any page.                                       | Y                 | -                                       |
+
 
 
 
@@ -489,3 +574,5 @@ That's it! Your Django project should now be successfully deployed on Render. Ma
 
 
 ## Testing
+
+   Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
