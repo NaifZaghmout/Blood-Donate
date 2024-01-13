@@ -231,7 +231,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Enables staff members to log in to the management panel.
 
 
-     - ![login-form](public/images/login-form.png)
+     - ![login-form](./blood-donate/public/images/login-form.png)
 
 
 
@@ -245,7 +245,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Staff actions to review and manage the information submitted by people applying for blood donation.
 
 
-     - ![staff-page](public/images/staff-page.png)
+     - ![staff-page](./blood-donate/public/images/staff-page.png)
 
 
 
@@ -388,9 +388,9 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
-## Theme: Blood Donation Platform
+### Theme: Blood Donation Platform
 
-### Epic: User Experience Enhancement
+#### Epic: User Experience Enhancement
 
 ### Home Page
 

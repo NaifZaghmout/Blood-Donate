@@ -81,7 +81,7 @@
 | 3 | Hover over the blue form.                 | The form gets bigger when the mouse is on it and returns to its original size when the mouse is not on it. | Y | Ensure the visual cue (size change) on hover is visible.
 
 
-#### Staff Login
+### Staff Login
 
 #### Staff Login Form
 
