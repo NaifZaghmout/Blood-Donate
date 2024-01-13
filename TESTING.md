@@ -35,11 +35,13 @@
 
 #### Contact Information
 
+
 | # | User Actions                        | Expected Results                                     | Y/N | Comments                                       |
-|---|-------------------------------------|-------------------------------------------------------|-----|
-------------------------------------------------|
-| 1 | View the contact information details (address, email, phone). | Correct contact information is displayed. | Y | Verify the accuracy of the displayed details.
-| 2 | Hover over the blue box with contact information. | The box turns red when the mouse is on it, and blue when the mouse is not on it. | Y | Ensure the visual cue (color change) on hover is visible.
+|---|-------------------------------------|-------------------------------------------------------|-----|------------------------------------------------|
+| 1 | Hover over the blue box with contact information. | The box turns red when the mouse is on it, and blue when the mouse is not on it. | Y | Ensure the visual cue (color change) on hover is visible.
+| 2 | View the contact information details (address, email, phone). | Correct contact information is displayed. | Y | Verify the accuracy of the displayed details.
+
+
 
 
 #### Send Us a Massage Form
