@@ -1,7 +1,7 @@
 # Stockholm Blood Donation Organization
 
 
-![Stockholm-Blood-Donation-Organization](public/images/media-screen.png)
+![Stockholm-Blood-Donation-Organization](BLOOD-DONATE/public/images/media-screen.png)
 
 
 
