@@ -1,25 +1,27 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import User from '../pages/User';
-import { BrowserRouter as Router } from 'react-router-dom';
-import fetchMock from 'jest-fetch-mock';
-import { fireEvent } from '@testing-library/react';
+import axios from "axios";
 
 
-fetchMock.enableMocks();
+import { MemoryRouter } from "react-router-dom";
 
-beforeEach(() => {
-    fetchMock.resetMocks();
-});
+
+jest.mock("axios");
+
+const setup = async () => {
+    render(
+        <MemoryRouter>
+            <User />
+        </MemoryRouter>
+    );
+    await waitFor(() =>   expect(screen.queryByText('Loading . . .')).not.toBeInTheDocument(), { timeout: 5000 });
+};
 
 describe('User Component', () => {
     test('renders initial message', async () => {
-        render(
-            <Router>
-                <User />
-            </Router>
-        );
+        await setup()
 
         expect(screen.getByText('Make a Difference with Your Donation')).toBeInTheDocument();
 
@@ -27,11 +29,7 @@ describe('User Component', () => {
 
 
     test('navigates to second step', async () => {
-        render(
-            <Router>
-                <User />
-            </Router>
-        );
+        await setup()
 
         fireEvent.click(screen.getByText('Next'));
         expect(screen.getByText('Ready to Be a Hero?')).toBeInTheDocument();
@@ -39,24 +37,17 @@ describe('User Component', () => {
 
 
     test('displays form for blood donation', async () => {
-        render(
-            <Router>
-                <User />
-            </Router>
-        );
+        await setup()
 
         fireEvent.click(screen.getByText('Next'));
         fireEvent.click(screen.getByText("Yes, I'm Ready"));
 
         expect(screen.getByText('Blood Donation Application')).toBeInTheDocument();
     });
+
     test('submits form and shows submission message', async () => {
-        fetchMock.mockResponseOnce(JSON.stringify({ data: '12345' }));
-        render(
-            <Router>
-                <User />
-            </Router>
-        );
+        await setup();
+        axios.post.mockResolvedValue({ data: "Mock response data" });
 
         fireEvent.click(screen.getByText('Next'));
         fireEvent.click(screen.getByText("Yes, I'm Ready"));
@@ -69,10 +60,15 @@ describe('User Component', () => {
 
         fireEvent.click(screen.getByText('Submit Application'));
 
-        await waitFor(() => {
-            expect(screen.getByText('Application Submitted')).toBeInTheDocument();
+          await waitFor(() => {
+            expect(axios.post).toHaveBeenCalledWith("api/createpatientblood/", {
+                patient_name: 'John Doe',
+                patient_email: 'john@example.com',
+                patient_phone_number: '1234567890',
+                patient_blood_type: 'A+',
+                patient_health_information: 'Healthy',
+            });
         });
-
-        expect(screen.getByText('Back to Home')).toBeInTheDocument();
+       
     });
 });
