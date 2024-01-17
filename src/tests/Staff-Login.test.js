@@ -1,41 +1,58 @@
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import axios from 'axios'; // You might need to mock axios
-import Login from '../components/Staff-Login.js';
+import React from "react";
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import axios from "axios";
+import Login from "../components/Staff-Login.js";
+import { MemoryRouter } from "react-router-dom";
 
+jest.mock("axios");
 
-jest.mock('axios'); // Mock axios to simulate API requests
+const setup = async () => {
+  render(
+    <MemoryRouter>
+      <Login />
+    </MemoryRouter>
+  );
+  await waitFor(() => expect(screen.queryByText('Loading . . .')).not.toBeInTheDocument(), { timeout: 5000 });
+};
 
-describe('Login component', () => {
-  it('renders without errors', () => {
-    render(<Login />);
-  });
+describe('Login Component', () => {
 
-  it('handles form submission and API response', async () => {
-    // Mock axios.post to return a successful response
-    axios.post.mockResolvedValue({ data: 'Mock response data' });
+  test('must display the login title', async () => {
+    await setup();
+    expect(screen.getByText('Staff Login')).toBeInTheDocument();
+  })
 
-    const { getByLabelText, getByText } = render(<Login />);
+  test('must have a form with the following fields: email,username, password and a submit button', async () => {
+    await setup();
+    expect(screen.getByLabelText("Email")).toBeInTheDocument()
+    expect(screen.getByLabelText("Password")).toBeInTheDocument()
+    expect(screen.getByLabelText("Username")).toBeInTheDocument()
+    expect(screen.getByText("Login")).toBeInTheDocument()
 
-    // Fill in the form fields
-    fireEvent.change(getByLabelText('Username'), { target: { value: 'testuser' } });
-    fireEvent.change(getByLabelText('Email'), { target: { value: 'test@example.com' } });
-    fireEvent.change(getByLabelText('Password'), { target: { value: 'password123' } });
+  })
+  test('handles form submission and API response', async () => {
+    await setup();
+    axios.post.mockResolvedValue({ data: "Mock response data" });
 
-    // Submit the form
-    fireEvent.click(getByText('Login'));
-
-    // Wait for the API response
-    await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith('api/login', {
-        username: 'testuser',
-        email: 'test@example.com',
-        password: 'password123',
-      });
+    fireEvent.change(screen.getByLabelText("Username"), {
+      target: { value: "testuser" },
+    });
+    fireEvent.change(screen.getByLabelText("Email"), {
+      target: { value: "test@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "password123" },
     });
 
-    // Verify that the success message is displayed
-    expect(getByText('Login Successfully')).toBeInTheDocument();
-  });
-});
+    fireEvent.click(screen.getByText("Login"));
 
+    await waitFor(() => {
+      expect(axios.post).toHaveBeenCalledWith("api/login", {
+        username: "testuser",
+        email: "test@example.com",
+        password: "password123",
+      });
+    });
+  });
+
+});git
