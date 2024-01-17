@@ -93,73 +93,6 @@ function User() {
       )}
 
       {step === 3 && (
-        // <Form onSubmit={handleSubmit} className="donation-form">
-        //   <h1 className="form-header">Blood Donation Application</h1>
-        //   <FormGroup className="form-group-item">
-        //     <FormLabel>Name</FormLabel>
-        //     <FormControl
-        //       type="text"
-        //       name="patient_name"
-        //       value={formData.patient_name}
-        //       onChange={handleChange}
-        //       placeholder="Enter Your Name"
-        //       required
-        //     />
-        //   </FormGroup>
-        //   <FormGroup className="form-group-item">
-        //     <FormLabel>Email</FormLabel>
-        //     <FormControl
-        //       type="email"
-        //       name="patient_email"
-        //       value={formData.patient_email}
-        //       onChange={handleChange}
-        //       placeholder="Enter Your Email" 
-        //       required
-        //     />
-        //   </FormGroup>
-        //   <FormGroup className="form-group-item">
-        //     <FormLabel>Phone Number</FormLabel>
-        //     <FormControl
-        //       type="text"
-        //       name="patient_phone_number"
-        //       value={formData.patient_phone_number}
-        //       onChange={handleChange}
-        //       placeholder="Enter Your Phone Number" 
-        //       required
-        //     />
-        //   </FormGroup>
-        //   <FormGroup className="form-group-item">
-        //     <FormLabel>Blood Type</FormLabel>
-        //     <FormControl
-        //       type="text"
-        //       name="patient_blood_type"
-        //       value={formData.patient_blood_type}
-        //       onChange={handleChange}
-        //       placeholder="Enter Your Blood Type"
-        //       required
-        //     />
-        //   </FormGroup>
-        //   <FormGroup className="form-group-item">
-        //     <FormLabel>Health Information</FormLabel>
-        //     <FormControl
-        //       as="textarea"
-        //       name="patient_health_information"
-        //       value={formData.patient_health_information}
-        //       onChange={handleChange}
-        //       rows={3}
-        //       placeholder="Write About Your Health Condition"
-        //       required
-        //     />
-        //   </FormGroup>
-        //   <Button
-        //     type="submit"
-        //     disabled={!isFormFilled()}
-        //     className="submit-button"
-        //   >
-        //     Submit Application
-        //   </Button>
-        //   </Form>
-
         <Form onSubmit={validationSubmit} className="donation-form">
         <h1 className="form-header">Blood Donation Application</h1>
         <FormGroup className="form-group-item">
@@ -234,17 +167,38 @@ function User() {
         </FormGroup>
 
        
-          <FormGroup className="form-group-item">
+        <FormGroup className="form-group-item">
             <FormLabel>Blood Type</FormLabel>
-             <FormControl
-               type="text"
-               name="patient_blood_type"
-               value={formData.patient_blood_type}
+            <Form.Select
+              aria-label="Default select example"
+              name="patient_blood_type"
+              value={formData.patient_blood_type}
               onChange={handleChange}
-               placeholder="Enter Your Blood Type"
-             required
-           />
-         </FormGroup>
+              placeholder="Enter Your Blood Type"
+            > 
+              <option>Select blood type</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </Form.Select>
+            <span
+              style={{
+                color: "#D14F4F",
+                display: "flex",
+                justifyContent: "end",
+                fontSize: "14px",
+                marginRight: "27px",
+                opacity: error.patient_blood_type_Error ? 1 : 0,
+              }}
+            >
+              {error.patient_blood_type_Error ?? "valid"}
+            </span>
+          </FormGroup>
 
         <FormGroup className="form-group-item">
           <FormLabel>Health Information</FormLabel>
