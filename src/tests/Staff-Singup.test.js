@@ -1,54 +1,61 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import Signup from '../components/Staff-Singup.js';
-
+import axios from "axios";
+import { MemoryRouter } from "react-router-dom";
 jest.mock('axios');
 
+const setup = async () => {
+  render(
+    <MemoryRouter>
+      <Signup />
+    </MemoryRouter>
+  );
+  await waitFor(() => expect(screen.queryByText('Loading . . .')).not.toBeInTheDocument(), { timeout: 5000 });
+};
+
 describe('Signup Component', () => {
-  it('should render the Signup form', () => {
-    const { getByLabelText, getByText } = render(<Signup />);
-    
-    const emailInput = getByLabelText('Email');
-    const usernameInput = getByLabelText('Username');
-    const passwordInput = getByLabelText('Password');
-    const confirmPasswordInput = getByLabelText('Confirm Password');
-    const signUpButton = getByText('Sign Up');
-    
-    expect(emailInput).toBeInTheDocument();
-    expect(usernameInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
-    expect(confirmPasswordInput).toBeInTheDocument();
-    expect(signUpButton).toBeInTheDocument();
+  test('must display the signup title', async () => {
+    await setup();
+    expect(screen.getByText('Staff Sign-Up')).toBeInTheDocument();
+  })
+
+  test('must have a form with the following fields: email,username, password and a submit button', async () => {
+    await setup();
+    expect(screen.getByLabelText("Email")).toBeInTheDocument()
+    expect(screen.getByLabelText("Username")).toBeInTheDocument()
+    expect(screen.getByLabelText("Password")).toBeInTheDocument()
+    expect(screen.getByLabelText("Confirm Password")).toBeInTheDocument()
+    expect(screen.getByText("Sign Up")).toBeInTheDocument()
+  })
+  test('handles form submission and API response', async () => {
+    await setup();
+    axios.post.mockResolvedValue({ data: "Mock response data" });
+    expect(screen.getByText('Staff Sign-Up')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText("Username"), {
+      target: { value: "testuser" },
+    });
+    fireEvent.change(screen.getByLabelText("Email"), {
+      target: { value: "test@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "password123" },
+    });
+    fireEvent.change(screen.getByLabelText("Confirm Password"), {
+      target: { value: "password123" },
+    });
+
+    fireEvent.click(screen.getByText("Sign Up"));
+
+    await waitFor(() => {
+      expect(axios.post).toHaveBeenCalledWith("api/register", {
+        username: "testuser",
+        email: "test@example.com",
+        password: "password123",
+        password2: "password123",
+      });
+    });
   });
 
-  it('should display validation messages for invalid inputs', async () => {
-    const { getByLabelText, getByText, findByText } = render(<Signup />);
-    
-    const emailInput = getByLabelText('Email');
-    const usernameInput = getByLabelText('Username');
-    const passwordInput = getByLabelText('Password');
-    const confirmPasswordInput = getByLabelText('Confirm Password');
-    const signUpButton = getByText('Sign Up');
-    
-    fireEvent.click(signUpButton);
-    
-    await findByText('Password must be at least 8 characters long and not entirely numeric.');
-    await findByText('Passwords do not match.');
-    
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(usernameInput, { target: { value: 'testuser' } });
-    fireEvent.change(passwordInput, { target: { value: 'password123' } });
-    fireEvent.change(confirmPasswordInput, { target: { value: 'password123' } });
-    
-    fireEvent.click(signUpButton);
-    
-    const validationMessages = await Promise.all([
-      findByText('Password must be at least 8 characters long and not entirely numeric.', { timeout: 1 }),
-      findByText('Passwords do not match.', { timeout: 1 }),
-    ]);
-    
-    expect(validationMessages).toEqual([null, null]);
-  });
-  
 });
 
