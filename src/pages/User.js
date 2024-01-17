@@ -1,44 +1,65 @@
-import React, { useState } from 'react';
-import { Form, Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
-import '../style/User.css';
-import Loader from '../components/Loader';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import {
+  Form,
+  Button,
+  FormGroup,
+  FormControl,
+  FormLabel,
+} from "react-bootstrap";
+import "../style/User.css";
+import Loader from "../components/Loader";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
-
-
 function User() {
   const [step, setStep] = useState(1);
   const [isLoading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
-    patient_name: '',
-    patient_email: '',
-    patient_phone_number: '',
-    patient_blood_type: '',
-    patient_health_information: ''
+    patient_name: "",
+    patient_email: "",
+    patient_phone_number: "",
+    patient_blood_type: "",
+    patient_health_information: "",
   });
-
-
+  const [error, setError] = useState({
+    patient_name_Error: "",
+    patient_email_Error: "",
+    patient_phone_number_Error: "",
+    patient_blood_type_Error: "",
+    patient_health_information_Error: "",
+  });
   setTimeout(() => setLoading(false), 3000);
-
-
-  const navigate = useNavigate(); 
-
-
+  const navigate = useNavigate();
   const goToHomePage = () => {
-    navigate('/');
+    navigate("/");
   };
-
-
   const nextStep = () => {
     setStep(step + 1);
   };
-
+  const validationSubmit = (e) => {
+    e.preventDefault();
+    const tempError = {
+      patient_name_Error: !formData?.patient_name && "Name field is required",
+      patient_email_Error:
+        !formData?.patient_email && "Email field is required",
+      patient_phone_number_Error:
+        !formData?.patient_phone_number && "Phone field is required",
+      patient_blood_type_Error:
+        !formData?.patient_blood_type && "Blood field is required",
+      patient_health_information_Error:
+        !formData?.patient_health_information && "Health field is required",
+    };
+    setError(tempError);
+    if (tempError.patient_email_Error || tempError.patient_phone_number_Error) {
+      return;
+    }
+    if (Object.values(tempError).filter((value) => value).length === 0) {
+      handleSubmit(e);
+    }
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post("api/createpatientblood/", formData);
-
       setLoading(false);
       setStep(4);
       setFormData({});
@@ -46,27 +67,42 @@ function User() {
       setLoading(false);
     }
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
+    }));
+    let emailError = "";
+    let phoneNumberError = "";
+
+    if (name === "patient_email" && value.trim() !== "") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        emailError = "Invalid email address";
+      }
+    }
+    if (name === "patient_phone_number" && value.trim() !== "") {
+      const phoneNumberRegex = /^\d{10,}$/; // Adjust the regex as needed for your validation
+      if (!phoneNumberRegex.test(value)) {
+        phoneNumberError = "Invalid phone number";
+      }
+    }
+    setError((prevError) => ({
+      ...prevError,
+      [`${name}_Error`]: !value
+        ? `${name.replace("_", " ")} field is required`
+        : name === "patient_email"
+        ? emailError
+        : name === "patient_phone_number"
+        ? phoneNumberError
+        : "",
     }));
   };
-
-
   if (isLoading) {
     return <Loader />;
   }
 
-  const isFormFilled = () => {
-    return formData.patient_name && formData.patient_email && formData.patient_phone_number && formData.patient_blood_type && formData.patient_health_information;
-  };
-
-
-
- 
 
 
 
