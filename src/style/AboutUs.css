@@ -1,0 +1,78 @@
+/* AboutUs.css */
+
+.about-section {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.about-paragraph {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+/* AboutUs.css */
+.about-image {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+/* Responsive Design */
+/* Large desktops */
+@media (min-width: 1200px) {
+    .about-image {
+        max-width: 400px;
+    }
+
+    .paragraph-style {
+        font-size: 20px;
+    }
+}
+
+
+/* Desktops and laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-image {
+        max-width: 350px;
+    }
+
+    .paragraph-style {
+        font-size: 19px;
+    }
+}
+
+/* Tablets and small laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-image {
+        max-width: 300px;
+    }
+
+    .paragraph-style {
+        font-size: 18px;
+    }
+}
+
+/* Larger phones */
+@media (min-width: 576px) and (max-width: 767px) {
+    .about-image {
+        max-width: 250px;
+    }
+
+    .paragraph-style {
+        font-size: 17px;
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 575px) {
+    .about-image {
+        max-width: 200px;
+    }
+
+    .paragraph-style {
+        font-size: 16px;
+    }
+}
