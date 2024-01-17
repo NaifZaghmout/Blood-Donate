@@ -85,80 +85,199 @@ function User() {
       {step === 2 && (
         <div className="message-box">
           <h1 className="message-header">Ready to Be a Hero?</h1>
-          <p className="message-text">By proceeding to the application, you're taking a significant step towards saving lives. Your willingness to donate blood makes you a hero in the eyes of those who need it most. Are you ready to make this noble commitment?</p>
-          <Button className="next-button" onClick={nextStep}>Yes, I'm Ready</Button>
+          <p className="message-text">By proceeding to the application, you re taking a significant step towards saving lives. Your willingness to donate blood makes you a hero in the eyes of those who need it most. Are you ready to make this noble commitment?</p>
+          <Button className="next-button" onClick={nextStep}>Yes, I am Ready</Button>
 
         </div>
 
       )}
 
       {step === 3 && (
-        <Form onSubmit={handleSubmit} className="donation-form">
-          <h1 className="form-header">Blood Donation Application</h1>
-          <FormGroup className="form-group-item">
-            <FormLabel>Name</FormLabel>
-            <FormControl
-              type="text"
-              name="patient_name"
-              value={formData.patient_name}
-              onChange={handleChange}
-              placeholder="Enter Your Name"
-              required
-            />
-          </FormGroup>
-          <FormGroup className="form-group-item">
-            <FormLabel>Email</FormLabel>
-            <FormControl
-              type="email"
-              name="patient_email"
-              value={formData.patient_email}
-              onChange={handleChange}
-              placeholder="Enter Your Email" 
-              required
-            />
-          </FormGroup>
-          <FormGroup className="form-group-item">
-            <FormLabel>Phone Number</FormLabel>
-            <FormControl
-              type="text"
-              name="patient_phone_number"
-              value={formData.patient_phone_number}
-              onChange={handleChange}
-              placeholder="Enter Your Phone Number" 
-              required
-            />
-          </FormGroup>
+        // <Form onSubmit={handleSubmit} className="donation-form">
+        //   <h1 className="form-header">Blood Donation Application</h1>
+        //   <FormGroup className="form-group-item">
+        //     <FormLabel>Name</FormLabel>
+        //     <FormControl
+        //       type="text"
+        //       name="patient_name"
+        //       value={formData.patient_name}
+        //       onChange={handleChange}
+        //       placeholder="Enter Your Name"
+        //       required
+        //     />
+        //   </FormGroup>
+        //   <FormGroup className="form-group-item">
+        //     <FormLabel>Email</FormLabel>
+        //     <FormControl
+        //       type="email"
+        //       name="patient_email"
+        //       value={formData.patient_email}
+        //       onChange={handleChange}
+        //       placeholder="Enter Your Email" 
+        //       required
+        //     />
+        //   </FormGroup>
+        //   <FormGroup className="form-group-item">
+        //     <FormLabel>Phone Number</FormLabel>
+        //     <FormControl
+        //       type="text"
+        //       name="patient_phone_number"
+        //       value={formData.patient_phone_number}
+        //       onChange={handleChange}
+        //       placeholder="Enter Your Phone Number" 
+        //       required
+        //     />
+        //   </FormGroup>
+        //   <FormGroup className="form-group-item">
+        //     <FormLabel>Blood Type</FormLabel>
+        //     <FormControl
+        //       type="text"
+        //       name="patient_blood_type"
+        //       value={formData.patient_blood_type}
+        //       onChange={handleChange}
+        //       placeholder="Enter Your Blood Type"
+        //       required
+        //     />
+        //   </FormGroup>
+        //   <FormGroup className="form-group-item">
+        //     <FormLabel>Health Information</FormLabel>
+        //     <FormControl
+        //       as="textarea"
+        //       name="patient_health_information"
+        //       value={formData.patient_health_information}
+        //       onChange={handleChange}
+        //       rows={3}
+        //       placeholder="Write About Your Health Condition"
+        //       required
+        //     />
+        //   </FormGroup>
+        //   <Button
+        //     type="submit"
+        //     disabled={!isFormFilled()}
+        //     className="submit-button"
+        //   >
+        //     Submit Application
+        //   </Button>
+        //   </Form>
+
+        <Form onSubmit={validationSubmit} className="donation-form">
+        <h1 className="form-header">Blood Donation Application</h1>
+        <FormGroup className="form-group-item">
+          <FormLabel>Name</FormLabel>
+          <FormControl
+            type="text"
+            name="patient_name"
+            value={formData.patient_name}
+            onChange={handleChange}
+            placeholder="Enter Your Name"
+            // required
+          />
+          <span
+            style={{
+              color: "#D14F4F",
+              display: "flex",
+              justifyContent: "end",
+              fontSize: "14px",
+              marginRight: "27px",
+              opacity: error.patient_name_Error ? 1 : 0,
+            }}
+          >
+            {error.patient_name_Error ?? "valid"}
+          </span>
+        </FormGroup>
+        <FormGroup className="form-group-item">
+          <FormLabel>Email</FormLabel>
+          <FormControl
+            type="email"
+            name="patient_email"
+            value={formData.patient_email}
+            onChange={handleChange}
+            placeholder="Enter Your Email"
+            // required
+          />
+          <span
+            style={{
+              color: "#D14F4F",
+              display: "flex",
+              justifyContent: "end",
+              fontSize: "14px",
+              marginRight: "27px",
+              opacity: error.patient_email_Error ? 1 : 0,
+            }}
+          >
+            {error.patient_email_Error ?? "valid"}
+          </span>
+        </FormGroup>
+        <FormGroup className="form-group-item">
+          <FormLabel>Phone Number</FormLabel>
+          <FormControl
+            // type="text"
+            type="tel"
+            name="patient_phone_number"
+            value={formData.patient_phone_number}
+            onChange={handleChange}
+            placeholder="Enter Your Phone Number"
+            // required
+          />
+          <span
+            style={{
+              color: "#D14F4F",
+              display: "flex",
+              justifyContent: "end",
+              fontSize: "14px",
+              marginRight: "27px",
+              opacity: error.patient_phone_number_Error ? 1 : 0,
+            }}
+          >
+            {error.patient_phone_number_Error ?? "valid"}
+          </span>
+        </FormGroup>
+
+       
           <FormGroup className="form-group-item">
             <FormLabel>Blood Type</FormLabel>
-            <FormControl
-              type="text"
-              name="patient_blood_type"
-              value={formData.patient_blood_type}
+             <FormControl
+               type="text"
+               name="patient_blood_type"
+               value={formData.patient_blood_type}
               onChange={handleChange}
-              placeholder="Enter Your Blood Type"
-              required
-            />
-          </FormGroup>
-          <FormGroup className="form-group-item">
-            <FormLabel>Health Information</FormLabel>
-            <FormControl
-              as="textarea"
-              name="patient_health_information"
-              value={formData.patient_health_information}
-              onChange={handleChange}
-              rows={3}
-              placeholder="Write About Your Health Condition"
-              required
-            />
-          </FormGroup>
-          <Button
-            type="submit"
-            disabled={!isFormFilled()}
-            className="submit-button"
+               placeholder="Enter Your Blood Type"
+             required
+           />
+         </FormGroup>
+
+        <FormGroup className="form-group-item">
+          <FormLabel>Health Information</FormLabel>
+          <FormControl
+            as="textarea"
+            name="patient_health_information"
+            value={formData.patient_health_information}
+            onChange={handleChange}
+            rows={3}
+            placeholder="Write About Your Health Condition"
+            // required
+          />
+          <span
+            style={{
+              color: "#D14F4F",
+              display: "flex",
+              justifyContent: "end",
+              fontSize: "14px",
+              marginRight: "27px",
+              opacity: error.patient_health_information_Error ? 1 : 0,
+            }}
           >
-            Submit Application
-          </Button>
-          </Form>
+            {error.patient_health_information_Error ?? "valid"}
+          </span>
+        </FormGroup>
+        <Button
+          type="submit"
+          // disabled={!isFormFilled()}
+          className="submit-button"
+        >
+          Submit Application
+        </Button>
+      </Form>
       )}
 
       {step === 4 && (
