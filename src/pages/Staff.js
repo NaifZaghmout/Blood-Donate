@@ -193,6 +193,16 @@ useEffect(() => {
   }
 
   setUsersForRender(userData);
+
+  var searchElements = document.querySelectorAll('.form-control.form-control-sm.ml-0.my-1');
+searchElements.forEach(function(element) {
+element.setAttribute('name', 'search');
+});
+
+var selectElements = document.querySelectorAll('.custom-select.custom-select-sm.form-control.form-control-sm');
+selectElements.forEach(function(element) {
+element.setAttribute('name', 'select');
+})
 }, [DataShow]);
 
   const data1 = {

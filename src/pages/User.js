@@ -132,9 +132,10 @@ function User() {
         <Form onSubmit={validationSubmit} className="donation-form">
         <h1 className="form-header">Blood Donation Application</h1>
         <FormGroup className="form-group-item">
-          <FormLabel>Name</FormLabel>
+          <FormLabel htmlFor="patientName">Name</FormLabel>
           <FormControl
             type="text"
+            id="patientName"
             name="patient_name"
             value={formData.patient_name}
             onChange={handleChange}
@@ -155,9 +156,10 @@ function User() {
           </span>
         </FormGroup>
         <FormGroup className="form-group-item">
-          <FormLabel>Email</FormLabel>
+          <FormLabel htmlFor="patientEmail">Email</FormLabel>
           <FormControl
             type="email"
+            id="patientEmail"
             name="patient_email"
             value={formData.patient_email}
             onChange={handleChange}
@@ -178,10 +180,11 @@ function User() {
           </span>
         </FormGroup>
         <FormGroup className="form-group-item">
-          <FormLabel>Phone Number</FormLabel>
+          <FormLabel htmlFor="patientPhone">Phone Number</FormLabel>
           <FormControl
             // type="text"
             type="tel"
+            id="patientPhone"
             name="patient_phone_number"
             value={formData.patient_phone_number}
             onChange={handleChange}
@@ -204,9 +207,10 @@ function User() {
 
        
         <FormGroup className="form-group-item">
-            <FormLabel>Blood Type</FormLabel>
+            <FormLabel htmlFor="patinetBlood">Blood Type</FormLabel>
             <Form.Select
               aria-label="Default select example"
+              id="patinetBlood"
               name="patient_blood_type"
               value={formData.patient_blood_type}
               onChange={handleChange}
@@ -237,9 +241,10 @@ function User() {
           </FormGroup>
 
         <FormGroup className="form-group-item">
-          <FormLabel>Health Information</FormLabel>
+          <FormLabel htmlFor="patienthealth">Health Information</FormLabel>
           <FormControl
             as="textarea"
+            id="patienthealth"
             name="patient_health_information"
             value={formData.patient_health_information}
             onChange={handleChange}
