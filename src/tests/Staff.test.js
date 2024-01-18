@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor, screen,fireEvent  } from "@testing-library/react";
+import { render, waitFor  } from "@testing-library/react";
 import axios from "axios";
 import Staff from '../pages/Staff';
 import { MemoryRouter } from "react-router-dom";
@@ -8,7 +8,8 @@ jest.mock('axios'); // Mock axios to simulate API requests
 
 describe('Staff component', () => {
   test('renders without errors', () => {
-    render(<MemoryRouter>
+    render(
+    <MemoryRouter>
       <Staff />
     </MemoryRouter>);
   });
@@ -44,7 +45,7 @@ describe('Staff component', () => {
       status: 204,
     });
 
-    const { getByText, queryByText } = render(<MemoryRouter>
+    const { queryByText } = render(<MemoryRouter>
       <Staff />
     </MemoryRouter>);
 

@@ -40,12 +40,12 @@ const UpdateDonor = () => {
             patient_phone_number: editedData.patient_phone_number || "",
             patient_blood_type: editedData.patient_blood_type || "",
             patient_health_information:
-              editedData.patient_health_information || "",
+              editedData.patient_health_information || ""
           });
         }
 
       } catch (error) {
-        // console.error("Error:", error);
+        console.error("Error:", error)
       }
     };
 
@@ -87,7 +87,7 @@ const UpdateDonor = () => {
     setRender2(true);
   };
 
-;
+
 
   const hanldeEditShow = (e, name) => {
     e.preventDefault();

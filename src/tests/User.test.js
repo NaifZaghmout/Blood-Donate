@@ -40,7 +40,7 @@ describe('User Component', () => {
         await setup()
 
         fireEvent.click(screen.getByText('Next'));
-        fireEvent.click(screen.getByText("Yes, I'm Ready"));
+        fireEvent.click(screen.getByText("Yes, I am Ready"));
 
         expect(screen.getByText('Blood Donation Application')).toBeInTheDocument();
     });
@@ -50,7 +50,7 @@ describe('User Component', () => {
         axios.post.mockResolvedValue({ data: "Mock response data" });
 
         fireEvent.click(screen.getByText('Next'));
-        fireEvent.click(screen.getByText("Yes, I'm Ready"));
+        fireEvent.click(screen.getByText("Yes, I am Ready"));
 
         fireEvent.change(screen.getByPlaceholderText('Enter Your Name'), { target: { value: 'John Doe' } });
         fireEvent.change(screen.getByPlaceholderText('Enter Your Email'), { target: { value: 'john@example.com' } });
@@ -69,6 +69,5 @@ describe('User Component', () => {
                 patient_health_information: 'Healthy',
             });
         });
-       
     });
 });

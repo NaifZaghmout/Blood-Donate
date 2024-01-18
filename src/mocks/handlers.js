@@ -5,7 +5,7 @@ const baseURL = "https://stockholm-blood-donate-organization.onrender.com/";
 export const handlers = [
   http.get(
     `${baseURL}api/listpatients/`,
-    ({ request, params, cookies }) => {
+    () => {
       return HttpResponse.json([
         {
           id: 10,

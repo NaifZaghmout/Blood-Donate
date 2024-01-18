@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/staff.css";
-import { MDBDataTable } from "mdbreact";
+import { MDBDataTable } from 'mdbreact';
 import "mdbreact/dist/css/mdb.css";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
@@ -56,7 +56,7 @@ const Staff = () => {
 
 
     if (DataShow) {
-      userData = DataShow.map((item, index) => {
+      userData = DataShow.map((item) => {
         item.name = item.patient_name;
         item.email = item.patient_email;
         item.phone_no = item.patient_phone_number;
