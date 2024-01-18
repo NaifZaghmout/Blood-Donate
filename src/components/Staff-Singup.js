@@ -100,6 +100,7 @@ const Signup = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        autoComplete='off'
                         required
                     />
                     {dataResponse === "Email already exists." && (
@@ -118,6 +119,7 @@ const Signup = () => {
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
+                        autoComplete='off'
                         required
                     />
                     {dataResponse === "Username already exists." && (

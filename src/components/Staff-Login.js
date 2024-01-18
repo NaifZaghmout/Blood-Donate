@@ -81,6 +81,7 @@ const Login = () => {
                         value={formData.username}
                         onChange={handleChange}
                         required
+                        autoComplete='off'
                     />
                 </Form.Group>
 
@@ -94,6 +95,7 @@ const Login = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        autoComplete='off'
                     />
                 </Form.Group>
 
