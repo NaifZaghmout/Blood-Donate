@@ -113,3 +113,18 @@
         content: ''; 
     }
 }
+
+
+.profileimage-upload-page {
+    background: white;
+    padding: 1px;
+    margin: 0px 11px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.navbar .dropdown-menu a:not(.active) {
+    color: #000;
+    text-align: center;
+}

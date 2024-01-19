@@ -1,6 +1,7 @@
 // Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 import '../style/Navbar.css';
 import swal from "sweetalert";
 import axios from "axios";
@@ -59,9 +60,29 @@ const Navbar = () => {
       <div className="navbar-right">
         <Link to="/user" className="navbar-link">Request for Donate</Link>
           {userDataShow ? (
-          <div className="logoutdiv" onClick={(e) => handleClick(e)}>
-            Staff Logout
-          </div>
+        <Dropdown>
+        <Dropdown.Toggle variant="Primary" id="dropdown-basic">
+        <img
+        src="https://bootdey.com/img/Content/avatar/avatar7.png"
+        alt="Admin"
+        className="rounded-circle profileimage-upload-page"
+        width="50"
+        />
+        </Dropdown.Toggle>
+        
+        
+        
+        <Dropdown.Menu>
+        <Dropdown.Item>
+        <Link to="/profile" className="navbar-link">Profile</Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+        <div className="logoutdiv" onClick={(e) => handleClick(e)}>
+        Staff Logout
+        </div>
+        </Dropdown.Item>
+        </Dropdown.Menu>
+        </Dropdown>
         ) : (
           <>
             <Link to="/staff-signup" className="navbar-link">
