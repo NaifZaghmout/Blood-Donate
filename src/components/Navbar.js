@@ -9,9 +9,11 @@ import axios from "axios";
 const Navbar = () => {
 
   const [userDataShow, setUserDataShow] = useState();
+  const [dataShow, setDataShow] = useState()
+
+
   useEffect(() => {
     const userDataString = localStorage.getItem("UserData");
-
     if (userDataString) {
       const userData = JSON.parse(userDataString);
       setUserDataShow(userData);
@@ -43,6 +45,26 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const storedProfileInfo = JSON.parse(localStorage.getItem("UserData"));
+    if (storedProfileInfo) {
+
+
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            `profile/userproile-detail/${storedProfileInfo?.data?.user_id}/`
+          );
+          setDataShow(response.data)
+        } catch (error) {
+          console.log("error---", error);
+        }
+      };
+
+      fetchData();
+    }
+  }, []);
+
 
 
   return (
@@ -59,30 +81,40 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         <Link to="/user" className="navbar-link">Request for Donate</Link>
-          {userDataShow ? (
-        <Dropdown>
-        <Dropdown.Toggle variant="Primary" id="dropdown-basic">
-        <img
-        src="https://bootdey.com/img/Content/avatar/avatar7.png"
-        alt="Admin"
-        className="rounded-circle profileimage-upload-page"
-        width="50"
-        />
-        </Dropdown.Toggle>
-        
-        
-        
-        <Dropdown.Menu>
-        <Dropdown.Item>
-        <Link to="/profile" className="navbar-link">Profile</Link>
-        </Dropdown.Item>
-        <Dropdown.Item>
-        <div className="logoutdiv" onClick={(e) => handleClick(e)}>
-        Staff Logout
-        </div>
-        </Dropdown.Item>
-        </Dropdown.Menu>
-        </Dropdown>
+        {userDataShow ? (
+          <Dropdown>
+            <Dropdown.Toggle variant="Primary" id="dropdown-basic">
+              {dataShow?.avatar != null ? (
+                <img
+                  src={dataShow?.avatar}
+                  alt="Admin"
+                  className="rounded-circle profileimage-upload-page"
+                  width="50"
+                />
+              ) : (
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                alt="Admin"
+                className="rounded-circle profileimage-upload-page"
+                width="50"
+              />
+              )}
+
+            </Dropdown.Toggle>
+
+
+
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Link to="/profile" className="navbar-link">Profile</Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <div className="logoutdiv" onClick={(e) => handleClick(e)}>
+                  Staff Logout
+                </div>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         ) : (
           <>
             <Link to="/staff-signup" className="navbar-link">

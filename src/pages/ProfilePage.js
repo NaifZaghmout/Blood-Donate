@@ -34,6 +34,7 @@ const ProfilePage = () => {
 
       setIsEditing(false);
       setRender(true)
+      window.location.reload()
     } catch (error) {
       console.error("Error:", error);
     }
@@ -56,7 +57,7 @@ const ProfilePage = () => {
   }, [render]);
 
 
-  
+
   return (
     <>
       <div className="container">
@@ -75,7 +76,7 @@ const ProfilePage = () => {
                         onChange={(e) => setProfileImage(e.target.files[0])}
                       />
                     ) : null}
-                    <label htmlFor="avatarInput">
+                    {/* <label htmlFor="avatarInput"> */}
                       {profileImage != null ? (
                         <>
                           <img
@@ -88,7 +89,7 @@ const ProfilePage = () => {
                       ) : (
                         <>
                           <img
-                            src={profileData?.avatar}
+                            src={profileData?.avatar ?? "https://bootdey.com/img/Content/avatar/avatar7.png" }
                             alt="Profile"
                             className="rounded-circle profileimage-upload"
                             width="150"
@@ -96,7 +97,7 @@ const ProfilePage = () => {
                           />
                         </>
                       )}
-                    </label>
+                    {/* </label> */}
                     <div className="mt-3">
                       <h4>{profileData?.username ?? "N/A"}</h4>
                     </div>
@@ -138,6 +139,7 @@ const ProfilePage = () => {
                               aria-label="With textarea"
                               value={profileBio}
                               onChange={(e) => setProfileBio(e.target.value)}
+                              autoComplete="off"
                             />
                           </InputGroup>
                         </>

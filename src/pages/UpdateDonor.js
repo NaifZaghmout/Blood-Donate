@@ -109,13 +109,12 @@ const UpdateDonor = () => {
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label htmlFor="patientName" column sm="2">
+            <Form.Label  column sm="2">
               Name :
             </Form.Label>
             <Col className="d-flex" sm="10">
               <Form.Control
                 type="text"
-                id="patientName"
                 name="patient_name"
                 value={formData.patient_name}
                 onChange={handleChange}
@@ -143,15 +142,14 @@ const UpdateDonor = () => {
           <Form.Group
             as={Row}
             className="mb-3"
-            controlId="formPlaintextPassword"
+            controlId="patientEmail"
           >
-            <Form.Label htmlFor="patientEmail" column sm="2">
+            <Form.Label  column sm="2">
               Email
             </Form.Label>
             <Col className="d-flex" sm="10">
               <Form.Control
                 type="email"
-                id="patientEmail"
                 name="patient_email"
                 value={formData.patient_email}
                 onChange={handleChange}
@@ -179,15 +177,14 @@ const UpdateDonor = () => {
           <Form.Group
             as={Row}
             className="mb-3"
-            controlId="formPlaintextPassword"
+            controlId="patientPhone"
           >
-            <Form.Label htmlFor="patientPhone" column sm="2">
+            <Form.Label column sm="2">
               Phone Number
             </Form.Label>
             <Col className="d-flex" sm="10">
               <Form.Control
                 type="text"
-                id="patientPhone"
                 name="patient_phone_number"
                 value={formData.patient_phone_number}
                 onChange={handleChange}
@@ -215,15 +212,14 @@ const UpdateDonor = () => {
           <Form.Group
             as={Row}
             className="mb-3"
-            controlId="formPlaintextPassword"
+            controlId="patientBloodType"
           >
-            <Form.Label htmlFor="patientBloodType" column sm="2">
+            <Form.Label  column sm="2">
               Blood Type
             </Form.Label>
             <Col className="d-flex" sm="10">
               <Form.Control
                 type="text"
-                id="patientBloodType"
                 name="patient_blood_type"
                 value={formData.patient_blood_type}
                 onChange={handleChange}
@@ -251,15 +247,14 @@ const UpdateDonor = () => {
           <Form.Group
             as={Row}
             className="mb-3"
-            controlId="formPlaintextPassword"
+            controlId="patienthealth"
           >
-            <Form.Label htmlFor="patienthealth" column sm="2">
+            <Form.Label  column sm="2">
               Health Information
             </Form.Label>
             <Col className="d-flex" sm="10">
               <Form.Control
                 as="textarea"
-                id="patienthealth"
                 name="patient_health_information"
                 value={formData.patient_health_information}
                 onChange={handleChange}
