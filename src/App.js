@@ -7,6 +7,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import User from './pages/User';
 import Staff from './pages/Staff';
+import ProfilePage from './pages/ProfilePage';
 import UpdateDonor from "./pages/UpdateDonor";
 import Login from './components/Staff-Login'; 
 import Signup from './components/Staff-Singup';
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/user" element={<User />} />
             <Route path="/staff" element={<Staff />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/update-donor/:Donorid" element={<UpdateDonor />} />
             <Route path="/staff-signup" element={<Signup />} />
             <Route path="/staff-login" element={<Login />} /> 

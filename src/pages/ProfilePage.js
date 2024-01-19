@@ -54,3 +54,126 @@ const ProfilePage = () => {
 
     fetchData();
   }, [render]);
+
+
+  
+  return (
+    <>
+      <div className="container">
+        <div className="main-body">
+          <div className="row gutters-sm">
+            <div className="col-md-4 mb-3">
+              <div className="card">
+                <div className="card-body">
+                  <div className="d-flex flex-column align-items-center text-center profile-image-section">
+                    {isEditing ? (
+                      <input
+                        type="file"
+                        accept="image/*"
+                        //   style={{ display: "none" }}
+                        id="avatarInput"
+                        onChange={(e) => setProfileImage(e.target.files[0])}
+                      />
+                    ) : null}
+                    <label htmlFor="avatarInput">
+                      {profileImage != null ? (
+                        <>
+                          <img
+                            src={URL.createObjectURL(profileImage)}
+                            alt="Admin"
+                            className="rounded-circle profileimage-upload"
+                            width="150"
+                          />
+                        </>
+                      ) : (
+                        <>
+                          <img
+                            src={profileData?.avatar}
+                            alt="Profile"
+                            className="rounded-circle profileimage-upload"
+                            width="150"
+                            style={{ cursor: "pointer" }}
+                          />
+                        </>
+                      )}
+                    </label>
+                    <div className="mt-3">
+                      <h4>{profileData?.username ?? "N/A"}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <div className="card mb-3">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-sm-3">
+                      <h6 className="mb-0">Email Id</h6>
+                    </div>
+                    <div className="col-sm-9 text-secondary">
+                      {profileData?.email ?? "N/A"}
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="row">
+                    <div className="col-sm-3">
+                      <h6 className="mb-0">Staff Id</h6>
+                    </div>
+                    <div className="col-sm-9 text-secondary">
+                      {profileData?.staff_id ?? "N/A"}
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="row">
+                    <div className="col-sm-3">
+                      <h6 className="mb-0">Bio</h6>
+                    </div>
+                    <div className="col-sm-9 text-secondary">
+                      {isEditing ? (
+                        <>
+                          <InputGroup>
+                            <Form.Control
+                              as="textarea"
+                              aria-label="With textarea"
+                              value={profileBio}
+                              onChange={(e) => setProfileBio(e.target.value)}
+                            />
+                          </InputGroup>
+                        </>
+                      ) : (
+                        profileData?.bio ?? "N/A"
+                      )}
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="row">
+                    <div className="col-sm-12">
+                      {isEditing ? (
+                        <button
+                          className="btn btn-primary"
+                          onClick={handleSubmit}
+                        >
+                          Save
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-primary"
+                          onClick={handleClick}
+                        >
+                          Edit
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ProfilePage;
