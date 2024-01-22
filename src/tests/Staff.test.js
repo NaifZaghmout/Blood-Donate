@@ -1,8 +1,14 @@
 import React from 'react';
+<<<<<<< HEAD
 import { render, waitFor  } from "@testing-library/react";
 import axios from "axios";
 import Staff from '../pages/Staff';
 import { MemoryRouter } from "react-router-dom";
+=======
+import { render } from '@testing-library/react';
+import axios from 'axios'; // You might need to mock axios
+import Staff from '../pages/Staff';
+>>>>>>> e2460a3 (fixed the staff-login.test.js code error)
 
 jest.mock('axios'); // Mock axios to simulate API requests
 

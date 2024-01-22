@@ -82,5 +82,10 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

@@ -10,7 +10,7 @@ import Staff from './pages/Staff';
 import ProfilePage from './pages/ProfilePage';
 import UpdateDonor from "./pages/UpdateDonor";
 import Login from './components/Staff-Login'; 
-import Signup from './components/Staff-Singup';
+import Signup from './components/Staff-Signup';
 import NotFoundPage from './components/NotFoundPage';
 import Footer from './components/Footer';
 import './style/App.css';
