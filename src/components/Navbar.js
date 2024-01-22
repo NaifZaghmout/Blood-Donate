@@ -102,8 +102,8 @@ const Navbar = () => {
 
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item>
-              <div className="navbar-link">
+              <Dropdown.Item as="div">
+              <div className="navbar-link text-center">
                 <Link to="/profile" className="navbar-link">Profile</Link>
                 </div>
               </Dropdown.Item>
