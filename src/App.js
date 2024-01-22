@@ -37,8 +37,6 @@ function App() {
             <Route path="/NotFdPage" element={<NotFoundPage />} />
             <Route path="/footer" element={<Footer />} />
             <Route path="*" element={<NotFoundPage />} />
-
-            
           </Routes>
         </div>
         <Footer />
