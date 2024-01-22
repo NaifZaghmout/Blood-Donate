@@ -101,12 +101,11 @@ const Navbar = () => {
               )}
 
             </Dropdown.Toggle>
-
-
-
             <Dropdown.Menu>
               <Dropdown.Item>
+              <div className="navbar-link">
                 <Link to="/profile" className="navbar-link">Profile</Link>
+                </div>
               </Dropdown.Item>
               <Dropdown.Item>
                 <div className="logoutdiv" onClick={(e) => handleClick(e)}>
