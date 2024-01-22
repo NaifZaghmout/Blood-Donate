@@ -55,7 +55,7 @@ padding: 0 !important;
 
 }
 
-@media only screen and (min-width: 661px) and (max-width: 743px) {
+@media only screen and (min-width: 661px) and (max-width: 767px) {
 .user-form-container-staff {
   width: 100% !important;
 
@@ -81,6 +81,65 @@ margin: 0 !important;
 .staffdiv {
 padding: 0 !important; 
 }
+
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+  .user-form-container-staff {
+    width: 100% !important;
+  
+  }
+  
+  .table-responsive {
+    overflow-x: auto !important;
+  }
+  .stafftopdiv th {
+    padding: 0 !important;
+    font-size: 12px !important;
+  }
+  .stafftopdiv td {
+  padding: 0 !important;
+  font-size: 12px !important;
+  }
+  button.iconbtn {
+  padding: 0 !important;
+  }
+  p.editiconDelete1 {
+  padding: 2px !important;
+  margin: 0 !important;
+  }
+  .staffdiv {
+  padding: 0 !important; 
+  }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1080px) {
+  .user-form-container-staff {
+    width: 100% !important;
+  
+  }
+  
+  .table-responsive {
+    overflow-x: auto !important;
+  }
+  .stafftopdiv th {
+    padding: 0 !important;
+    font-size: 13px !important;
+  }
+  .stafftopdiv td {
+  padding: 0 !important;
+  font-size: 13px !important;
+  }
+  button.iconbtn {
+  padding: 0 !important;
+  }
+  p.editiconDelete1 {
+  padding: 2px !important;
+  margin: 0 !important;
+  }
+  .staffdiv {
+  padding: 0 !important; 
+  }
 
 }
 
@@ -142,7 +201,7 @@ thead[data-test="table-foot"] {
 
 .dataTable th {
   font-size: 18px;
-  padding: 14px 10px !important;
+  padding: 14px 5px !important;
   font-weight: 700;
   color: #000;
   font-family: "Rajdhani", sans-serif !important;

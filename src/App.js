@@ -34,8 +34,11 @@ function App() {
             <Route path="/update-donor/:Donorid" element={<UpdateDonor />} />
             <Route path="/staff-signup" element={<Signup />} />
             <Route path="/staff-login" element={<Login />} /> 
-            <Route path="/NotFoundPage" element={<NotFoundPage />} />
+            <Route path="/NotFdPage" element={<NotFoundPage />} />
             <Route path="/footer" element={<Footer />} />
+            <Route path="*" element={<NotFoundPage />} />
+
+            
           </Routes>
         </div>
         <Footer />
