@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import "../style/ProfilePage.css";
 import axios from "axios";
+import Loader from '../components/Loader';
 
 const ProfilePage = () => {
   const [profileData, setProfileData] = useState([]);
@@ -10,6 +11,15 @@ const ProfilePage = () => {
   const [render, setRender] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [profileBio, setProfileBio] = useState("");
+
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      setTimeout(() => {
+          setIsLoading(false);
+      }, 2000);
+  }, []);
 
   const handleClick = () => {
     setIsEditing(!isEditing);
@@ -57,24 +67,33 @@ const ProfilePage = () => {
   }, [render]);
 
 
+  
+  if (isLoading) {
+    return <Loader />;
+}
+
+
 
   return (
     <>
-      <div className="container">
+      <div className="container profile-conatiners">
         <div className="main-body">
           <div className="row gutters-sm">
             <div className="col-md-4 mb-3">
               <div className="card">
                 <div className="card-body">
                   <div className="d-flex flex-column align-items-center text-center profile-image-section">
-                    {isEditing ? (
+                    {isEditing ? (<>
+                      <label  className="btn btn-primary" htmlFor="avatarInput"> Upload image..</label>
                       <input
                         type="file"
                         accept="image/*"
-                        //   style={{ display: "none" }}
+                        style={{ display: "none" }}
                         id="avatarInput"
+                    
                         onChange={(e) => setProfileImage(e.target.files[0])}
                       />
+                      </>
                     ) : null}
                     {/* <label htmlFor="avatarInput"> */}
                       {profileImage != null ? (
@@ -137,6 +156,7 @@ const ProfilePage = () => {
                             <Form.Control
                               as="textarea"
                               aria-label="With textarea"
+                              name="bio"
                               value={profileBio}
                               onChange={(e) => setProfileBio(e.target.value)}
                               autoComplete="off"

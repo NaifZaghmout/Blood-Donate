@@ -3,3 +3,7 @@ img.profileimage-upload {
     height: 170px;
     object-fit: cover;
 }
+
+.profile-conatiners {
+    min-height: 80vh !important;
+}

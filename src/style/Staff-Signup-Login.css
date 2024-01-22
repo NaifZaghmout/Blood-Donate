@@ -113,4 +113,21 @@ color: red;
         width: 95%;
         padding: 15px;
     }
+    .custom-container {
+        height: 50vh;
+    }
+}
+
+
+
+@media (min-width: 320px) and  (max-width: 767px) {
+    .custom-container {
+        height: 520px;
+    }
+}
+
+@media (min-width: 768px) and  (max-width: 1024px) {
+    .custom-container {
+        height: 580px;
+    }
 }
