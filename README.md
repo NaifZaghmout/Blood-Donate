@@ -79,7 +79,7 @@ Get started with the Blood Donate Organization website by following these simple
 - **Navbar:**
   - Allows easy navigation with links to Home, About Us, Contact Us, Blood Donate Request, Staff Signup, Staff Login, and Staff Page.
 
-      ![Navbar](./blood-donate/public/images/navbar.png)
+      ![Navbar](./public/images/navbar.png)
 
 
   
