@@ -85,6 +85,7 @@ const ProfilePage = () => {
                   <div className="d-flex flex-column align-items-center text-center profile-image-section">
                     {isEditing ? (<>
                       <label  className="btn btn-primary" htmlFor="avatarInput"> Upload image..</label>
+                      
                       <input
                         type="file"
                         accept="image/*"
