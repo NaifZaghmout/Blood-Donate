@@ -79,7 +79,7 @@ Get started with the Blood Donate Organization website by following these simple
 - **Navbar:**
   - Allows easy navigation with links to Home, About Us, Contact Us, Blood Donate Request, Staff Signup, Staff Login, and Staff Page.
 
-     - ![Navbar](./blood-donate/public/images/navbar.png)
+      ![Navbar](./blood-donate/public/images/navbar.png)
 
 
   
@@ -88,7 +88,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides a brief description of the organization.
 
 
-     - ![hero](./blood-donate/public/images/hero.png)
+      ![hero](./blood-donate/public/images/hero.png)
 
 
 
@@ -101,7 +101,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Read More Button: Redirects users to an external website for detailed information.
 
 
-     - ![header](./blood-donate/public/images/header.png)
+      ![header](./blood-donate/public/images/header.png)
 
 
 
@@ -114,7 +114,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Read More Button: Redirects users to an external website for in-depth details.
 
 
-     - ![Benefits](./blood-donate/public/images/Benefits.png)
+      ![Benefits](./blood-donate/public/images/Benefits.png)
 
 
 
@@ -127,7 +127,7 @@ Get started with the Blood Donate Organization website by following these simple
 
 
 
-     - ![how-can-donate](./blood-donate/public/images/who-can-donate.png)
+      ![how-can-donate](./blood-donate/public/images/who-can-donate.png)
 
 
 
@@ -139,7 +139,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Features an informative page about the organization.
 
 
-     - ![about-us](./blood-donate/public/images/about-us.png)
+      ![about-us](./blood-donate/public/images/about-us.png)
 
 
 
@@ -151,7 +151,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides insights into the impact and significance of blood donation.
 
 
-     - ![why-we-help](./blood-donate/public/images/why-we-help.png)
+      ![why-we-help](./blood-donate/public/images/why-we-help.png)
 
 
 
@@ -163,7 +163,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Provides organization contact information, including phone, address, and email.
 
 
-     - ![contact-info](./blood-donate/public/images/contact-info.png)
+      ![contact-info](./blood-donate/public/images/contact-info.png)
 
 
 
@@ -176,7 +176,7 @@ Get started with the Blood Donate Organization website by following these simple
 
 
 
-     - ![send-us-massage](./blood-donate/public/images/send-us-massage.png)
+      ![send-us-massage](./blood-donate/public/images/send-us-massage.png)
 
 
 
@@ -187,7 +187,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Features a compelling message: "Make a Difference with Your Donation."
 
 
-      - ![massage1](./blood-donate/public/images/massage1.png)
+       ![massage1](./blood-donate/public/images/massage1.png)
 
 
 
@@ -196,7 +196,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Encourages users with the message: "Ready to Be a Hero?"
 
 
-     - ![massage2](./blood-donate/public/images/massage2.png)
+      ![massage2](./blood-donate/public/images/massage2.png)
 
 
 
@@ -207,7 +207,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Includes a link to the application for individuals who want to donate blood and make a difference.
 
 
-     - ![application](./blood-donate/public/images/application.png)
+      ![application](./blood-donate/public/images/application.png)
 
 
 
@@ -219,7 +219,7 @@ Get started with the Blood Donate Organization website by following these simple
   - Allows staff members to register on the platform.
 
 
-     - ![singup-form](./blood-donate/public/images/singup-form.png)
+      ![singup-form](./blood-donate/public/images/singup-form.png)
 
 
 
@@ -231,52 +231,114 @@ Get started with the Blood Donate Organization website by following these simple
   - Enables staff members to log in to the management panel.
 
 
-     - ![login-form](./blood-donate/public/images/login-form.png)
+      ![login-form](./blood-donate/public/images/login-form.png)
+
+
+
+### 11. Staff Navigation Bar
+
+
+- After successful login, staff members will have access to a dedicated navigation bar The staff navigation bar includes links to the following:
+
+
+  - Home
+
+  - About Us
+
+  - Contact Us
+
+  - Blood Donate Request
+
+  - Staff Profile
+
+
+      ![after-login-navbar](./blood-donate/public/images/after-login-navbar.png)
+
+
+### 12. Accessing Staff Profile
+
+  - A small avatar with an arrow is located on the right side of the navbar.
+  - When staff members click on the avatar, a dropdown menu appears with two options: "Profile" and "Logout."
+  - Clicking on "Profile" redirects staff members to their individual staff profile page.
+  - Clicking on "Logout" logs the staff member out of the system
+
+
+
+      ![profile&logout](./blood-donate/public/images/profile&logout.png)
+
+
+
+### 13.  Staff Profile Page
+
+
+  - Staff members can access their profile page by clicking on the "Profile" option in the dropdown menu from the small avatar in the navbar.
+  - The profile page displays the following information:
+    - Staff ID
+    - Email
+    - Biography (BIO)
+    - Current profile image
+
+
+      ![profile-page](./blood-donate/public/images/profile-page.png)
+
+
+
+### Edit profile 
+
+- Staff members can click on the "Edit" button to update their profile information, Like changing the profile image and editing the biography.
+
+
+
+      ![edit-profile](./blood-donate/public/images/edit-profile.png)
 
 
 
 
 
 
-### 11. Staff Page
+
+
+### 14. Staff Page
 
 - **Staff Page:**
   - Contains a "Donors List" with information for people who want to donate blood.
   - Staff actions to review and manage the information submitted by people applying for blood donation.
 
 
-     - ![staff-page](./blood-donate/public/images/staff-page.png)
+      ![staff-page](./blood-donate/public/images/staff-page.png)
 
 
 
 
 
-### 12. Footer
+### 15. Footer
 
 - **Footer:**
   - Contains social media links to follow the organization.
   - Includes a copyright statement.
 
-     - ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
 
 
 
 
-### 13. Success messages
+### 16. Success messages
 
   - All Success messages
 
-     - ![success-messages](./blood-donate/public/images/success-messages.jpg)
+      ![success-messages](./blood-donate/public/images/success-messages.jpg)
 
 
 
 
-### 14. Error messages
+### 17. Error messages
 
   - All Error messages
 
   
-     - ![error-messages](./blood-donate/public/images/error-messages.jpg)
+      ![error-messages](./blood-donate/public/images/error-messages.jpg)
+
+
 
 
 
@@ -512,7 +574,7 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
-# Deployment
+## Deployment
 
 Follow these steps to deploy your Django project on Render:
 
@@ -576,3 +638,9 @@ That's it! Your Django project should now be successfully deployed on Render. Ma
 ## Testing
 
    Please refer to the **[TESTING.md](TESTING.md)** file for all test-related documentation.
+
+
+
+## Data Models
+
+- Data models are documented in the read-me for the[Blood-Donate Django Rest Framework API](https://github.com/-/tribehub_drf).

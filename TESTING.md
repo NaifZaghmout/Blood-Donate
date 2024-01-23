@@ -91,6 +91,28 @@
 | 2 | Click on "Login" button. | Login is successful, and a success message is displayed. | - | Verify successful login process.
 | 3 | Hover over the login form. | The form becomes larger when the mouse is on it and returns to the original size when the mouse is not on it. | Y | Ensure the visual cue (size change) on hover is visible.
 
+
+
+### Staff Navbar After Login
+
+#### Navbar Content
+
+| # | User Actions                             | Expected Results                           | Y/N | Comments                              |
+|---|------------------------------------------|---------------------------------------------|-----|---------------------------------------|
+| 1 | Successfully log in as a staff member.   | Redirected to the staff home page.          | Y   | Ensure staff members can log in successfully.
+| 2 | Verify the presence of "Staff Page" on the left side of the navbar. | "Staff Page" is visible in the navbar. | Y | Confirm that the "Staff Page" link is present.
+| 3 | Verify the presence of a small avatar on the right side of the navbar. | Avatar is visible on the right side. | Y | Confirm that the small avatar is present.
+| 4 | Hover over the small avatar.              | The avatar expands, showing an arrow. | Y | Visual cue (size change) on hover should be visible.
+| 5 | Click on the expanded avatar.             | A dropdown menu appears with options: "Profile" and "Logout." | Y | Dropdown menu should appear with the specified options.
+| 6 | Hover over "Profile" option in the dropdown. | The option turns red when the mouse is on it. | Y | Visual cue (red color change) on hover should be visible.
+| 7 | Click on "Profile" option.                | Redirected to the staff profile page.        | - | Ensure staff members can access their profile page.
+| 8 | Hover over "Logout" option in the dropdown. | The option turns red when the mouse is on it. | Y | Visual cue (red color change) on hover should be visible.
+| 9 | Click on "Logout" option.                 | A success message is displayed, and the staff member is redirected to the home page. | - | Verify the logout process and success message.
+
+
+
+
+
 ### Staff Page
 
 #### Requests Information
@@ -117,8 +139,124 @@
 | 1 | Use the search bar to search for a specific patient by name. | Relevant patient information is displayed based on the search. | Y | Ensure the search functionality works as expected.
 | 2 | Adjust the number of entries to display.  | The number of displayed entries is adjusted accordingly. | Y | Verify the control over the number of displayed entries.
 
+
+
+
+### Staff Profile Page
+
+#### Profile Information
+
+| # | User Actions                             | Expected Results                           | Y/N | Comments                              |
+|---|------------------------------------------|---------------------------------------------|-----|---------------------------------------|
+| 1 | Successfully log in as a staff member.   | Redirected to the staff profile page.       | Y   | Ensure staff members can log in successfully.
+| 2 | View personal information on the staff profile page. | Staff ID, Email, Biography, and current profile image are displayed. | Y | Verify the displayed information is accurate.
+| 3 | Click on the "Edit" button.              | Redirected to the staff profile edit page.  | - | Ensure staff members can access the profile edit page.
+
+
+
+#### Edit Profile Page
+
+| # | User Actions                             | Expected Results                           | Y/N | Comments                              |
+|---|------------------------------------------|---------------------------------------------|-----|---------------------------------------|
+| 1 | Click on the "Edit" button on the staff profile page. | Redirected to the staff profile edit page. | - | Ensure staff members can access the profile edit page.
+| 2 | View the existing BIO information.       | Current BIO information is displayed.      | Y | Confirm the displayed BIO information.
+| 3 | Edit the BIO field in the staff page.    | The BIO field becomes editable.            | - | Verify the edit functionality for BIO.
+| 4 | Upload a new profile image from the desktop. | Staff can choose and upload a new profile image. | - | Verify the image upload functionality.
+| 5 | Click on "Save Changes" button.          | Changes are saved, and a success message is displayed. | - | Verify the save changes process and success message.
+
+
 #### Logout
 
 | # | User Actions                             | Expected Results                           | Y/N | Comments                                       |
 |---|------------------------------------------|---------------------------------------------|-----|------------------------------------------------|
 | 1 | Click on "Logout" in the navbar.         | Logout message is displayed, and the user is redirected to the home page. | - | Verify the logout process and success message.
+
+
+
+
+
+
+
+
+
+### Automated Tests
+
+Four automated tests were implemented to ensure the functionality and integrity of all pages and components.
+
+### Test Results
+
+- **Test Suites:** 13 passed, 13 total
+- **Tests:** 38 passed, 38 total
+- **Snapshots:** 0 total
+- **Time:** 20.331 s, estimated 46 s
+
+
+***Running the Tests***
+
+- To run the automated tests, use the following command:
+
+  - `npm test`
+
+
+
+      ![auto-test](./blood-donate/public/images/auto-test.png)
+
+
+
+
+
+
+
+### ESLint JavaScript validator
+
+All JavaScript files were validated using the ESLint JavaScript validator.
+The following issues were identified and corrected:
+
+- Unnecessary semi-colons at the end of some statements.
+- Unescaped apostrophies in HTML text in some components.
+- An unused variable.
+- Missing React import statements.
+
+
+      ![](./blood-donate/public/images/.png)
+
+
+
+
+### W3C CSS validator
+
+- All CSS files were passed through the W3C validator
+
+
+
+      ![css-v](./blood-donate/public/images/css-v.png)
+
+
+
+
+### W3C HTML validator
+
+-  HTML file were passed through the W3C validator
+
+
+
+      ![html-v](./blood-donate/public/images/html-v.png)
+
+
+
+
+
+### Lighthouse testing
+
+
+
+      ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
+      ![footer](./blood-donate/public/images/footer.png)
+
+
+
+
