@@ -199,7 +199,7 @@ Four automated tests were implemented to ensure the functionality and integrity 
 
 
 
-      ![auto-test](./blood-donate/public/images/auto-test.png)
+      ![auto-test](./public/images/auto-test.png)
 
 
 
@@ -261,15 +261,15 @@ The combination of ESLint and ESLintwer ensures a robust validation process, con
 
 
 
-### Lighthouse testing
+ ### Lighthouse testing
 
 
 
-      ![light1](./public/images/light1.png)
-      ![light2](./public/images/light2.png)
-      ![light3](./public/images/light3.png)
-      ![light4](./public/images/light4.png)
-      ![light5](./public/images/light5.png)
-      ![light6](./public/images/light6.png)
-      ![light7](./public/images/light7.png)
+   ![light1](./public/images/light1.png)
+   ![light2](./public/images/light2.png)
+   ![light3](./public/images/light3.png)
+   ![light4](./public/images/light4.png)
+   ![light5](./public/images/light5.png)
+   ![light6](./public/images/light6.png)
+   ![light7](./public/images/light7.png)
 
