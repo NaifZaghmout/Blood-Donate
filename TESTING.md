@@ -207,18 +207,33 @@ Four automated tests were implemented to ensure the functionality and integrity 
 
 
 
-### ESLint JavaScript validator
+### ESLint JavaScript Validator
 
-All JavaScript files were validated using the ESLint JavaScript validator.
-The following issues were identified and corrected:
+All JavaScript files in this project undergo validation using ESLint, a widely used JavaScript linter, to ensure code quality and adherence to best practices. The validation process has identified and corrected various issues, including:
 
-- Unnecessary semi-colons at the end of some statements.
-- Unescaped apostrophies in HTML text in some components.
-- An unused variable.
-- Missing React import statements.
+- **Unnecessary Semi-colons:** Removed unnecessary semi-colons at the end of some statements for cleaner code.
+
+- **Unescaped Apostrophes in HTML:** Escaped apostrophes in HTML text within some components to prevent unintended behavior.
+
+- **Unused Variable:** Addressed an issue where an unused variable was present, optimizing the codebase.
+
+- **Missing React Import Statements:** Ensured all necessary React import statements are included for proper component rendering.
+
+### ESLintwer Validation
+
+In addition to ESLint, ESLintwer has also been utilized for further validation. It is worth noting that the ESLintwer validation process has successfully passed without raising any issues.
+
+### Running ESLint Locally:
+
+To run ESLint locally and ensure code consistency, follow these steps:
+
+1. Ensure Node.js and npm are installed on your machine.
+2. Install ESLint globally: `npm install -g eslint`
+3. Run ESLint: `eslint .`
+
+The combination of ESLint and ESLintwer ensures a robust validation process, contributing to a maintainable and high-quality JavaScript codebase. Developers can contribute confidently, knowing that their code aligns with established coding standards.
 
 
-      ![](./blood-donate/public/images/.png)
 
 
 
@@ -250,13 +265,11 @@ The following issues were identified and corrected:
 
 
 
-      ![footer](./blood-donate/public/images/footer.png)
-      ![footer](./blood-donate/public/images/footer.png)
-      ![footer](./blood-donate/public/images/footer.png)
-      ![footer](./blood-donate/public/images/footer.png)
-      ![footer](./blood-donate/public/images/footer.png)
-      ![footer](./blood-donate/public/images/footer.png)
-
-
-
+      ![light1](./public/images/light1.png)
+      ![light2](./public/images/light2.png)
+      ![light3](./public/images/light3.png)
+      ![light4](./public/images/light4.png)
+      ![light5](./public/images/light5.png)
+      ![light6](./public/images/light6.png)
+      ![light7](./public/images/light7.png)
 

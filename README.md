@@ -442,7 +442,7 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
-
+## Issue 
 
 
 
@@ -547,6 +547,11 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
+      ![jera1](./public/images/jera1.png)
+      ![jera2](./public/images/jera2.png)
+      ![jera3](./public/images/jera3.png)
+      ![jera4](./public/images/jera4.png)
+      ![jera5](./public/images/jera5.png)
 
 
 
@@ -641,6 +646,9 @@ That's it! Your Django project should now be successfully deployed on Render. Ma
 
 
 
-## Data Models
 
-- Data models are documented in the read-me for the[Blood-Donate Django Rest Framework API](https://github.com/-/tribehub_drf).
+## Blood-Donate Django Rest Framework API
+
+This repository contains the Django Rest Framework API for the Blood-Donate application.
+
+**Backend Repository:** [Blood-Donate Backend Repository](https://github.com/NaifZaghmout/Blood-Donate-Backend)
