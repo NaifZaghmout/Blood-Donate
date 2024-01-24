@@ -571,16 +571,19 @@ A project kanban board was used to track progress, with user stories moved betwe
 
 - **To asses Jira use:**
 
-  - **Full Name:**Naif Zaghmout
+  - **Full Name:** Naif Zaghmout
   - **Email:** Naif-zaghmout@hotmail.com
-  - **Password:**poizon999
-  - **Link to Jira:**`https://www.atlassian.com/software/jira`
+  - **Password:** poizon999
+  - **Link to Jira:** `https://www.atlassian.com/software/jira`
 
   ![jera1](./public/images/jera1.png)
   ![jera2](./public/images/jera2.png)
   ![jera3](./public/images/jera3.png)
   ![jera4](./public/images/jera4.png)
   ![jera5](./public/images/jera5.png)
+  ![jera6](./public/images/jera6.png)
+  ![jera7](./public/images/jera7.png)
+
 
 
 
