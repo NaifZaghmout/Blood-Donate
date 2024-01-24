@@ -54,10 +54,11 @@ const ProfilePage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `profile/userproile-detail/${storedProfileInfo?.data?.user_id}/`
+          `profile/userprofile-detail/${storedProfileInfo?.data?.user_id}/`
         );
         setProfileData(response.data);
-        setProfileBio(response?.data?.bio);
+        // setProfileBio(response?.data?.bio);
+        setProfileBio(response?.data?.bio || "");
       } catch (error) {
         console.log("error---", error);
       }

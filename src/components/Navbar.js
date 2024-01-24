@@ -53,7 +53,7 @@ const Navbar = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `profile/userproile-detail/${storedProfileInfo?.data?.user_id}/`
+            `profile/userprofile-detail/${storedProfileInfo?.data?.user_id}/`
           );
           setDataShow(response.data)
         } catch (error) {

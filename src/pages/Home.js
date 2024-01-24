@@ -10,12 +10,15 @@ const Home = () => {
   const [isLoading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // const baseUrl = "https://res.cloudinary.com/dusc2x8ri/image/upload/"
+
+
   const imageUrls = [
-    'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437640/pexels-puwadon-sangngern-5340280_otvusk.jpg',
-    'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437615/pexels-artem-podrez-5726838_albohv.jpg',
-    'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437629/pexels-karolina-grabowska-4226894_fskupm.jpg',
-    'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437603/pexels-artem-podrez-6823603_jbcd53.jpg',
-    'https://res.cloudinary.com/dusc2x8ri/image/upload/v1701437590/pexels-vlada-karpovich-5790810_azal66.jpg',
+  './img/pexels-puwadon-sangngern-5340280_otvusk.jpg ',
+  './img/pexels-artem-podrez-5726838_albohv.jpg',
+  './img/pexels-karolina-grabowska-4226894_fskupm.jpg',
+  './img/pexels-artem-podrez-6823603_jbcd53.jpg',
+  './img/pexels-vlada-karpovich-5790810_azal66.jpg',
   ];
 
   useEffect(() => {
@@ -44,6 +47,7 @@ const Home = () => {
               src={imageUrls[currentImageIndex]}
               alt={`Image ${currentImageIndex + 1}`}
               className="common-image"
+              loading="lazy"
             />
           </Col>
         </Row>
@@ -88,8 +92,6 @@ const Home = () => {
                 Read More
               </a>
             </div>
-
-
 
           </Col>
         </Row>
