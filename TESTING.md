@@ -244,7 +244,7 @@ The combination of ESLint and ESLintwer ensures a robust validation process, con
 
 
 
-      ![css-v](./blood-donate/public/images/css-v.png)
+      ![css-v](./public/images/css-v.png)
 
 
 
@@ -255,7 +255,7 @@ The combination of ESLint and ESLintwer ensures a robust validation process, con
 
 
 
-      ![html-v](./blood-donate/public/images/html-v.png)
+      ![html-v](./public/images/html-v.png)
 
 
 

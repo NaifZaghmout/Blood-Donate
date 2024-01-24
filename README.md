@@ -435,7 +435,6 @@ This resolution should fix the issue, and now the donor information should be up
 
 
 
-
 #### Remaining Bugs
 
 - None 
@@ -444,97 +443,118 @@ This resolution should fix the issue, and now the donor information should be up
 
 ## Issue 
 
+### Issue: Frequent Rebase in Gitpod
+
+#### Problem
+Encountering recurring rebase conflicts in Gitpod due to concurrent development efforts. The situation is exacerbated by the late adoption of Agile methodology after the project initiation, leading to increased frequency of code changes.
+
+#### Impact
+- Disrupts development workflow.
+- Increases the risk of overlooking critical changes.
+- Requires constant manual conflict resolution during rebase.
+
+#### Resolution
+
+1. **Communication:**
+   - Establish clear communication channels for code changes coordination.
+   - Encourage team members to communicate development plans to minimize overlap.
+
+2. **Branching Strategy:**
+   - Adopt a feature branching strategy to isolate and manage specific features.
+
+3. **Pulling Strategy:**
+   - Encourage regular pulling of changes from the main branch to local branches.
+   - Use `git pull --rebase` for a cleaner integration.
+
+#### Agile Methodology Integration (Late Adoption)
+
+**Problem:**
+- Agile methodology was introduced late in the project after the mentor section, causing a delay in its benefits.
+
+**Resolution:**
+- Strike a balance between Agile's iterative development and effective communication.
+- Ensure team members are aligned with Agile practices to minimize disruptions.
+- Consider conducting a retrospective to identify areas for improvement and streamline Agile integration.
+
+
 
 
 ## User Story
-
-
-
-### Theme: Blood Donation Platform
-
-#### Epic: User Experience Enhancement
-
-### Home Page
-
-#### Epic: Navigation Improvement
-
-| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Easily find the navbar and use it to navigate through pages. | Intuitive navbar for easy navigation.                               | Y                 | -                                       |
-| 2 | View information about blood donation based on gender. | Gender-specific information displayed.                              | Y                 | -                                       |
-| 3 | Learn about the health benefits of blood donation.     | Clear presentation of health benefits.                               | Y                 | -                                       |
-| 4 | Check eligibility for blood donation.                 | Information on eligibility for blood donation.                       | Y                 | -                                       |
-| 5 | Find social media links in the footer and click to be redirected. | Easily accessible social media links in the footer.               | Y                 | -                                       |
-
-### About Us Page
-
-#### Epic: Information Presentation
-
-| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Read about the organization.                          | Comprehensive information about the organization.                  | Y                 | -                                       |
-| 2 | Understand why the organization supports blood donation. | Clear presentation of the organization's mission.                    | Y                 | -                                       |
-
-### Contact Us Page
-
-#### Epic: Communication Enhancement
-
-| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Reach the organization for contact or visit.          | Easy access to contact information.                                  | Y                 | -                                       |
-| 2 | Send a message to the organization for better communication. | Simple and efficient message submission.                           | Y                 | -                                       |
-
-### Request for Donate Page
-
-#### Epic: Donation Request Streamlining
-
-| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Access information before requesting blood donation. | Clear information available before request submission.               | Y                 | -                                       |
-| 2 | Receive a motivational message before submitting the donation request. | Inspirational message before form submission.                  | Y                 | -                                       |
-| 3 | Submit blood donation request quickly and easily.     | Seamless and user-friendly form submission.                          | Y                 | -                                       |
-
-### Footer (Applicable to All Pages)
-
-#### Epic: Social Media Integration
-
-| # | User Actions                                         | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Easily find social media links in the footer.        | Clearly visible social media links.                                 | Y                 | -                                       |
-
-### Staff Experience Enhancement (Staff-Specific)
-
-#### Epic: Staff Access and Management
-
-##### Staff Signup Form
-
-| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Find the staff signup form easily in the navbar.     | Clearly visible staff signup form in the navbar.                     | Y                 | -                                       |
-| 2 | Signup as a staff using personal information.         | Successful signup as a staff using personal information.             | Y                 | -                                       |
-| 3 | Receive helpful messages during staff signup.        | Clear messages for issues like username/email taken or password mismatch. | Y             | -                                       |
-| 4 | Automatically redirected to the staff login page after successful staff signup. | Seamless transition to the staff login page.                    | Y             | -                                       |
-
-##### Staff Login Page
-
-| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | Find the staff login page easily in the navbar.      | Clearly visible staff login page in the navbar.                      | Y                 | -                                       |
-| 2 | Receive messages for staff login validation.         | Clear messages for issues like wrong password or email.              | Y                 | -                                       |
-
-##### Staff Management Page
-
-| # | Staff Actions                                        | Expected Results                                                     | Required for MVP? | Comments                                |
-|---|------------------------------------------------------|---------------------------------------------------------------------|-------------------|-----------------------------------------|
-| 1 | View information about people requesting blood donation. | Clear display of information for blood donation requests.           | Y                 | -                                       |
-| 2 | View, update, delete, or edit information for a specific patient. | Manage patient information efficiently.                            | Y                 | -                                       |
-| 3 | Search for a specific patient name for fast processing. | Efficient search functionality for specific patient names.          | Y                 | -                                       |
-| 4 | Adjust the number of patients showing in the list.   | Customizable number of patients displayed in the list.               | Y                 | -                                       |
-| 5 | Logout easily from the navbar and return to the home page. | Seamless logout from any page.                                       | Y                 | -                                       |
+User stories required to implement each epic were created. These were categorised according to whether they were 'must have' features required to implement a Minimum Viable Product (MVP).
+Please see the [Google sheet](https://docs.google.com/spreadsheets/d/1cyEBb2ZI2SYo6h-4pERsSZ_tiwFX7DpN6npcbnHGD4o/edit#gid=412412840) for detail.
 
 
 
 
+## Project Themes and Epics
+
+### Themes
+
+The development of themes in this project was rooted in the overarching project goals. The identified themes include:
+
+1. **Staff Management:**
+   - Necessary to support the use of the system on an individual basis.
+   - Aims to bring Staff users together into a 'tribe' to support Goal 1.
+
+2. **Customer:**
+   - Essential to enable key functionality required by Goal 1.
+
+3. **Contact Customer:**
+   - Chosen as a ‘nice to have’ feature, potentially implementable in version 2 with sufficient time.
+
+4. **User Feedback and Information:**
+   - Required to support Goal 1.
+
+5. **Search:**
+   - Required to support Goal 1.
+
+### Epics
+
+Themes were further refined into the following epics:
+
+1. **Static Pages:**
+   - Home Page
+     - Navigation
+     - Footer
+   - About Us
+   - Contact Us
+
+2. **Request for Donate Page**
+
+3. **Blood Donation Application:**
+   - Name
+   - Email Validation
+   - Phone Number
+   - Blood Group Type
+   - Health Information
+   - Submit Application
+   - Back to Home
+
+4. **Staff Sign Up:**
+   - Email Validation
+   - User Name
+   - Password Creation
+   - Confirm Password
+   - Sign-Up Button
+   - Login Button
+
+5. **Staff Login:**
+   - Enter Credentials
+   - Login
+
+6. **Donor List:**
+   - Donor Information
+   - Action
+   - Search
+   - Number of Donor List Display
+   - Pagination
+   - Navigation
+   - Request A Donor
+   - Staff Profile
+
+7. **Accessing Staff Profile:**
+   - View/Update Donor Profile
+   - Logout
 
 
 
@@ -544,14 +564,23 @@ This resolution should fix the issue, and now the donor information should be up
 ## Agile development methodology
 
 
+- Agile development methodology GitHub issues and JIRA Project Management tool were used to document and track an agile development approach. A JIRA board was created to represent the product backlog. All user stories were initially added to the product backlog.
+Development work was planned using a series of iterations each with a timebox of three working days, representing a total 11 story points (although the duration of each iteration in calendar days was variable due to fitting the three working days around work and other commitments).
+A JIRA project board was created for each iteration, and user stories moved from the product backlog into the relevant iteration as each cycle of work began. User stories were labelled as 'must have', 'could have' or 'should have' goals for that specific iteration, and assigned story point values. Story points for 'must have' user stories never exceeded 6 (60%). 
+A project kanban board was used to track progress, with user stories moved between 'Todo', 'In Progress' and 'Done' columns as appropriate. For example, the BD project board was captured at the start, in the middle and at the end:
 
+- **To asses Jira use:**
 
+  - **Full Name:**Naif Zaghmout
+  - **Email:** Naif-zaghmout@hotmail.com
+  - **Password:**poizon999
+  - **Link to Jira:**`https://www.atlassian.com/software/jira`
 
-      ![jera1](./public/images/jera1.png)
-      ![jera2](./public/images/jera2.png)
-      ![jera3](./public/images/jera3.png)
-      ![jera4](./public/images/jera4.png)
-      ![jera5](./public/images/jera5.png)
+  ![jera1](./public/images/jera1.png)
+  ![jera2](./public/images/jera2.png)
+  ![jera3](./public/images/jera3.png)
+  ![jera4](./public/images/jera4.png)
+  ![jera5](./public/images/jera5.png)
 
 
 
