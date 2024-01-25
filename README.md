@@ -76,6 +76,19 @@ To access the admin panel, you can use the following credentials:
 - **Password:** admin@123
 
 
+6. **To Login To Staff Page**
+
+Use : 
+
+- **Email:** test@gmail.com
+- **Username:**test
+- **Password:**test@123
+
+Or :
+
+- **Signup To Create New Staff Account / Login After Create New Staff Account**
+
+
 
 
 
