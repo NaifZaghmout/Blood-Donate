@@ -623,10 +623,6 @@ A project kanban board was used to track progress, with user stories moved betwe
 Follow these steps to deploy your Django project on Render:
 
 
-### Deployment Status
-
-[![Render Deployment](https://img.shields.io/render/endpoint?color=green&url=REPLACE_WITH_YOUR_RENDER_APP_URL)](REPLACE_WITH_YOUR_RENDER_APP_URL)
-
 ### Deployment Instructions
 
 #### 1. Sign In to Render
