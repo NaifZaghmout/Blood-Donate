@@ -219,11 +219,11 @@ All JavaScript files in this project undergo validation using ESLint, a widely u
 
 - **Missing React Import Statements:** Ensured all necessary React import statements are included for proper component rendering.
 
-### ESLintwer Validation
+#### ESLintwer Validation
 
 In addition to ESLint, ESLintwer has also been utilized for further validation. It is worth noting that the ESLintwer validation process has successfully passed without raising any issues.
 
-### Running ESLint Locally:
+#### Running ESLint Locally:
 
 To run ESLint locally and ensure code consistency, follow these steps:
 
@@ -244,7 +244,7 @@ The combination of ESLint and ESLintwer ensures a robust validation process, con
 
 
 
-      ![css-v](./public/images/css-v.png)
+   ![css-v](./public/images/css-v.png)
 
 
 
@@ -261,7 +261,7 @@ The combination of ESLint and ESLintwer ensures a robust validation process, con
 
 
 
- ### Lighthouse testing
+ ### Lighthouse Testing
 
 
 

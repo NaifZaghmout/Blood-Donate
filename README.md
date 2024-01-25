@@ -69,6 +69,13 @@ Get started with the Blood Donate Organization website by following these simple
 **Note:** Make sure you have Node.js and npm installed on your machine before proceeding with the installation steps.
 
 
+5. **Admin Panel Access:**
+To access the admin panel, you can use the following credentials:
+
+- **Email:** admin@gmail.com
+- **Password:** admin@123
+
+
 
 
 
@@ -615,58 +622,63 @@ A project kanban board was used to track progress, with user stories moved betwe
 
 Follow these steps to deploy your Django project on Render:
 
-### 1. Create an Account on Render
 
-- Go to the [Render](https://render.com/) website.
-- Sign up for an account if you don't have one.
+### Deployment Status
 
-### 2. Create a New Web Service
+[![Render Deployment](https://img.shields.io/render/endpoint?color=green&url=REPLACE_WITH_YOUR_RENDER_APP_URL)](REPLACE_WITH_YOUR_RENDER_APP_URL)
 
-- After logging in, click on the "Create" button to create a new web service.
-- Choose "Web Service" from the available options.
+### Deployment Instructions
 
-### 3. Configure Your Service
+#### 1. Sign In to Render
 
-- Select the deployment region that is closest to your target audience.
-- Choose the "Django" preset from the list of presets.
-- Set the "Environment" to "Python."
-- Enter your repository URL, for example, `https://github.com/NaifZaghmout/Blood-Donate`.
+Visit [Render](https://render.com) and sign in to your Render account.
 
-### 4. Configure Environment Variables
+#### 2. Create a New Web Service
 
-- Add environment variables required for your Django project (e.g., `SECRET_KEY`, `DEBUG`, `DATABASE_URL`, etc.).
-- In Render, you can add environment variables in the "Environment" section of your web service settings.
+In the Render dashboard, click the "+" button to create a new web service.
 
-### 5. Set Up Your Database
+#### 3. Connect GitHub Repository
 
-- If you're using a database, configure the database settings.
-- Render provides options for different types of databases, including managed PostgreSQL.
+In the "Repository" section, select GitHub and connect your repository by providing the repository URL (`https://github.com/NaifZaghmout/Blood-Donate`).
 
-### 6. Specify Start Command
+#### 4. Configure Build Settings
 
-- In the "Advanced" section, set the start command for your Django application. Typically, this would be something like `cd bloodbackend && gunicorn bloodbackend.wsgi`.
+Render will attempt to automatically detect build settings. Verify the build command is set to `npm install && npm run build` and the build directory is set to `build`.
 
-### 7. Configure Automatic Deployments
+#### 5. Create the Web Service
 
-- Set up automatic deployments from your Git repository. Render will automatically deploy updates when you push changes to your repository.
+Choose a name, select the environment, and choose the region. Click "Create Web Service."
 
-### 8. Review and Deploy
+#### 6. Environment Variables (if needed)
 
-- Review your settings and click the "Create Web Service" button to deploy your Django application.
+If your app relies on environment variables, configure them in the Render dashboard under "Environment."
 
-### 9. Wait for Deployment
+#### 7. Deployment
 
-- Render will automatically build and deploy your Django application. You can monitor the deployment progress in the Render dashboard.
+Monitor the deployment progress in the Render dashboard.
 
-### 10. Access Your Application
+#### 8. Access Your Deployed App
 
-- Once the deployment is complete, you can access your Django application using the provided Render URL (`https://stockholm-blood-donate-organization.onrender.com`).
+Once deployment is successful, Render will provide a URL for your app.
 
-### 11. Custom Domains (Optional)
+#### 9. Update README (Optional)
 
-- If you have a custom domain, you can configure it in the Render dashboard.
+If desired, add a Render deployment badge to your README for quick access.
 
-That's it! Your Django project should now be successfully deployed on Render. Make sure to update your database, collect static files, and perform any other necessary tasks as part of your Django deployment process.
+#### 10. Monitor and Scale (Optional)
+
+Use the Render dashboard to monitor performance and configure auto-scaling.
+
+#### 11. SSL Configuration (Optional)
+
+Configure SSL settings if you want to enable SSL for your custom domain.
+
+#### 12. Custom Domain (Optional)
+
+Configure your custom domain in the "Custom Domains" section of your service settings.
+
+For more details and platform-specific information, refer to the [Render Documentation](https://render.com/docs).
+
 
 
 
